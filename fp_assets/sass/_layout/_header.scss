@@ -1,0 +1,76 @@
+//__Header Style__//
+.header__section{
+    padding: 30px 0 30px;
+    @include breakpoint(max-lg){
+        padding: 0px 0px 0px;
+    }
+}
+.header__wrap{
+    @include justify;
+    align-items: center;
+    .logo{
+        h1{
+            color: var(--bs-heading-color, inherit);
+            @include breakpoint(max-lg){
+                font-size: 42px;
+            }
+            @include breakpoint(max-sm){
+                font-size: 32px;
+            }
+            @include breakpoint(max-xs){
+                font-size: 24px;
+            }
+        }
+    }
+    .cmn__grp{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include breakpoint(max-lg){
+            gap: 12px;
+            .cmn--btn{
+                padding: 7px 30px 8px;
+                font-size: 17px;
+            }
+        }
+        @include breakpoint(max-sm){
+            gap: 10px;
+            .cmn--btn{
+                padding: 5px 15px 6px;
+                font-size: 14px;
+            }
+        }
+        @include breakpoint(max-xs){
+            gap: 5px;
+            .cmn--btn{
+                padding: 4px 12px 5px;
+                font-size: 14px;
+            }
+            .border--btn{
+                padding: 4px 8px 5px;
+            }
+        }
+        .mode--toggle{
+            width: 35px;
+            height: 35px;   
+            border-radius: 50%;
+            background: var(--medium-blue);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 20px;
+                height: unset;
+            }
+            @include breakpoint(max-xs){
+                width: 30px;
+                height: 30px;
+                img{
+                    width: 14px;
+                }
+            }
+        }
+    }
+}
+//__Header Style__//

@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {"id": "navbar", "status": "done", "priority": 1},
+    {"id": "documents", "status": "done", "priority": 2},
+    {"id": "flashcards", "status": "done", "priority": 3},
+    {"id": "reports", "status": "done", "priority": 4},
+    {"id": "smartfeed", "status": "done", "priority": 5},
+    {"id": "exports", "status": "done", "priority": 6},
+    {"id": "settings", "status": "done", "priority": 7},
+    {"id": "instructions", "status": "done", "priority": 8},
+    {"id": "zh_word_sample", "status": "done", "priority": 9},
+    {"id": "zh_index", "status": "done", "priority": 10},
+    {"id": "es_index", "status": "done", "priority": 11},
+    {"id": "cross_page_verification", "status": "done", "priority": 12}
+  ]
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Smart Feed - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link active" href="smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        <p>The feed uses word tracking and spaced repetition to address the problem of over-studied and under-studied words.
+           It also improves understanding of your target words by presenting them in novel contexts.</p>
+        <p class="mb-0">The smart feed recommends content from:
+          <ul><li>Your flashcard phrases</li><li>The Speakize database</li></ul>
+        </p>
+        <p>By continuously optimizing the next recommendation against your learning goals, you hit more of your target words with fewer reviews.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card m-3 text-center shadow">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <br>
+    <img id="feedImage" src="" class="img-fluid rounded-start" alt="" style="display:none;">
+    <br><br>
+    <p class="card-text">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseTranscript" role="button" aria-expanded="true">
+        <i class="bi bi-chat-left-text-fill"></i>
+      </a>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseTranslation" role="button" aria-expanded="true">
+        <i class="bi bi-translate"></i>
+      </a>
+    </p>
+    <div class="collapse show" id="collapseTranscript">
+      <p class="fs-4" id="feedText">比如一个漂亮的后空踢</p>
+    </div>
+    <div class="collapse show" id="collapseTranslation">
+      <p><em id="feedTrans">Like a nice back kick</em></p>
+    </div>
+
+    <audio controls id="feedAudio" >
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <br><br>
+    <button class="btn btn-primary" onclick="feedAgain()">Again</button>
+    <button class="btn btn-primary" onclick="feedNext()">Next</button>
+  </div>
+  <div class="card-footer text-muted"></div>
+</div>
+<br>
+
+<div class="container">
+  <div class="accordion" id="accordionHelp">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHelp" aria-expanded="true">
+          Need some help?
+        </button>
+      </h2>
+      <div id="collapseHelp" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <p><a class="btn btn-primary"><i class="bi bi-chat-left-text-fill"></i></a> - Toggle transcript (default: show)</p>
+          <p><a class="btn btn-primary"><i class="bi bi-translate"></i></a> - Toggle translation (default: show)</p>
+          <p><button class="btn btn-primary">Again</button> - This was difficult, review again in 1 minute</p>
+          <p><button class="btn btn-primary">Next</button> - I understood this, show me the next phrase</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+(function() {
+  var phrases = [{"text": "比如一个漂亮的后空踢", "translation": "Like a nice back kick", "audio_url": ""}, {"text": "想我的时候就看一下", "translation": "Look when you think of me", "audio_url": ""}, {"text": "对chris进行了训练", "translation": "trained chris", "audio_url": ""}, {"text": "{\\an8}展现视觉与味觉的盛宴", "translation": "{\\an8}A feast for sight and taste", "audio_url": ""}, {"text": "偷偷说出我的小秘密来了", "translation": "Here comes my little secret", "audio_url": ""}, {"text": "有超过七成的人放弃自己的判断", "translation": "More than 70% of people give up their judgment", "audio_url": ""}, {"text": "再也没有脸见杉菜姐姐了", "translation": "I don't have the face to see Sister Shancai again.", "audio_url": ""}, {"text": "[尖叫声]", "translation": "[screaming]", "audio_url": "https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_33106dd8-81f4-497a-9c2b-7a061927850d.mp3"}, {"text": "是阴暗和恐怖的", "translation": "is dark and scary", "audio_url": ""}, {"text": "花泽类", "translation": "flowers", "audio_url": ""}, {"text": "很懂得利用心理战", "translation": "know how to use psychological warfare", "audio_url": ""}, {"text": "录音很有帮助", "translation": "recording is helpful", "audio_url": ""}, {"text": "没问题", "translation": "no problem", "audio_url": ""}, {"text": "重点就是你们什么都没有说错", "translation": "The point is that you didn't say anything wrong", "audio_url": ""}, {"text": "人们不知道这个时候该怎么办", "translation": "", "audio_url": ""}, {"text": "请你离开", "translation": "please leave", "audio_url": ""}, {"text": "", "translation": "", "audio_url": ""}, {"text": "观之", "translation": "view it", "audio_url": ""}, {"text": "美国政府要对琼斯城进行报复", "translation": "U.S. government to retaliate against Jonestown", "audio_url": "https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_a269834a-c682-43d6-9576-0380cf5016b1.mp3"}, {"text": "没关系反正没人管我", "translation": "It doesn't matter anyway, no one cares about me", "audio_url": ""}, {"text": "trabajo para una gran empresa de", "translation": "I work for a big company", "audio_url": ""}, {"text": "Deben ser de la persona que vivía en este departamento antes .", "translation": "They must be from the person who lived in this apartment before.", "audio_url": ""}, {"text": "Semillas tengo de ti", "translation": "I have seeds of you", "audio_url": ""}, {"text": "¡ He dicho YO voy de compras con él !", "translation": "I said I go shopping with him !", "audio_url": ""}, {"text": "ahora son las dos y media", "translation": "now it's half past two", "audio_url": ""}, {"text": "practico un poco", "translation": "I practice a little", "audio_url": "https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b03b5247-049d-4ad6-af48-1a90b29614f0.mp3"}, {"text": "me gustaría una hamburguesa con queso", "translation": "I would like a cheeseburger", "audio_url": ""}, {"text": "importante de Argentina", "translation": "important of Argentina", "audio_url": ""}, {"text": "¿ Tienes este coche ? ¡ Seguro que las chicas te adoran !", "translation": "Do you have this car? I'm sure the girls adore you!", "audio_url": ""}, {"text": "También he subido al volcán Ilamatepec .", "translation": "I have also climbed the Ilamatepec volcano.", "audio_url": ""}, {"text": "Ellos se sienten solos", "translation": "they feel alone", "audio_url": ""}, {"text": "al menos 20 años", "translation": "at least 20 years", "audio_url": ""}, {"text": "qué has hecho en los últimos 20 años", "translation": "what have you done in the last 20 years", "audio_url": ""}, {"text": "En un VIP , un VIP , ey Saluden a Tití", "translation": "In a VIP, a VIP, hey say hello to Tití", "audio_url": ""}, {"text": "Sí , Pablo . ¡ Enséñale un poco de español a Sam !", "translation": "Yes, Paul. Teach Sam some Spanish!", "audio_url": ""}, {"text": "Usamos el pretérito perfecto", "translation": "We use the past perfect", "audio_url": ""}, {"text": "como médico tienes que estudiar mucho", "translation": "as a doctor you have to study a lot", "audio_url": ""}, {"text": "zelanda", "translation": "zealand", "audio_url": ""}, {"text": "porque nunca tuve una cuenta de twitter , nunca la borré", "translation": "because I never had a twitter account, I never deleted it", "audio_url": ""}, {"text": "empresa de informática", "translation": "computer company", "audio_url": ""}];
+  var idx = 0;
+  function showPhrase(i) {
+    var p = phrases[i];
+    document.getElementById('feedText').textContent = p.text;
+    document.getElementById('feedTrans').textContent = p.translation || '';
+    var audio = document.getElementById('feedAudio');
+    if (p.audio_url) { audio.src = p.audio_url; audio.style.display = ''; }
+    else { audio.removeAttribute('src'); audio.style.display = 'none'; }
+  }
+  window.feedNext = function() {
+    if (phrases.length === 0) return;
+    idx = (idx + 1) % phrases.length;
+    showPhrase(idx);
+  };
+  window.feedAgain = function() {
+    showPhrase(idx);
+    var audio = document.getElementById('feedAudio');
+    if (audio.src) audio.play();
+  };
+})();
+</script>
+</body>
+</html>

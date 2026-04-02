@@ -1,0 +1,71 @@
+//Banner Section Start
+.banner__section{
+    padding: 80px 0 110px;
+    @include breakpoint(max-lg){
+        padding: 40px 0 80px;
+    }
+    @include breakpoint(max-md){
+        padding:  30px 0 80px;
+    }
+}
+.banner__thumb{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
+.banner__content{
+    @include breakpoint(max-lg){
+        margin-bottom: 35px;
+    }
+    h1{
+        margin-bottom: 60px;
+        // color: var(--main-black);
+        font-weight: 700;
+        @include breakpoint(max-xl){
+            font-size: 46px;
+            line-height: 66px;
+            margin-bottom: 35px;
+        }
+    }
+    .banner__list{
+        li{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            &:not(:last-child){
+                margin-bottom: 19px;
+            }
+            span{
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--inner-black);
+            }
+        }
+        @include breakpoint(max-xs){
+            li{
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    @include breakpoint(max-md){
+        h1{
+            font-size: 38px;
+            line-height: 52px;
+            margin-bottom: 30px;
+        }
+    }
+    @include breakpoint(max-xs){
+        h1{
+            font-size: 28px;
+            line-height: 38px;
+            margin-bottom: 20px;
+        }
+    }
+}
+//Banner Section Start

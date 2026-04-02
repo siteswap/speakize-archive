@@ -1,0 +1,49 @@
+/*--Button Area Start--*/
+/*--Button Area Start--*/
+.cmn--btn {
+	padding: 11px 40px 14px;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 600;
+	display: inline-block;
+	color: var(--white);
+	text-transform: capitalize;
+	font-family: 'Inter', sans-serif;
+	transition: all 0.3s;
+	text-align: center;
+	border-radius: 8px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	background: var(--medium-blue);
+	&::before{
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		background: var(--medium-blue);
+		height: 100%;
+		width: 0px;
+		transition:all 0.4s;
+	}
+	&:hover::before{
+		width: 100%;
+	}
+	&:hover{
+		span{
+			color: var(--white);
+		}
+	}
+	span{
+		z-index: 1;
+		position: relative;
+		transition: all 0.4s;
+	}
+}
+.border--btn{
+	border: 1px solid var(--medium-blue);
+	color: var(--medium-blue);
+	background: unset;
+}
+/*--Button Area End--*/
+/*--Button Area End--*/
