@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/dAmgBA9skDk"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>几</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a><span>珍宝岛</span><span>又</span><span>打上</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>两</span><span>家</span><span>又</span><span>掐</span><span>起来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="过" data-lang="zh">过</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="几" data-lang="zh">几</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="年" data-lang="zh">年</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="呢" data-lang="zh">呢</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="珍宝岛" data-lang="zh">珍宝岛</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="又" data-lang="zh">又</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="打上" data-lang="zh">打上</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="两" data-lang="zh">两</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="家" data-lang="zh">家</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="又" data-lang="zh">又</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="掐" data-lang="zh">掐</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="起来" data-lang="zh">起来</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"几": {"definition": "small table; \n; almost; \n; how much; how many; several", "rank": 185, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%87%A0.mp3", "href": "../../zh/word/%E5%87%A0/index.html", "inTop": false, "known": false, "pinyin": "jǐ"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "两": {"definition": "two; both; some", "rank": 121, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%A4.mp3", "href": "../../zh/word/%E4%B8%A4/index.html", "inTop": false, "known": false, "pinyin": "liǎng"}, "又": {"definition": "(once) again; also; both... and...", "rank": 124, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8F%88.mp3", "href": "../../zh/word/%E5%8F%88/index.html", "inTop": false, "known": false, "pinyin": "yòu"}, "呢": {"definition": "particle indicating that a previously asked question is to be applied to the preceding word (\"What about ...?\", \"And ...?\"); particle for inquiring about location (\"Where is ...?\"); particle signaling a pause, to emphasize the preceding words and allow the listener time to take them on board (\"ok?\", \"are you with me?\"); woolen material; \n", "rank": 59, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%91%A2.mp3", "href": "../../zh/word/%E5%91%A2/index.html", "inTop": true, "known": false, "pinyin": "ne"}, "年": {"definition": "year; CL:個|个[ge4]; \n", "rank": 141, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B9%B4.mp3", "href": "../../zh/word/%E5%B9%B4/index.html", "inTop": false, "known": false, "pinyin": "nián"}, "掐": {"definition": "to pick (flowers); to pinch; to nip", "rank": 4891, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%8E%90.mp3", "href": "../../zh/word/%E6%8E%90/index.html", "inTop": false, "known": false, "pinyin": "qiā"}, "珍宝岛": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%8F%8D%E5%AE%9D%E5%B2%9B.mp3", "href": "../../zh/word/%E7%8F%8D%E5%AE%9D%E5%B2%9B/index.html", "inTop": false, "known": false, "pinyin": "zhēn bǎo dǎo"}, "起来": {"definition": "to stand up; to get up; also pr. [qi3 lai2]; (after a verb) indicating the beginning and continuation of an action or a state; indicating an upward movement (e.g. after 站[zhan4]); indicating completion", "rank": 117, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B5%B7%E6%9D%A5.mp3", "href": "../../zh/word/%E8%B5%B7%E6%9D%A5/index.html", "inTop": false, "known": false, "pinyin": "qǐ lái"}, "打上": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%89%93%E4%B8%8A.mp3", "href": "../../zh/word/%E6%89%93%E4%B8%8A/index.html", "inTop": false, "known": false, "pinyin": "dǎ shàng"}, "过": {"definition": "to cross; to go over; to pass (time); (experienced action marker); \n", "rank": 47, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%87.mp3", "href": "../../zh/word/%E8%BF%87/index.html", "inTop": true, "known": false, "pinyin": "guò"}, "家": {"definition": "see 傢伙|家伙[jia1 huo5]; \n; home; family; (polite) my (sister, uncle etc)", "rank": 157, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%B6.mp3", "href": "../../zh/word/%E5%AE%B6/index.html", "inTop": false, "known": false, "pinyin": "jiā"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

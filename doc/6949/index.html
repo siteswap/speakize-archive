@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/-eEEgiv9R1s"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>普通</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>接吻</span><span>镜头</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>剪掉</span></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="很" data-lang="zh">很</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="普通" data-lang="zh">普通</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="text-decoration:none" href="#" class="word" data-name="一" data-lang="zh">一</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="个" data-lang="zh">个</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="接吻" data-lang="zh">接吻</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="镜头" data-lang="zh">镜头</a><a style="text-decoration:none" href="#" class="word" data-name="会" data-lang="zh">会</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="给" data-lang="zh">给</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="剪掉" data-lang="zh">剪掉</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"普通": {"definition": "common; ordinary; general", "rank": 1550, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%99%AE%E9%80%9A.mp3", "href": "../../zh/word/%E6%99%AE%E9%80%9A/index.html", "inTop": false, "known": false, "pinyin": "pǔ tōng"}, "很": {"definition": "(adverb of degree); quite; very", "rank": 22, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BE%88.mp3", "href": "../../zh/word/%E5%BE%88/index.html", "inTop": true, "known": false, "pinyin": "hěn"}, "接吻": {"definition": "to kiss; \n", "rank": 3435, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%8E%A5%E5%90%BB.mp3", "href": "../../zh/word/%E6%8E%A5%E5%90%BB/index.html", "inTop": false, "known": false, "pinyin": "jiē wěn"}, "给": {"definition": "to; for; for the benefit of; to supply; to provide; \n", "rank": 43, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BB%99.mp3", "href": "../../zh/word/%E7%BB%99/index.html", "inTop": true, "known": false, "pinyin": "gěi"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "个": {"definition": "individual; this; that", "rank": 29, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AA.mp3", "href": "../../zh/word/%E4%B8%AA/index.html", "inTop": true, "known": false, "pinyin": "gè"}, "镜头": {"definition": "camera lens; camera shot (in a movie etc); scene", "rank": 2193, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%95%9C%E5%A4%B4.mp3", "href": "../../zh/word/%E9%95%9C%E5%A4%B4/index.html", "inTop": false, "known": false, "pinyin": "jìng tóu"}, "会": {"definition": "can (i.e. have the skill, know how to); likely to; sure to; to balance an account; accountancy; accounting", "rank": 14, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BC%9A.mp3", "href": "../../zh/word/%E4%BC%9A/index.html", "inTop": true, "known": true, "pinyin": "huì"}, "剪掉": {"definition": "to cut off; to cut away; to trim", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%89%AA%E6%8E%89.mp3", "href": "../../zh/word/%E5%89%AA%E6%8E%89/index.html", "inTop": false, "known": false, "pinyin": "jiǎn diào"}, "一": {"definition": "one; 1; single", "rank": 21, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80.mp3", "href": "../../zh/word/%E4%B8%80/index.html", "inTop": true, "known": true, "pinyin": "yī"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

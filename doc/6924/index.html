@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/NtbEjwNbdaQ"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>普林斯顿</span><span>大学</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>第一</span><span>位</span><span>女性</span><span>教授</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="普林斯顿" data-lang="zh">普林斯顿</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="大学" data-lang="zh">大学</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="第一" data-lang="zh">第一</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="位" data-lang="zh">位</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="女性" data-lang="zh">女性</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="教授" data-lang="zh">教授</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"第一": {"definition": "first; number one; primary", "rank": 223, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%AC%AC%E4%B8%80.mp3", "href": "../../zh/word/%E7%AC%AC%E4%B8%80/index.html", "inTop": false, "known": false, "pinyin": "dì yī"}, "普林斯顿": {"definition": "Princeton, New Jersey; \n", "rank": 8984, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF.mp3", "href": "../../zh/word/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF/index.html", "inTop": false, "known": false, "pinyin": "pǔ lín sī dùn"}, "教授": {"definition": "professor; to instruct; to lecture on", "rank": 1468, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%95%99%E6%8E%88.mp3", "href": "../../zh/word/%E6%95%99%E6%8E%88/index.html", "inTop": false, "known": false, "pinyin": "jiào shòu"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "位": {"definition": "position; location; place", "rank": 239, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BD%8D.mp3", "href": "../../zh/word/%E4%BD%8D/index.html", "inTop": false, "known": false, "pinyin": "wèi"}, "大学": {"definition": "the Great Learning, one of the Four Books 四書|四书[Si4 shu1] in Confucianism; \n; university; college; CL:所[suo3]", "rank": 712, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A4%A7%E5%AD%A6.mp3", "href": "../../zh/word/%E5%A4%A7%E5%AD%A6/index.html", "inTop": false, "known": false, "pinyin": "dà xué"}, "女性": {"definition": "woman; the female sex; \n", "rank": 1365, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A5%B3%E6%80%A7.mp3", "href": "../../zh/word/%E5%A5%B3%E6%80%A7/index.html", "inTop": false, "known": false, "pinyin": "nǚ xìng"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

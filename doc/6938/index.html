@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/PCH9AG2ky70"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>乱</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>套</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>打</span><span>蒙</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="他" data-lang="zh">他</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="就" data-lang="zh">就</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="自己" data-lang="zh">自己</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="就" data-lang="zh">就</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="乱" data-lang="zh">乱</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="套" data-lang="zh">套</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="已经" data-lang="zh">已经</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="是" data-lang="zh">是</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="被" data-lang="zh">被</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="打" data-lang="zh">打</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="蒙" data-lang="zh">蒙</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a></div>
     <p><em>He just messed up on his own. He was already beaten up.</em></p>
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"就": {"definition": "at once; right away; only", "rank": 13, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%B1.mp3", "href": "../../zh/word/%E5%B0%B1/index.html", "inTop": true, "known": false, "pinyin": "jiù"}, "他": {"definition": "he or him; (used for either sex when the sex is unknown or unimportant); (used before sb's name for emphasis)", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%96.mp3", "href": "../../zh/word/%E4%BB%96/index.html", "inTop": true, "known": false, "pinyin": "tā"}, "套": {"definition": "to cover; to encase; cover", "rank": 819, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A5%97.mp3", "href": "../../zh/word/%E5%A5%97/index.html", "inTop": false, "known": false, "pinyin": "tào"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "自己": {"definition": "oneself; one's own; \n", "rank": 73, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%87%AA%E5%B7%B1.mp3", "href": "../../zh/word/%E8%87%AA%E5%B7%B1/index.html", "inTop": true, "known": false, "pinyin": "zì jǐ"}, "打": {"definition": "dozen (loanword); \n; to beat; to strike; to hit", "rank": 137, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%89%93.mp3", "href": "../../zh/word/%E6%89%93/index.html", "inTop": false, "known": false, "pinyin": "dǎ"}, "是": {"definition": "is; are; am", "rank": 4, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%98%AF.mp3", "href": "../../zh/word/%E6%98%AF/index.html", "inTop": true, "known": false, "pinyin": "shì"}, "已经": {"definition": "already; \n", "rank": 84, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B7%B2%E7%BB%8F.mp3", "href": "../../zh/word/%E5%B7%B2%E7%BB%8F/index.html", "inTop": true, "known": false, "pinyin": "yǐ jīng"}, "乱": {"definition": "in confusion or disorder; in a confused state of mind; disorder", "rank": 928, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%B1.mp3", "href": "../../zh/word/%E4%B9%B1/index.html", "inTop": false, "known": false, "pinyin": "luàn"}, "被": {"definition": "quilt; by; (indicates passive-voice clauses)", "rank": 65, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%A2%AB.mp3", "href": "../../zh/word/%E8%A2%AB/index.html", "inTop": true, "known": false, "pinyin": "bèi"}, "蒙": {"definition": "drizzle; mist; \n; to deceive; to cheat; to hoodwink; blind; dim-sighted; \n; Mongol ethnic group; abbr. for Mongolia 蒙古國|蒙古国[Meng3 gu3 guo2]; Taiwan pr. [Meng2]; (knocked) unconscious; dazed; stunned; to cover; ignorant; to suffer (misfortune)", "rank": 2830, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%92%99.mp3", "href": "../../zh/word/%E8%92%99/index.html", "inTop": false, "known": false, "pinyin": "méng"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

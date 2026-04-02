@@ -84,69 +84,75 @@ function toggleTheme() {
   <small class="text-muted">(Document)</small>
 </h2>
 
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>脱口</span><span>秀</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="脱口" data-lang="zh">脱口</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="秀" data-lang="zh">秀</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>关键</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>细节</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="关键" data-lang="zh">关键</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="细节" data-lang="zh">细节</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>开始</span><span>之前</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="开始" data-lang="zh">开始</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="之前" data-lang="zh">之前</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>关心</span><span>事情</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="关心" data-lang="zh">关心</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="事情" data-lang="zh">事情</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>深夜</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="深夜" data-lang="zh">深夜</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>比较</span><span>符合</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="比较" data-lang="zh">比较</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="符合" data-lang="zh">符合</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>评价</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="评价" data-lang="zh">评价</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>平时</span><span>时间</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="平时" data-lang="zh">平时</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="时间" data-lang="zh">时间</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>20</span><span>小时</span><span>以内</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="20" data-lang="zh">20</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="小时" data-lang="zh">小时</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="以内" data-lang="zh">以内</a></div>
     
   </td>
 </tr>
@@ -158,6 +164,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -170,6 +203,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"20": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_20.mp3", "href": "../../zh/word/20/index.html", "inTop": false, "known": false, "pinyin": "20"}, "小时": {"definition": "hour; CL:個|个[ge4]; \n", "rank": 302, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%8F%E6%97%B6.mp3", "href": "../../zh/word/%E5%B0%8F%E6%97%B6/index.html", "inTop": false, "known": false, "pinyin": "xiǎo shí"}, "深夜": {"definition": "very late at night; \n", "rank": 7096, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%B7%B1%E5%A4%9C.mp3", "href": "../../zh/word/%E6%B7%B1%E5%A4%9C/index.html", "inTop": false, "known": false, "pinyin": "shēn yè"}, "细节": {"definition": "details; particulars; \n", "rank": 1860, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BB%86%E8%8A%82.mp3", "href": "../../zh/word/%E7%BB%86%E8%8A%82/index.html", "inTop": false, "known": false, "pinyin": "xì jié"}, "评价": {"definition": "to evaluate; to assess; \n", "rank": 2800, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%AF%84%E4%BB%B7.mp3", "href": "../../zh/word/%E8%AF%84%E4%BB%B7/index.html", "inTop": false, "known": false, "pinyin": "píng jià"}, "平时": {"definition": "ordinarily; in normal times; in peacetime", "rank": 3335, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B9%B3%E6%97%B6.mp3", "href": "../../zh/word/%E5%B9%B3%E6%97%B6/index.html", "inTop": false, "known": false, "pinyin": "píng shí"}, "关心": {"definition": "to be concerned about; to care about; \n", "rank": 792, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%85%B3%E5%BF%83.mp3", "href": "../../zh/word/%E5%85%B3%E5%BF%83/index.html", "inTop": false, "known": false, "pinyin": "guān xīn"}, "比较": {"definition": "to compare; to contrast; comparatively", "rank": 914, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AF%94%E8%BE%83.mp3", "href": "../../zh/word/%E6%AF%94%E8%BE%83/index.html", "inTop": false, "known": false, "pinyin": "bǐ jiào"}, "开始": {"definition": "to begin; beginning; to start", "rank": 135, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BC%80%E5%A7%8B.mp3", "href": "../../zh/word/%E5%BC%80%E5%A7%8B/index.html", "inTop": false, "known": false, "pinyin": "kāi shǐ"}, "以内": {"definition": "within; less than; \n", "rank": 8584, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%A5%E5%86%85.mp3", "href": "../../zh/word/%E4%BB%A5%E5%86%85/index.html", "inTop": false, "known": false, "pinyin": "yǐ nèi"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "秀": {"definition": "handsome; refined; elegant", "rank": 1215, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%A7%80.mp3", "href": "../../zh/word/%E7%A7%80/index.html", "inTop": false, "known": false, "pinyin": "xiù"}, "脱口": {"definition": "to blurt out; \n", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%84%B1%E5%8F%A3.mp3", "href": "../../zh/word/%E8%84%B1%E5%8F%A3/index.html", "inTop": false, "known": false, "pinyin": "tuō kǒu"}, "事情": {"definition": "affair; matter; thing", "rank": 151, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%8B%E6%83%85.mp3", "href": "../../zh/word/%E4%BA%8B%E6%83%85/index.html", "inTop": false, "known": false, "pinyin": "shì qíng"}, "时间": {"definition": "time; period; CL:段[duan4]", "rank": 140, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%97%B6%E9%97%B4.mp3", "href": "../../zh/word/%E6%97%B6%E9%97%B4/index.html", "inTop": false, "known": false, "pinyin": "shí jiān"}, "之前": {"definition": "before; prior to; ago", "rank": 250, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%8B%E5%89%8D.mp3", "href": "../../zh/word/%E4%B9%8B%E5%89%8D/index.html", "inTop": false, "known": false, "pinyin": "zhī qián"}, "关键": {"definition": "crucial point; crux; CL:個|个[ge4]", "rank": 1274, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%85%B3%E9%94%AE.mp3", "href": "../../zh/word/%E5%85%B3%E9%94%AE/index.html", "inTop": false, "known": false, "pinyin": "guān jiàn"}, "符合": {"definition": "in keeping with; in accordance with; tallying with", "rank": 2482, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%AC%A6%E5%90%88.mp3", "href": "../../zh/word/%E7%AC%A6%E5%90%88/index.html", "inTop": false, "known": false, "pinyin": "fú hé"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

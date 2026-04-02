@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/4XtTZ4ED_kQ"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E7%9F%A5%E9%81%93/index.html">知道</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B8%AA/index.html">这个</a><span>金灿</span><span>荣</span><span>知不知道</span><span>朝鲜</span><span>战争</span><span>打完</span><span>之后</span></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="我" data-lang="zh">我</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="就" data-lang="zh">就</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="不" data-lang="zh">不</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="知道" data-lang="zh">知道</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="这个" data-lang="zh">这个</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="金灿" data-lang="zh">金灿</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="荣" data-lang="zh">荣</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="知不知道" data-lang="zh">知不知道</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="朝鲜" data-lang="zh">朝鲜</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="战争" data-lang="zh">战争</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="打完" data-lang="zh">打完</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="之后" data-lang="zh">之后</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"就": {"definition": "at once; right away; only", "rank": 13, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%B1.mp3", "href": "../../zh/word/%E5%B0%B1/index.html", "inTop": true, "known": false, "pinyin": "jiù"}, "不": {"definition": "(negative prefix); not; no", "rank": 6, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%8D.mp3", "href": "../../zh/word/%E4%B8%8D/index.html", "inTop": true, "known": false, "pinyin": "bù"}, "打完": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%89%93%E5%AE%8C.mp3", "href": "../../zh/word/%E6%89%93%E5%AE%8C/index.html", "inTop": false, "known": false, "pinyin": "dǎ wán"}, "知不知道": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9F%A5%E4%B8%8D%E7%9F%A5%E9%81%93.mp3", "href": "../../zh/word/%E7%9F%A5%E4%B8%8D%E7%9F%A5%E9%81%93/index.html", "inTop": false, "known": false, "pinyin": "zhī bù zhī dào"}, "战争": {"definition": "war; conflict; CL:場|场[chang2],次[ci4]", "rank": 979, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%98%E4%BA%89.mp3", "href": "../../zh/word/%E6%88%98%E4%BA%89/index.html", "inTop": false, "known": false, "pinyin": "zhàn zhēng"}, "我": {"definition": "I; me; my", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%91.mp3", "href": "../../zh/word/%E6%88%91/index.html", "inTop": true, "known": true, "pinyin": "wǒ"}, "金灿": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%87%91%E7%81%BF.mp3", "href": "../../zh/word/%E9%87%91%E7%81%BF/index.html", "inTop": false, "known": false, "pinyin": "jīn càn"}, "荣": {"definition": "glory; honor; thriving", "rank": 4364, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%8D%A3.mp3", "href": "../../zh/word/%E8%8D%A3/index.html", "inTop": false, "known": false, "pinyin": "róng"}, "朝鲜": {"definition": "North Korea; Korea as geographic term; Taiwan pr. [Chao2 xian1]", "rank": 4988, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%9C%9D%E9%B2%9C.mp3", "href": "../../zh/word/%E6%9C%9D%E9%B2%9C/index.html", "inTop": false, "known": false, "pinyin": "cháo xiān"}, "之后": {"definition": "afterwards; following; later", "rank": 322, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%8B%E5%90%8E.mp3", "href": "../../zh/word/%E4%B9%8B%E5%90%8E/index.html", "inTop": false, "known": false, "pinyin": "zhī hòu"}, "知道": {"definition": "to know; to become aware of; also pr. [zhi1 dao5]", "rank": 23, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9F%A5%E9%81%93.mp3", "href": "../../zh/word/%E7%9F%A5%E9%81%93/index.html", "inTop": true, "known": false, "pinyin": "zhī dào"}, "这个": {"definition": "this; this one; \n", "rank": 54, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%99%E4%B8%AA.mp3", "href": "../../zh/word/%E8%BF%99%E4%B8%AA/index.html", "inTop": true, "known": false, "pinyin": "zhè gè"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

@@ -84,13 +84,19 @@ function toggleTheme() {
   <small class="text-muted">(Document)</small>
 </h2>
 
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_77610eb0-cc0c-4852-95d1-51f3d27d2959.mp3"><i class="bi bi-play-fill"></i></button></td>
   <td>
-    <div><span>亦</span><span>vs</span><span>痕迹</span><span>vs</span><span>赤脚</span><span>vs</span><span>赫兹</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="亦" data-lang="zh">亦</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="vs" data-lang="zh">vs</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="痕迹" data-lang="zh">痕迹</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="vs" data-lang="zh">vs</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="赤脚" data-lang="zh">赤脚</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="vs" data-lang="zh">vs</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="赫兹" data-lang="zh">赫兹</a></div>
     <p><em>Yi vs Trace vs Barefoot vs Hertz</em></p>
   </td>
 </tr>
@@ -102,6 +108,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -114,6 +147,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"vs": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_vs.mp3", "href": "../../zh/word/vs/index.html", "inTop": false, "known": false, "pinyin": "vs"}, "赫兹": {"definition": "Hertz (name); Heinrich Hertz (1857-1894), German physicist and meteorologist, pioneer of electromagnetic radiation; \n; hertz (Hz), unit of frequency; \n", "rank": 29818, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B5%AB%E5%85%B9.mp3", "href": "../../zh/word/%E8%B5%AB%E5%85%B9/index.html", "inTop": false, "known": false, "pinyin": "hè zī"}, "亦": {"definition": "also; \n", "rank": 6497, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%A6.mp3", "href": "../../zh/word/%E4%BA%A6/index.html", "inTop": false, "known": false, "pinyin": "yì"}, "痕迹": {"definition": "vestige; mark; trace", "rank": 2183, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%97%95%E8%BF%B9.mp3", "href": "../../zh/word/%E7%97%95%E8%BF%B9/index.html", "inTop": false, "known": false, "pinyin": "hén jì"}, "赤脚": {"definition": "barefoot; \n", "rank": 21156, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B5%A4%E8%84%9A.mp3", "href": "../../zh/word/%E8%B5%A4%E8%84%9A/index.html", "inTop": false, "known": false, "pinyin": "chì jiǎo"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

@@ -89,34 +89,40 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/f1w8jTH6tKE"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>历史</span><span>悠久</span><span>山</span><span>清水</span><span>秀</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>地方</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="历史" data-lang="zh">历史</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="悠久" data-lang="zh">悠久</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="山" data-lang="zh">山</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="清水" data-lang="zh">清水</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="秀" data-lang="zh">秀</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="地方" data-lang="zh">地方</a></div>
     <p><em>A place with a long history and beautiful mountains and clear waters</em></p>
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>据</span><span>调查</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="据" data-lang="zh">据</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="调查" data-lang="zh">调查</a></div>
     <p><em>According to the survey</em></p>
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>山水</span><span>美景</span><span>真的</span><span>非常</span><span>地</span><span>赞</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="山水" data-lang="zh">山水</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="美景" data-lang="zh">美景</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="真的" data-lang="zh">真的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="非常" data-lang="zh">非常</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="地" data-lang="zh">地</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="赞" data-lang="zh">赞</a></div>
     <p><em>The scenery of the mountains and rivers is really amazing</em></p>
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>中国</span><span>定制</span><span>衣服</span></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="在" data-lang="zh">在</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="中国" data-lang="zh">中国</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="定制" data-lang="zh">定制</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="衣服" data-lang="zh">衣服</a></div>
     <p><em>Custom Clothes in China</em></p>
   </td>
 </tr>
@@ -128,6 +134,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -140,6 +173,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"地": {"definition": "-ly; structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct; \n; earth; ground; field", "rank": 225, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9C%B0.mp3", "href": "../../zh/word/%E5%9C%B0/index.html", "inTop": false, "known": false, "pinyin": "de"}, "在": {"definition": "(located) at; (to be) in; to exist", "rank": 7, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9C%A8.mp3", "href": "../../zh/word/%E5%9C%A8/index.html", "inTop": true, "known": false, "pinyin": "zài"}, "悠久": {"definition": "long (tradition, history etc); \n", "rank": 15022, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%82%A0%E4%B9%85.mp3", "href": "../../zh/word/%E6%82%A0%E4%B9%85/index.html", "inTop": false, "known": false, "pinyin": "yōu jiǔ"}, "衣服": {"definition": "clothes; CL:件[jian4],套[tao4]; \n", "rank": 420, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%A1%A3%E6%9C%8D.mp3", "href": "../../zh/word/%E8%A1%A3%E6%9C%8D/index.html", "inTop": false, "known": false, "pinyin": "yī fú"}, "据": {"definition": "see 拮据[jie2 ju1]; \n; according to; to act in accordance with; to depend on", "rank": 1844, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%8D%AE.mp3", "href": "../../zh/word/%E6%8D%AE/index.html", "inTop": false, "known": false, "pinyin": "jù"}, "定制": {"definition": "custom-made; made-to-order; to have something custom made", "rank": 13968, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%9A%E5%88%B6.mp3", "href": "../../zh/word/%E5%AE%9A%E5%88%B6/index.html", "inTop": false, "known": false, "pinyin": "dìng zhì"}, "山水": {"definition": "Sansui, Japanese company; \n; water from a mountain; mountains and rivers; scenery", "rank": 35449, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B1%B1%E6%B0%B4.mp3", "href": "../../zh/word/%E5%B1%B1%E6%B0%B4/index.html", "inTop": false, "known": false, "pinyin": "shān shuǐ"}, "中国": {"definition": "China; \n", "rank": 1406, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AD%E5%9B%BD.mp3", "href": "../../zh/word/%E4%B8%AD%E5%9B%BD/index.html", "inTop": false, "known": false, "pinyin": "zhōng guó"}, "历史": {"definition": "history; CL:門|门[men2],段[duan4]; \n", "rank": 1243, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8E%86%E5%8F%B2.mp3", "href": "../../zh/word/%E5%8E%86%E5%8F%B2/index.html", "inTop": false, "known": false, "pinyin": "lì shǐ"}, "调查": {"definition": "investigation; inquiry; to investigate", "rank": 532, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B0%83%E6%9F%A5.mp3", "href": "../../zh/word/%E8%B0%83%E6%9F%A5/index.html", "inTop": false, "known": false, "pinyin": "diào chá"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "秀": {"definition": "handsome; refined; elegant", "rank": 1215, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%A7%80.mp3", "href": "../../zh/word/%E7%A7%80/index.html", "inTop": false, "known": false, "pinyin": "xiù"}, "真的": {"definition": "real", "rank": 622, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9C%9F%E7%9A%84.mp3", "href": "../../zh/word/%E7%9C%9F%E7%9A%84/index.html", "inTop": false, "known": false, "pinyin": "zhēn de"}, "地方": {"definition": "region; regional (away from the central administration); local; area; place; space", "rank": 181, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9C%B0%E6%96%B9.mp3", "href": "../../zh/word/%E5%9C%B0%E6%96%B9/index.html", "inTop": false, "known": false, "pinyin": "dì fāng"}, "非常": {"definition": "very; very much; unusual", "rank": 158, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%9D%9E%E5%B8%B8.mp3", "href": "../../zh/word/%E9%9D%9E%E5%B8%B8/index.html", "inTop": false, "known": false, "pinyin": "fēi cháng"}, "赞": {"definition": "to patronize; to support; to praise", "rank": 4515, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B5%9E.mp3", "href": "../../zh/word/%E8%B5%9E/index.html", "inTop": false, "known": false, "pinyin": "zàn"}, "清水": {"definition": "fresh water; drinking water; clear water", "rank": 16338, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%B8%85%E6%B0%B4.mp3", "href": "../../zh/word/%E6%B8%85%E6%B0%B4/index.html", "inTop": false, "known": false, "pinyin": "qīng shuǐ"}, "美景": {"definition": "beautiful scenery; \n", "rank": 11912, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BE%8E%E6%99%AF.mp3", "href": "../../zh/word/%E7%BE%8E%E6%99%AF/index.html", "inTop": false, "known": false, "pinyin": "měi jǐng"}, "山": {"definition": "mountain; hill; anything that resembles a mountain", "rank": 1297, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B1%B1.mp3", "href": "../../zh/word/%E5%B1%B1/index.html", "inTop": false, "known": false, "pinyin": "shān"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

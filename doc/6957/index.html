@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/6E1K2uit5LQ"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>戳</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>一下</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E5%AE%83/index.html">它</a><span>冲</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="我" data-lang="zh">我</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="戳" data-lang="zh">戳</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="一下" data-lang="zh">一下</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="好" data-lang="zh">好</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="它" data-lang="zh">它</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="冲" data-lang="zh">冲</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="然后" data-lang="zh">然后</a><a style="text-decoration:none" href="#" class="word" data-name="我" data-lang="zh">我</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="出来" data-lang="zh">出来</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"一下": {"definition": "(used after a verb) give it a go; to do (sth for a bit to give it a try); one time", "rank": 156, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80%E4%B8%8B.mp3", "href": "../../zh/word/%E4%B8%80%E4%B8%8B/index.html", "inTop": false, "known": false, "pinyin": "yī xià"}, "它": {"definition": "it; \n", "rank": 91, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%83.mp3", "href": "../../zh/word/%E5%AE%83/index.html", "inTop": true, "known": false, "pinyin": "tā"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "然后": {"definition": "after; then (afterwards); after that", "rank": 145, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%84%B6%E5%90%8E.mp3", "href": "../../zh/word/%E7%84%B6%E5%90%8E/index.html", "inTop": false, "known": false, "pinyin": "rán hòu"}, "冲": {"definition": "(of water) to dash against; to mix with water; to infuse; thoroughfare; to go straight ahead; to rush; powerful; vigorous; pungent", "rank": 809, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%86%B2.mp3", "href": "../../zh/word/%E5%86%B2/index.html", "inTop": false, "known": false, "pinyin": "chōng"}, "出来": {"definition": "to come out; to appear; to arise; (after a verb, indicates coming out, completion of an action, or ability to discern or detect); \n", "rank": 198, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%87%BA%E6%9D%A5.mp3", "href": "../../zh/word/%E5%87%BA%E6%9D%A5/index.html", "inTop": false, "known": false, "pinyin": "chū lái"}, "我": {"definition": "I; me; my", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%91.mp3", "href": "../../zh/word/%E6%88%91/index.html", "inTop": true, "known": true, "pinyin": "wǒ"}, "好": {"definition": "good; well; proper; to be fond of; to have a tendency to; to be prone to", "rank": 10, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A5%BD.mp3", "href": "../../zh/word/%E5%A5%BD/index.html", "inTop": true, "known": false, "pinyin": "hǎo"}, "戳": {"definition": "to jab; to poke; to stab", "rank": 4617, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%B3.mp3", "href": "../../zh/word/%E6%88%B3/index.html", "inTop": false, "known": false, "pinyin": "chuō"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

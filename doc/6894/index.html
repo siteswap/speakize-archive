@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/neI4PW1jHmE"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>欧洲</span><span>一些</span><span>国家</span><span>当</span><span>它们</span><span>撤离</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>殖民地</span><span>之后</span></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="那" data-lang="zh">那</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="就" data-lang="zh">就</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="是" data-lang="zh">是</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="欧洲" data-lang="zh">欧洲</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="一些" data-lang="zh">一些</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="国家" data-lang="zh">国家</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="当" data-lang="zh">当</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="它们" data-lang="zh">它们</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="撤离" data-lang="zh">撤离</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="他们" data-lang="zh">他们</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="殖民地" data-lang="zh">殖民地</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="之后" data-lang="zh">之后</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"就": {"definition": "at once; right away; only", "rank": 13, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%B1.mp3", "href": "../../zh/word/%E5%B0%B1/index.html", "inTop": true, "known": false, "pinyin": "jiù"}, "那": {"definition": "that; those; then (in that case)", "rank": 26, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%82%A3.mp3", "href": "../../zh/word/%E9%82%A3/index.html", "inTop": true, "known": false, "pinyin": "nà"}, "他们": {"definition": "they; \n", "rank": 34, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%96%E4%BB%AC.mp3", "href": "../../zh/word/%E4%BB%96%E4%BB%AC/index.html", "inTop": true, "known": false, "pinyin": "tā men"}, "之后": {"definition": "afterwards; following; later", "rank": 322, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%8B%E5%90%8E.mp3", "href": "../../zh/word/%E4%B9%8B%E5%90%8E/index.html", "inTop": false, "known": false, "pinyin": "zhī hòu"}, "欧洲": {"definition": "Europe; abbr. for 歐羅巴洲|欧罗巴洲[Ou1 luo2 ba1 Zhou1]; \n", "rank": 2577, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AC%A7%E6%B4%B2.mp3", "href": "../../zh/word/%E6%AC%A7%E6%B4%B2/index.html", "inTop": false, "known": false, "pinyin": "ōu zhōu"}, "一些": {"definition": "some; a few; a little", "rank": 232, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80%E4%BA%9B.mp3", "href": "../../zh/word/%E4%B8%80%E4%BA%9B/index.html", "inTop": false, "known": false, "pinyin": "yī xiē"}, "是": {"definition": "is; are; am", "rank": 4, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%98%AF.mp3", "href": "../../zh/word/%E6%98%AF/index.html", "inTop": true, "known": false, "pinyin": "shì"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "国家": {"definition": "country; nation; state", "rank": 587, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9B%BD%E5%AE%B6.mp3", "href": "../../zh/word/%E5%9B%BD%E5%AE%B6/index.html", "inTop": false, "known": false, "pinyin": "guó jiā"}, "撤离": {"definition": "to withdraw from; to evacuate; \n", "rank": 4986, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%92%A4%E7%A6%BB.mp3", "href": "../../zh/word/%E6%92%A4%E7%A6%BB/index.html", "inTop": false, "known": false, "pinyin": "chè lí"}, "它们": {"definition": "they (for inanimate objects); \n", "rank": 363, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%83%E4%BB%AC.mp3", "href": "../../zh/word/%E5%AE%83%E4%BB%AC/index.html", "inTop": false, "known": false, "pinyin": "tā men"}, "当": {"definition": "(onom.) dong; ding dong (bell); \n; to be; to act as; manage; at or in the very same...; suitable; adequate", "rank": 146, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BD%93.mp3", "href": "../../zh/word/%E5%BD%93/index.html", "inTop": false, "known": false, "pinyin": "dāng"}, "殖民地": {"definition": "colony; \n", "rank": 9633, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AE%96%E6%B0%91%E5%9C%B0.mp3", "href": "../../zh/word/%E6%AE%96%E6%B0%91%E5%9C%B0/index.html", "inTop": false, "known": false, "pinyin": "zhí mín dì"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

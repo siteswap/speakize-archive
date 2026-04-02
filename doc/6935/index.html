@@ -89,20 +89,26 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/uNH4rFgmoO0"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>瞒</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>瞒</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>住</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>越</span><span>早</span><span>宣布</span><span>越好</span></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="你" data-lang="zh">你</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="瞒" data-lang="zh">瞒</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="也" data-lang="zh">也</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="瞒" data-lang="zh">瞒</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="不" data-lang="zh">不</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="住" data-lang="zh">住</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="对" data-lang="zh">对</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="不" data-lang="zh">不</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="对" data-lang="zh">对</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="越" data-lang="zh">越</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="早" data-lang="zh">早</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="宣布" data-lang="zh">宣布</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="越好" data-lang="zh">越好</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>人少</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>亚非</span><span>拉拉</span><span>一大堆</span><span>选票</span></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="你" data-lang="zh">你</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="人少" data-lang="zh">人少</a><a style="text-decoration:none" href="#" class="word" data-name="我" data-lang="zh">我</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="就" data-lang="zh">就</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="亚非" data-lang="zh">亚非</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="拉拉" data-lang="zh">拉拉</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="一大堆" data-lang="zh">一大堆</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="选票" data-lang="zh">选票</a></div>
     
   </td>
 </tr>
@@ -114,6 +120,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -126,6 +159,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"不": {"definition": "(negative prefix); not; no", "rank": 6, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%8D.mp3", "href": "../../zh/word/%E4%B8%8D/index.html", "inTop": true, "known": false, "pinyin": "bù"}, "对": {"definition": "right; correct; couple", "rank": 36, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AF%B9.mp3", "href": "../../zh/word/%E5%AF%B9/index.html", "inTop": true, "known": false, "pinyin": "duì"}, "越": {"definition": "generic word for peoples or states of south China or south Asia at different historical periods; abbr. for Vietnam 越南; \n; to exceed; to climb over; to surpass", "rank": 711, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B6%8A.mp3", "href": "../../zh/word/%E8%B6%8A/index.html", "inTop": false, "known": false, "pinyin": "yuè"}, "宣布": {"definition": "to declare; to announce; to proclaim", "rank": 1770, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%A3%E5%B8%83.mp3", "href": "../../zh/word/%E5%AE%A3%E5%B8%83/index.html", "inTop": false, "known": false, "pinyin": "xuān bù"}, "就": {"definition": "at once; right away; only", "rank": 13, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%B1.mp3", "href": "../../zh/word/%E5%B0%B1/index.html", "inTop": true, "known": false, "pinyin": "jiù"}, "住": {"definition": "to live; to dwell; to stay", "rank": 209, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BD%8F.mp3", "href": "../../zh/word/%E4%BD%8F/index.html", "inTop": false, "known": false, "pinyin": "zhù"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "选票": {"definition": "a vote; ballot; CL:張|张[zhang1]", "rank": 5118, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%80%89%E7%A5%A8.mp3", "href": "../../zh/word/%E9%80%89%E7%A5%A8/index.html", "inTop": false, "known": false, "pinyin": "xuǎn piào"}, "早": {"definition": "early; morning; Good morning!", "rank": 292, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%97%A9.mp3", "href": "../../zh/word/%E6%97%A9/index.html", "inTop": false, "known": false, "pinyin": "zǎo"}, "一大堆": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80%E5%A4%A7%E5%A0%86.mp3", "href": "../../zh/word/%E4%B8%80%E5%A4%A7%E5%A0%86/index.html", "inTop": false, "known": false, "pinyin": "yī dà duī"}, "我": {"definition": "I; me; my", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%91.mp3", "href": "../../zh/word/%E6%88%91/index.html", "inTop": true, "known": true, "pinyin": "wǒ"}, "也": {"definition": "also; too; (in Classical Chinese) final particle implying affirmation", "rank": 37, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%9F.mp3", "href": "../../zh/word/%E4%B9%9F/index.html", "inTop": true, "known": false, "pinyin": "yě"}, "瞒": {"definition": "to conceal from; to keep (sb) in the dark; \n", "rank": 3281, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9E%92.mp3", "href": "../../zh/word/%E7%9E%92/index.html", "inTop": false, "known": false, "pinyin": "mán"}, "你": {"definition": "you (informal, as opposed to courteous 您[nin2]); \n", "rank": 3, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BD%A0.mp3", "href": "../../zh/word/%E4%BD%A0/index.html", "inTop": true, "known": true, "pinyin": "nǐ"}, "越好": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B6%8A%E5%A5%BD.mp3", "href": "../../zh/word/%E8%B6%8A%E5%A5%BD/index.html", "inTop": false, "known": false, "pinyin": "yuè hǎo"}, "拉拉": {"definition": "Lala, Philippines; \n; lesbian (Internet slang); Labrador retriever; \n", "rank": 4834, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%8B%89%E6%8B%89.mp3", "href": "../../zh/word/%E6%8B%89%E6%8B%89/index.html", "inTop": false, "known": false, "pinyin": "lā lā"}, "亚非": {"rank": 74447, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%9A%E9%9D%9E.mp3", "href": "../../zh/word/%E4%BA%9A%E9%9D%9E/index.html", "inTop": false, "known": false, "pinyin": "yà fēi"}, "人少": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%BA%E5%B0%91.mp3", "href": "../../zh/word/%E4%BA%BA%E5%B0%91/index.html", "inTop": false, "known": false, "pinyin": "rén shǎo"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/OK_TJ4DhloE"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>表情</span><span>居然</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><span>贱</span></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="我" data-lang="zh">我</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="表情" data-lang="zh">表情</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="居然" data-lang="zh">居然</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="这么" data-lang="zh">这么</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="贱" data-lang="zh">贱</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"我": {"definition": "I; me; my", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%88%91.mp3", "href": "../../zh/word/%E6%88%91/index.html", "inTop": true, "known": true, "pinyin": "wǒ"}, "表情": {"definition": "(facial) expression; to express one's feelings; \n", "rank": 1541, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%A1%A8%E6%83%85.mp3", "href": "../../zh/word/%E8%A1%A8%E6%83%85/index.html", "inTop": false, "known": false, "pinyin": "biǎo qíng"}, "贱": {"definition": "inexpensive; lowly; despicable", "rank": 4859, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B4%B1.mp3", "href": "../../zh/word/%E8%B4%B1/index.html", "inTop": false, "known": false, "pinyin": "jiàn"}, "居然": {"definition": "unexpectedly; to one's surprise; go so far as to", "rank": 1043, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B1%85%E7%84%B6.mp3", "href": "../../zh/word/%E5%B1%85%E7%84%B6/index.html", "inTop": false, "known": false, "pinyin": "jū rán"}, "这么": {"definition": "so much; this much; how much?", "rank": 90, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%99%E4%B9%88.mp3", "href": "../../zh/word/%E8%BF%99%E4%B9%88/index.html", "inTop": true, "known": false, "pinyin": "zhè me"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

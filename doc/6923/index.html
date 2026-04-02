@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/GP65Fb723Fw"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>美国</span><span>普林斯顿</span><span>大学</span><span>毕业</span><span>之后</span><span>长期</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>亚洲</span><span>工作</span></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="他" data-lang="zh">他</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="从" data-lang="zh">从</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="美国" data-lang="zh">美国</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="普林斯顿" data-lang="zh">普林斯顿</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="大学" data-lang="zh">大学</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="毕业" data-lang="zh">毕业</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="之后" data-lang="zh">之后</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="长期" data-lang="zh">长期</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="在" data-lang="zh">在</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="亚洲" data-lang="zh">亚洲</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="工作" data-lang="zh">工作</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"他": {"definition": "he or him; (used for either sex when the sex is unknown or unimportant); (used before sb's name for emphasis)", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%96.mp3", "href": "../../zh/word/%E4%BB%96/index.html", "inTop": true, "known": false, "pinyin": "tā"}, "普林斯顿": {"definition": "Princeton, New Jersey; \n", "rank": 8984, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF.mp3", "href": "../../zh/word/%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF/index.html", "inTop": false, "known": false, "pinyin": "pǔ lín sī dùn"}, "工作": {"definition": "to work; (of a machine) to operate; job", "rank": 144, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B7%A5%E4%BD%9C.mp3", "href": "../../zh/word/%E5%B7%A5%E4%BD%9C/index.html", "inTop": false, "known": false, "pinyin": "gōng zuò"}, "在": {"definition": "(located) at; (to be) in; to exist", "rank": 7, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9C%A8.mp3", "href": "../../zh/word/%E5%9C%A8/index.html", "inTop": true, "known": false, "pinyin": "zài"}, "毕业": {"definition": "graduation; to graduate; to finish school", "rank": 1653, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AF%95%E4%B8%9A.mp3", "href": "../../zh/word/%E6%AF%95%E4%B8%9A/index.html", "inTop": false, "known": false, "pinyin": "bì yè"}, "之后": {"definition": "afterwards; following; later", "rank": 322, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%8B%E5%90%8E.mp3", "href": "../../zh/word/%E4%B9%8B%E5%90%8E/index.html", "inTop": false, "known": false, "pinyin": "zhī hòu"}, "美国": {"definition": "United States; USA; US", "rank": 293, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BE%8E%E5%9B%BD.mp3", "href": "../../zh/word/%E7%BE%8E%E5%9B%BD/index.html", "inTop": false, "known": false, "pinyin": "měi guó"}, "长期": {"definition": "long term; long time; long range (of a forecast)", "rank": 4832, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%95%BF%E6%9C%9F.mp3", "href": "../../zh/word/%E9%95%BF%E6%9C%9F/index.html", "inTop": false, "known": false, "pinyin": "cháng qī"}, "从": {"definition": "from; through; via", "rank": 92, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%8E.mp3", "href": "../../zh/word/%E4%BB%8E/index.html", "inTop": true, "known": false, "pinyin": "cóng"}, "大学": {"definition": "the Great Learning, one of the Four Books 四書|四书[Si4 shu1] in Confucianism; \n; university; college; CL:所[suo3]", "rank": 712, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A4%A7%E5%AD%A6.mp3", "href": "../../zh/word/%E5%A4%A7%E5%AD%A6/index.html", "inTop": false, "known": false, "pinyin": "dà xué"}, "亚洲": {"definition": "Asia; abbr. for 亞細亞洲|亚细亚洲[Ya4 xi4 ya4 Zhou1]; \n", "rank": 4645, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%9A%E6%B4%B2.mp3", "href": "../../zh/word/%E4%BA%9A%E6%B4%B2/index.html", "inTop": false, "known": false, "pinyin": "yà zhōu"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

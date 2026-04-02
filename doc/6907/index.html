@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/QbkUONEx6aI"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>而且</span><span>又</span><span>那么</span><span>嚣张</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>不稳定</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>中共</span><span>政权</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="而且" data-lang="zh">而且</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="又" data-lang="zh">又</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="那么" data-lang="zh">那么</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="嚣张" data-lang="zh">嚣张</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="和" data-lang="zh">和</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="不稳定" data-lang="zh">不稳定</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="这么" data-lang="zh">这么</a><a style="text-decoration:none" href="#" class="word" data-name="一" data-lang="zh">一</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="个" data-lang="zh">个</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="中共" data-lang="zh">中共</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="政权" data-lang="zh">政权</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"嚣张": {"definition": "rampant; unbridled; arrogant", "rank": 15142, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9A%A3%E5%BC%A0.mp3", "href": "../../zh/word/%E5%9A%A3%E5%BC%A0/index.html", "inTop": false, "known": false, "pinyin": "xiāo zhāng"}, "又": {"definition": "(once) again; also; both... and...", "rank": 124, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8F%88.mp3", "href": "../../zh/word/%E5%8F%88/index.html", "inTop": false, "known": false, "pinyin": "yòu"}, "政权": {"definition": "regime; political power; \n", "rank": 9255, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%94%BF%E6%9D%83.mp3", "href": "../../zh/word/%E6%94%BF%E6%9D%83/index.html", "inTop": false, "known": false, "pinyin": "zhèng quán"}, "而且": {"definition": "(not only ...) but also; moreover; in addition", "rank": 212, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%80%8C%E4%B8%94.mp3", "href": "../../zh/word/%E8%80%8C%E4%B8%94/index.html", "inTop": false, "known": false, "pinyin": "ér qiě"}, "中共": {"definition": "abbr. for 中國共產黨|中国共产党[Zhong1 guo2 Gong4 chan3 dang3], Chinese Communist Party; \n", "rank": 52703, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AD%E5%85%B1.mp3", "href": "../../zh/word/%E4%B8%AD%E5%85%B1/index.html", "inTop": false, "known": false, "pinyin": "zhōng gòng"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "和": {"definition": "and; together with; with; to compose a poem in reply (to sb's poem) using the same rhyme sequence; to join in the singing; to chime in with others; to complete a set in mahjong or playing cards; \n; to combine a powdery substance (flour, plaster etc) with water; Taiwan pr. [huo4]; \n; to mix (ingredients) together; to blend; classifier for rinses of clothes", "rank": 33, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%92%8C.mp3", "href": "../../zh/word/%E5%92%8C/index.html", "inTop": true, "known": false, "pinyin": "hé"}, "个": {"definition": "individual; this; that", "rank": 29, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AA.mp3", "href": "../../zh/word/%E4%B8%AA/index.html", "inTop": true, "known": false, "pinyin": "gè"}, "那么": {"definition": "like that; in that way; or so", "rank": 106, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%82%A3%E4%B9%88.mp3", "href": "../../zh/word/%E9%82%A3%E4%B9%88/index.html", "inTop": false, "known": false, "pinyin": "nà me"}, "这么": {"definition": "so much; this much; how much?", "rank": 90, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%99%E4%B9%88.mp3", "href": "../../zh/word/%E8%BF%99%E4%B9%88/index.html", "inTop": true, "known": false, "pinyin": "zhè me"}, "不稳定": {"definition": "unstable; \n", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%8D%E7%A8%B3%E5%AE%9A.mp3", "href": "../../zh/word/%E4%B8%8D%E7%A8%B3%E5%AE%9A/index.html", "inTop": false, "known": false, "pinyin": "bù wěn dìng"}, "一": {"definition": "one; 1; single", "rank": 21, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80.mp3", "href": "../../zh/word/%E4%B8%80/index.html", "inTop": true, "known": true, "pinyin": "yī"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

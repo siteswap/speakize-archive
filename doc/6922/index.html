@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/lCbZDvx8kto"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>场</span><span>火灾</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>催生</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>美国</span><span>妇女</span><span>维权</span><span>运动</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>次</span><span>高潮</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>引来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>国际</span><span>共产主义</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>关注</span></div>
+    <div><a style="text-decoration:none" href="#" class="word" data-name="这" data-lang="zh">这</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="场" data-lang="zh">场</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="火灾" data-lang="zh">火灾</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="也" data-lang="zh">也</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="催生" data-lang="zh">催生</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="美国" data-lang="zh">美国</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="妇女" data-lang="zh">妇女</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="维权" data-lang="zh">维权</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="运动" data-lang="zh">运动</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="text-decoration:none" href="#" class="word" data-name="一" data-lang="zh">一</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="次" data-lang="zh">次</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="高潮" data-lang="zh">高潮</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="也" data-lang="zh">也</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="引来" data-lang="zh">引来</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="国际" data-lang="zh">国际</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="共产主义" data-lang="zh">共产主义</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="关注" data-lang="zh">关注</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"催生": {"definition": "to pressure a younger relative to hurry up and have a baby; (obstetrics) to induce labor; to expedite childbirth", "rank": 46555, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%82%AC%E7%94%9F.mp3", "href": "../../zh/word/%E5%82%AC%E7%94%9F/index.html", "inTop": false, "known": false, "pinyin": "cuī shēng"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "场": {"definition": "threshing floor; classifier for events and happenings: spell, episode, bout; \n; large place used for a specific purpose; stage; scene (of a play)", "rank": 326, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9C%BA.mp3", "href": "../../zh/word/%E5%9C%BA/index.html", "inTop": false, "known": false, "pinyin": "chǎng"}, "共产主义": {"definition": "communism; \n", "rank": 11044, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%85%B1%E4%BA%A7%E4%B8%BB%E4%B9%89.mp3", "href": "../../zh/word/%E5%85%B1%E4%BA%A7%E4%B8%BB%E4%B9%89/index.html", "inTop": false, "known": false, "pinyin": "gòng chǎn zhǔ yì"}, "运动": {"definition": "to move; to exercise; sports", "rank": 1446, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%90%E5%8A%A8.mp3", "href": "../../zh/word/%E8%BF%90%E5%8A%A8/index.html", "inTop": false, "known": false, "pinyin": "yùn dòng"}, "引来": {"rank": 10988, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BC%95%E6%9D%A5.mp3", "href": "../../zh/word/%E5%BC%95%E6%9D%A5/index.html", "inTop": false, "known": false, "pinyin": "yǐn lái"}, "也": {"definition": "also; too; (in Classical Chinese) final particle implying affirmation", "rank": 37, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B9%9F.mp3", "href": "../../zh/word/%E4%B9%9F/index.html", "inTop": true, "known": false, "pinyin": "yě"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "这": {"definition": "this; these; (commonly pr. [zhei4] before a classifier, esp. in Beijing)", "rank": 12, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%99.mp3", "href": "../../zh/word/%E8%BF%99/index.html", "inTop": true, "known": true, "pinyin": "zhè"}, "高潮": {"definition": "high tide; high water; upsurge", "rank": 4517, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%AB%98%E6%BD%AE.mp3", "href": "../../zh/word/%E9%AB%98%E6%BD%AE/index.html", "inTop": false, "known": false, "pinyin": "gāo cháo"}, "关注": {"definition": "to pay attention to; to follow sth closely; to follow (on social media)", "rank": 1898, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%85%B3%E6%B3%A8.mp3", "href": "../../zh/word/%E5%85%B3%E6%B3%A8/index.html", "inTop": false, "known": false, "pinyin": "guān zhù"}, "美国": {"definition": "United States; USA; US", "rank": 293, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BE%8E%E5%9B%BD.mp3", "href": "../../zh/word/%E7%BE%8E%E5%9B%BD/index.html", "inTop": false, "known": false, "pinyin": "měi guó"}, "次": {"definition": "next in sequence; second; the second (day, time etc)", "rank": 104, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AC%A1.mp3", "href": "../../zh/word/%E6%AC%A1/index.html", "inTop": false, "known": false, "pinyin": "cì"}, "维权": {"definition": "to defend (legal) rights; \n", "rank": 53172, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%BB%B4%E6%9D%83.mp3", "href": "../../zh/word/%E7%BB%B4%E6%9D%83/index.html", "inTop": false, "known": false, "pinyin": "wéi quán"}, "国际": {"definition": "international; \n", "rank": 2308, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9B%BD%E9%99%85.mp3", "href": "../../zh/word/%E5%9B%BD%E9%99%85/index.html", "inTop": false, "known": false, "pinyin": "guó jì"}, "妇女": {"definition": "woman; \n", "rank": 3510, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A6%87%E5%A5%B3.mp3", "href": "../../zh/word/%E5%A6%87%E5%A5%B3/index.html", "inTop": false, "known": false, "pinyin": "fù nǚ"}, "火灾": {"definition": "serious fire (in a city or a forest etc); \n", "rank": 3491, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%81%AB%E7%81%BE.mp3", "href": "../../zh/word/%E7%81%AB%E7%81%BE/index.html", "inTop": false, "known": false, "pinyin": "huǒ zāi"}, "一": {"definition": "one; 1; single", "rank": 21, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80.mp3", "href": "../../zh/word/%E4%B8%80/index.html", "inTop": true, "known": true, "pinyin": "yī"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

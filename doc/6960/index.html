@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/AuI6m2RCfqU"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>「</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>星期天</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>教会</span><span>便</span><span>算了</span></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="他" data-lang="zh">他</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="说" data-lang="zh">说</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="「" data-lang="zh">「</a><a style="text-decoration:none" href="#" class="word" data-name="你" data-lang="zh">你</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="星期天" data-lang="zh">星期天</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="不" data-lang="zh">不</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="想" data-lang="zh">想</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="去" data-lang="zh">去</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="教会" data-lang="zh">教会</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="便" data-lang="zh">便</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="算了" data-lang="zh">算了</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"不": {"definition": "(negative prefix); not; no", "rank": 6, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%8D.mp3", "href": "../../zh/word/%E4%B8%8D/index.html", "inTop": true, "known": false, "pinyin": "bù"}, "说": {"definition": "to persuade; \n; to speak; to say; to explain", "rank": 18, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%AF%B4.mp3", "href": "../../zh/word/%E8%AF%B4/index.html", "inTop": true, "known": false, "pinyin": "shuō"}, "「": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E3%80%8C.mp3", "href": "../../zh/word/%E3%80%8C/index.html", "inTop": false, "known": false, "pinyin": "「"}, "他": {"definition": "he or him; (used for either sex when the sex is unknown or unimportant); (used before sb's name for emphasis)", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%96.mp3", "href": "../../zh/word/%E4%BB%96/index.html", "inTop": true, "known": false, "pinyin": "tā"}, "去": {"definition": "to go; to go to (a place); (of a time etc) last", "rank": 31, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8E%BB.mp3", "href": "../../zh/word/%E5%8E%BB/index.html", "inTop": true, "known": false, "pinyin": "qù"}, "教会": {"definition": "to show; to teach; \n; Christian church; \n", "rank": 3400, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%95%99%E4%BC%9A.mp3", "href": "../../zh/word/%E6%95%99%E4%BC%9A/index.html", "inTop": false, "known": false, "pinyin": "jiào huì"}, "你": {"definition": "you (informal, as opposed to courteous 您[nin2]); \n", "rank": 3, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BD%A0.mp3", "href": "../../zh/word/%E4%BD%A0/index.html", "inTop": true, "known": true, "pinyin": "nǐ"}, "便": {"definition": "plain; informal; suitable; see 便宜|便宜[pian2 yi5]; \n", "rank": 1220, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BE%BF.mp3", "href": "../../zh/word/%E4%BE%BF/index.html", "inTop": false, "known": false, "pinyin": "biàn"}, "想": {"definition": "to think; to believe; to suppose", "rank": 20, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%83%B3.mp3", "href": "../../zh/word/%E6%83%B3/index.html", "inTop": true, "known": false, "pinyin": "xiǎng"}, "算了": {"definition": "let it be; let it pass; forget about it", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%AE%97%E4%BA%86.mp3", "href": "../../zh/word/%E7%AE%97%E4%BA%86/index.html", "inTop": false, "known": false, "pinyin": "suàn le"}, "星期天": {"definition": "Sunday; CL:個|个[ge4]; \n", "rank": 4238, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%98%9F%E6%9C%9F%E5%A4%A9.mp3", "href": "../../zh/word/%E6%98%9F%E6%9C%9F%E5%A4%A9/index.html", "inTop": false, "known": false, "pinyin": "xīng qī tiān"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

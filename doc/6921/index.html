@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/Ok7brT4cZNg"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>中共</span><span>追讨</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>那时</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>高潮</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="对" data-lang="zh">对</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="中共" data-lang="zh">中共</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="追讨" data-lang="zh">追讨</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="已经" data-lang="zh">已经</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="那时" data-lang="zh">那时</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="已经" data-lang="zh">已经</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="去" data-lang="zh">去</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a><a style="text-decoration:none" href="#" class="word" data-name="一" data-lang="zh">一</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="个" data-lang="zh">个</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="高潮" data-lang="zh">高潮</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="了" data-lang="zh">了</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"对": {"definition": "right; correct; couple", "rank": 36, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AF%B9.mp3", "href": "../../zh/word/%E5%AF%B9/index.html", "inTop": true, "known": false, "pinyin": "duì"}, "去": {"definition": "to go; to go to (a place); (of a time etc) last", "rank": 31, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8E%BB.mp3", "href": "../../zh/word/%E5%8E%BB/index.html", "inTop": true, "known": false, "pinyin": "qù"}, "了": {"definition": "(completed action marker); (modal particle indicating change of state, situation now); (modal particle intensifying preceding clause); (of eyes) bright; clear-sighted; to understand clearly", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BA%86.mp3", "href": "../../zh/word/%E4%BA%86/index.html", "inTop": true, "known": false, "pinyin": "le"}, "中共": {"definition": "abbr. for 中國共產黨|中国共产党[Zhong1 guo2 Gong4 chan3 dang3], Chinese Communist Party; \n", "rank": 52703, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AD%E5%85%B1.mp3", "href": "../../zh/word/%E4%B8%AD%E5%85%B1/index.html", "inTop": false, "known": false, "pinyin": "zhōng gòng"}, "追讨": {"definition": "to demand payment of money owing; \n", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%BF%BD%E8%AE%A8.mp3", "href": "../../zh/word/%E8%BF%BD%E8%AE%A8/index.html", "inTop": false, "known": false, "pinyin": "zhuī tǎo"}, "那时": {"definition": "then; at that time; in those days", "rank": 891, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%82%A3%E6%97%B6.mp3", "href": "../../zh/word/%E9%82%A3%E6%97%B6/index.html", "inTop": false, "known": false, "pinyin": "nà shí"}, "个": {"definition": "individual; this; that", "rank": 29, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AA.mp3", "href": "../../zh/word/%E4%B8%AA/index.html", "inTop": true, "known": false, "pinyin": "gè"}, "已经": {"definition": "already; \n", "rank": 84, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B7%B2%E7%BB%8F.mp3", "href": "../../zh/word/%E5%B7%B2%E7%BB%8F/index.html", "inTop": true, "known": false, "pinyin": "yǐ jīng"}, "高潮": {"definition": "high tide; high water; upsurge", "rank": 4517, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%AB%98%E6%BD%AE.mp3", "href": "../../zh/word/%E9%AB%98%E6%BD%AE/index.html", "inTop": false, "known": false, "pinyin": "gāo cháo"}, "一": {"definition": "one; 1; single", "rank": 21, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%80.mp3", "href": "../../zh/word/%E4%B8%80/index.html", "inTop": true, "known": true, "pinyin": "yī"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

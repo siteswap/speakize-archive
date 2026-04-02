@@ -89,20 +89,26 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/nfGt6ugUgpo"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>苏联</span><span>政府</span><span>下令</span><span>快马加鞭</span><span>发展</span><span>核能</span><span>工业</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="苏联" data-lang="zh">苏联</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="政府" data-lang="zh">政府</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="下令" data-lang="zh">下令</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="快马加鞭" data-lang="zh">快马加鞭</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="发展" data-lang="zh">发展</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="核能" data-lang="zh">核能</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="工业" data-lang="zh">工业</a></div>
     
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><span>越</span><span>干</span><span>越</span><span>错</span><span>加上</span><span>系列</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>安全</span><span>措施</span><span>备</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>忽略</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="越" data-lang="zh">越</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="干" data-lang="zh">干</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="越" data-lang="zh">越</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="错" data-lang="zh">错</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="加上" data-lang="zh">加上</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="系列" data-lang="zh">系列</a><a style="text-decoration:none" href="#" class="word" data-name="的" data-lang="zh">的</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="安全" data-lang="zh">安全</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="措施" data-lang="zh">措施</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="备" data-lang="zh">备</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="被" data-lang="zh">被</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="忽略" data-lang="zh">忽略</a></div>
     
   </td>
 </tr>
@@ -114,6 +120,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -126,6 +159,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"发展": {"definition": "development; growth; to develop", "rank": 1646, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8F%91%E5%B1%95.mp3", "href": "../../zh/word/%E5%8F%91%E5%B1%95/index.html", "inTop": false, "known": false, "pinyin": "fā zhǎn"}, "核能": {"definition": "nuclear energy; \n", "rank": 15268, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%A0%B8%E8%83%BD.mp3", "href": "../../zh/word/%E6%A0%B8%E8%83%BD/index.html", "inTop": false, "known": false, "pinyin": "hé néng"}, "越": {"definition": "generic word for peoples or states of south China or south Asia at different historical periods; abbr. for Vietnam 越南; \n; to exceed; to climb over; to surpass", "rank": 711, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B6%8A.mp3", "href": "../../zh/word/%E8%B6%8A/index.html", "inTop": false, "known": false, "pinyin": "yuè"}, "忽略": {"definition": "to neglect; to overlook; to ignore", "rank": 4057, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BF%BD%E7%95%A5.mp3", "href": "../../zh/word/%E5%BF%BD%E7%95%A5/index.html", "inTop": false, "known": false, "pinyin": "hū lüè"}, "错": {"definition": "mistake; wrong; bad", "rank": 122, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%94%99.mp3", "href": "../../zh/word/%E9%94%99/index.html", "inTop": false, "known": false, "pinyin": "cuò"}, "安全": {"definition": "safe; secure; safety", "rank": 369, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%AE%89%E5%85%A8.mp3", "href": "../../zh/word/%E5%AE%89%E5%85%A8/index.html", "inTop": false, "known": false, "pinyin": "ān quán"}, "快马加鞭": {"definition": "to spur the horse to full speed (idiom); to go as fast as possible; \n", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BF%AB%E9%A9%AC%E5%8A%A0%E9%9E%AD.mp3", "href": "../../zh/word/%E5%BF%AB%E9%A9%AC%E5%8A%A0%E9%9E%AD/index.html", "inTop": false, "known": false, "pinyin": "kuài mǎ jiā biān"}, "下令": {"definition": "to give an order; to command; \n", "rank": 5849, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%8B%E4%BB%A4.mp3", "href": "../../zh/word/%E4%B8%8B%E4%BB%A4/index.html", "inTop": false, "known": false, "pinyin": "xià lìng"}, "的": {"definition": "of; ~'s (possessive particle); (used after an attribute); see 的士[di1 shi4]; \n; really and truly; \n; aim; clear; \n", "rank": 1, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%9A%84.mp3", "href": "../../zh/word/%E7%9A%84/index.html", "inTop": true, "known": true, "pinyin": "de"}, "政府": {"definition": "government; CL:個|个[ge4]; \n", "rank": 878, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%94%BF%E5%BA%9C.mp3", "href": "../../zh/word/%E6%94%BF%E5%BA%9C/index.html", "inTop": false, "known": false, "pinyin": "zhèng fǔ"}, "苏联": {"definition": "Soviet Union, 1922-1991; abbr. for Union of Soviet Socialist Republics (USSR) 蘇維埃社會主義共和國聯盟|苏维埃社会主义共和国联盟[Su1 wei2 ai1 She4 hui4 zhu3 yi4 Gong4 he2 guo2 Lian2 meng2]; \n", "rank": 4202, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%8B%8F%E8%81%94.mp3", "href": "../../zh/word/%E8%8B%8F%E8%81%94/index.html", "inTop": false, "known": false, "pinyin": "sū lián"}, "工业": {"definition": "industry; \n", "rank": 5775, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B7%A5%E4%B8%9A.mp3", "href": "../../zh/word/%E5%B7%A5%E4%B8%9A/index.html", "inTop": false, "known": false, "pinyin": "gōng yè"}, "干": {"definition": "dry; clean; in vain; to concern; to interfere; shield; tree trunk; main part of sth; to manage", "rank": 107, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B9%B2.mp3", "href": "../../zh/word/%E5%B9%B2/index.html", "inTop": false, "known": false, "pinyin": "gàn"}, "系列": {"definition": "series; set; \n", "rank": 2908, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E7%B3%BB%E5%88%97.mp3", "href": "../../zh/word/%E7%B3%BB%E5%88%97/index.html", "inTop": false, "known": false, "pinyin": "xì liè"}, "加上": {"definition": "plus; to put in; to add", "rank": 1946, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%8A%A0%E4%B8%8A.mp3", "href": "../../zh/word/%E5%8A%A0%E4%B8%8A/index.html", "inTop": false, "known": false, "pinyin": "jiā shàng"}, "备": {"definition": "to prepare; get ready; to provide or equip", "rank": 4934, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A4%87.mp3", "href": "../../zh/word/%E5%A4%87/index.html", "inTop": false, "known": false, "pinyin": "bèi"}, "措施": {"definition": "measure; step; CL:個|个[ge4]", "rank": 3470, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%8E%AA%E6%96%BD.mp3", "href": "../../zh/word/%E6%8E%AA%E6%96%BD/index.html", "inTop": false, "known": false, "pinyin": "cuò shī"}, "被": {"definition": "quilt; by; (indicates passive-voice clauses)", "rank": 65, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%A2%AB.mp3", "href": "../../zh/word/%E8%A2%AB/index.html", "inTop": true, "known": false, "pinyin": "bèi"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');

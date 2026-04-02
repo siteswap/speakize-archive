@@ -89,13 +89,19 @@ function toggleTheme() {
     src="https://www.youtube.com/embed/rMSJrnyhYms"
     title="YouTube video" allowfullscreen></iframe>
 </div><br>
-<br>
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <table class="table table-borderless">
   <tbody>
     <tr>
   <td></td>
   <td>
-    <div><span>金灿</span><span>荣</span><span>那些</span><span>国师们</span><span>就说</span><span>中国</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>崛起</span></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="金灿" data-lang="zh">金灿</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="荣" data-lang="zh">荣</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="那些" data-lang="zh">那些</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="国师们" data-lang="zh">国师们</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="就说" data-lang="zh">就说</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="中国" data-lang="zh">中国</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="已经" data-lang="zh">已经</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="崛起" data-lang="zh">崛起</a></div>
     
   </td>
 </tr>
@@ -107,6 +113,33 @@ function toggleTheme() {
   <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <audio id="phraseAudio"></audio>
 <script>
 
@@ -119,6 +152,45 @@ function doWordLookup(prefix) {
   return false;
 }
 
+var wordData = {"就说": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B0%B1%E8%AF%B4.mp3", "href": "../../zh/word/%E5%B0%B1%E8%AF%B4/index.html", "inTop": false, "known": false, "pinyin": "jiù shuō"}, "中国": {"definition": "China; \n", "rank": 1406, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%B8%AD%E5%9B%BD.mp3", "href": "../../zh/word/%E4%B8%AD%E5%9B%BD/index.html", "inTop": false, "known": false, "pinyin": "zhōng guó"}, "那些": {"definition": "those; \n", "rank": 161, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%82%A3%E4%BA%9B.mp3", "href": "../../zh/word/%E9%82%A3%E4%BA%9B/index.html", "inTop": false, "known": false, "pinyin": "nèi xiē"}, "荣": {"definition": "glory; honor; thriving", "rank": 4364, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%8D%A3.mp3", "href": "../../zh/word/%E8%8D%A3/index.html", "inTop": false, "known": false, "pinyin": "róng"}, "金灿": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E9%87%91%E7%81%BF.mp3", "href": "../../zh/word/%E9%87%91%E7%81%BF/index.html", "inTop": false, "known": false, "pinyin": "jīn càn"}, "已经": {"definition": "already; \n", "rank": 84, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B7%B2%E7%BB%8F.mp3", "href": "../../zh/word/%E5%B7%B2%E7%BB%8F/index.html", "inTop": true, "known": false, "pinyin": "yǐ jīng"}, "国师们": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%9B%BD%E5%B8%88%E4%BB%AC.mp3", "href": "../../zh/word/%E5%9B%BD%E5%B8%88%E4%BB%AC/index.html", "inTop": false, "known": false, "pinyin": "guó shī men"}, "崛起": {"definition": "to rise abruptly (to a towering position); to tower over; to spring up", "rank": 13386, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B4%9B%E8%B5%B7.mp3", "href": "../../zh/word/%E5%B4%9B%E8%B5%B7/index.html", "inTop": false, "known": false, "pinyin": "jué qǐ"}};
+var wordAudio = new Audio();
+document.querySelectorAll('.word').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var name = this.getAttribute('data-name');
+    var info = wordData[name];
+    if (!info) return;
+    document.getElementById('modalWordTitle').textContent = name;
+    document.getElementById('modalDefinition').textContent = info.definition || '—';
+    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+    var pinyinEl = document.getElementById('modalPinyin');
+    var pinyinRow = document.getElementById('modalPinyinRow');
+    if (pinyinRow) {
+      if (info.pinyin) {
+        pinyinEl.textContent = info.pinyin;
+        pinyinRow.style.display = '';
+      } else {
+        pinyinRow.style.display = 'none';
+      }
+    }
+    var fullLink = document.getElementById('modalFullInfo');
+    if (info.inTop) {
+      fullLink.href = info.href;
+      fullLink.style.display = '';
+    } else {
+      fullLink.style.display = 'none';
+    }
+    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+    modal.show();
+    if (info.audio) {
+      wordAudio.src = info.audio;
+      wordAudio.play().catch(function(){});
+    }
+  });
+});
+document.getElementById('modalPlayBtn').addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');
