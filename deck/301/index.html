@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Haley first lesson back - Flashcards - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link active" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="text-center">
+  Haley first lesson back
+  <small class="text-muted">(Flashcard Deck)</small>
+</h2><br>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <span class="btn btn-secondary disabled shadow">Export as Anki Package</span>
+  <span class="btn btn-secondary disabled shadow">Export as Mp3</span>
+  <span class="btn btn-secondary disabled shadow">Export as Mp4</span>
+  <span class="btn btn-secondary disabled shadow">Study Now</span>
+  <div class="card shadow">
+    <div class="card-body">
+      <h6 class="card-title"><span class="badge bg-danger"><i class="bi bi-book"></i></span> Read (text only)</h6>
+      <h6 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span> Listen (audio only)</h6>
+      <h6 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span> Speak (translation only)</h6>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container"><div class="row row-cols-1 row-cols-md-2 g-4"><div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;花很多时间开发APP</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_91408de8-c92a-4abf-9f6f-3d4bd884987a.jpeg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>Spend a lot of time developing apps</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_4865abd6-2397-4929-8314-f66523846ae5.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我忘记了很多中文单词</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_4457823f-77cd-465a-83b7-ca3cb6f1c9e2.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I forgot a lot of Chinese words</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_7837c696-2a5d-4be6-9fb3-b50a5b1ca4d8.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;记起我的词汇</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_6a56b884-6b67-4567-920d-16b4da9498f3.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>remember my vocabulary</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_325e8563-cabd-4344-bd76-2bd5628a77d7.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;想起我的词汇</h5>
+      
+      <p class="text-muted"><em>remember my vocabulary</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_65ab62a0-f8ca-4b7d-bd85-68c366e99214.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;APP能用吗？</h5>
+      
+      <p class="text-muted"><em>Can the app be used?</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_77bb78ae-cb4e-4123-a28a-eebd4ec39611.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;用起来麻烦</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_9a1ca084-a316-4c13-8845-2474bb24b88b.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>troublesome to use</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b28aabac-6318-40c0-a2de-5472248d858b.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;客户</h5>
+      
+      <p class="text-muted"><em>client</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_db6d2de6-38a9-4447-ad63-f5ad4238e4fe.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;客户坐在我旁边</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_f440aaf6-4443-4e50-b642-352990872e4b.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>client sitting next to me</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_0fc7abb7-0ef8-40ec-9b28-52d8bc31fd6f.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;反馈</h5>
+      
+      <p class="text-muted"><em>the feedback</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_32e5c864-6207-43ad-935e-3502aee3343b.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;教育技术</h5>
+      
+      <p class="text-muted"><em>educational technology</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_534071de-056d-4404-b1db-82a92f64d30d.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;投简历</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_db1d8aa8-d597-4b8b-8583-b7808b46eb0c.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>submit resume</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_bbf6ebf4-f41f-4953-bd35-856a85c6404b.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;都分享词汇</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_d21b2da6-4f09-446d-addd-dcf1cdee787c.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>share vocabulary</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3f7130ba-d65a-4cf8-8ee2-4ca6b4c8837a.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;忽略</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_174dbf95-9afa-482a-a49c-d986a18789bf.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>neglect</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_dbb298b1-37e2-4453-a2e0-fd038da2aac9.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;虽然语法不对，但是意思很清楚</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/WhatsApp-Image-2021-05-06-at-6.53.51-PM-1024x800.jpeg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>Although the grammar is wrong, the meaning is clear</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3f4efaa9-4413-42b3-a130-0857196e0921.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;印地语</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/1200px-Hindi.svg.png" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>Hindi</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3392dc03-7812-404e-aaac-be6069c06771.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;相似的</h5>
+      
+      <p class="text-muted"><em>similar</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f29c308c-e146-452a-8dfb-5e1f4e4ac25f.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;相似的语法</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_e197a39e-f6cb-4436-8258-24627bbcd7d2.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>similar syntax</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b3faabad-3beb-4f85-996b-918197a78eb7.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我的硕士专业是统计学</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/my-masters-degree-in-statistics.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>My master&#x27;s degree is statistics</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6383100c-899e-48a4-836b-b012348f10ed.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;广泛应用</h5>
+      
+      <p class="text-muted"><em>widely used</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_0f5d43e5-6ac5-4626-9144-4c4d9b800628.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我们不会得老年痴呆</h5>
+      
+      <p class="text-muted"><em>we won&#x27;t get dementia</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d2214961-81df-49c3-86a3-531f0eb5b6a0.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;肯德基激素</h5>
+      
+      <p class="text-muted"><em>kfc hormone</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_05a85376-8f2f-4778-a7de-56aef46c5530.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我自己做鸡肉</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_9fdb9199-3d65-491a-a6d2-835479eed4bb.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I make my own chicken</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_17540e18-0f9e-4acb-bd2f-e11996fb1130.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我很少吃肯德基</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_dcc16607-3d0d-433d-98cc-6d816aa40fc3.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I rarely eat KFC</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_8c49710a-27b0-454d-a327-23df46cd13fc.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;我每周都吃鸡肉</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_b6fe2e95-6765-481c-a2cb-32feee8845f8.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>i eat chicken every week</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d4724e1a-c5a1-44ba-bec7-c6cf3343fac7.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;如果所有其他孩子都有抖音，你就更难限制你的孩子使用</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/21CORN-KID2-videoSixteenByNine3000.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>It&#x27;s harder for you to limit your kid&#x27;s use if all other kids have TikTok</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_5e620a98-3af7-446b-99de-6507939d5acd.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+</div></div>
+<br>
+<div class="text-center">
+  <a href="../../flashcards.html" class="btn btn-outline-primary">&larr; All Flashcards</a>
+</div>
+<br><br>
+<script>
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+</script>
+</body>
+</html>

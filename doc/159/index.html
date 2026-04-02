@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Chen - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  Chen
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><span>稍</span><span>等</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a></div>
+    <p><em>Wait a mininute</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>心情</span><span>比较</span><span>舒畅</span></div>
+    <p><em>
+I feel more comfortable</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><span>有些</span><span>懊恼</span></div>
+    <p><em>
+So a little annoyed</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>桌游</span><span>-</span><span>桌面</span><span>游戏</span><span>酒吧</span></div>
+    <p><em>
+Board Games - Board Game Bar</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>英国</span><span>绅士</span></div>
+    <p><em>
+British gentleman</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>之前</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>工作</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>开发</span><span>外汇</span><span>交易</span><span>算法</span></div>
+    <p><em>
+My previous job was developing forex trading algorithms</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>很差</span></div>
+    <p><em>
+very poor</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>文件</span></div>
+    <p><em>
+document</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>限制</span></div>
+    <p><em>
+no limit</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>长江</span></div>
+    <p><em>
+Yangtze</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><span>受</span><span>欢迎</span></div>
+    <p><em>
+most popular</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>高</span><span>品质</span></div>
+    <p><em>
+high quality </em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>质量</span></div>
+    <p><em>
+quality</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>列表</span></div>
+    <p><em>
+list</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><span>剩</span><span>多少</span><span>时间</span></div>
+    <p><em>
+how much time is left</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>希腊</span><span>岛屿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>沙滩</span></div>
+    <p><em>
+sandy beaches of greek islands</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>效率</span><span>很高</span></div>
+    <p><em>
+high efficiency</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>利率</span></div>
+    <p><em>
+interest rate</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>银行</span><span>贷款</span></div>
+    <p><em>
+Bank loan</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>经济</span><span>特区</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>改革</span><span>开放</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部分</span></div>
+    <p><em>
+Special economic zones are part of reform and opening up</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Stockholm</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>湖泊</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>河流</span></div>
+    <p><em>
+Stockholm has lakes and rivers</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_aee968ee-43be-41eb-b606-b934fc07128b.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>Netherlands</span><span>人口</span><span>密度</span><span>最大</span></div>
+    <p><em>
+Netherlands has the highest population density</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>生产</span><span>这些</span><span>啤酒</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>工厂</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>超过</span><span>一千</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>历史</span></div>
+    <p><em>
+The factory that produces these beers is over a thousand years old</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>城市</span><span>，</span><span>还是</span><span>传统</span><span>村落</span><span>，</span><span>还是</span><span>高山</span><span>？</span></div>
+    <p><em>
+Do you like big cities, traditional villages, or mountains?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>欧洲</span><span>风格</span></div>
+    <p><em>
+European style</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>里面</span><span>，</span><span>所以</span><span>纳粹</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>发现</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a></div>
+    <p><em>
+Can&#x27;t see inside, so the Nazis don&#x27;t find them</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>安妮</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>犹太</span><span>女孩</span></div>
+    <p><em>
+annie is a jewish girl</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>应该</span><span>感激</span></div>
+    <p><em>
+i should be grateful</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>看完</span><span>安妮</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>日记</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>感触</span></div>
+    <p><em>
+After reading Annie&#x27;s diary, I was very touched</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>心存</span><span>感激</span></div>
+    <p><em>
+Thankful</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>常常</span><span>抱怨</span></div>
+    <p><em>
+often complain</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>发</span><span>牢骚</span></div>
+    <p><em>
+complain</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>政府</span><span>受到</span><span>舆论</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>压力</span></div>
+    <p><em>
+Government under pressure from public opinion</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>中</span><span>文</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>术语</span><span>叫</span><span>“</span><span>语义</span><span>饱和</span><span>”</span><span>jamais</span><span>vu.</span></div>
+    <p><em>
+The Chinese term is &quot;semantic saturation&quot; jamais vu.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>上周</span><span>复活</span><span>节</span><span>公共</span><span>假期</span><span>结束</span></div>
+    <p><em>
+Easter public holiday ended last week</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>基督</span><span>教</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>英国</span><span>影响</span><span>很大</span></div>
+    <p><em>
+Christianity has a great influence on Britain</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>刮</span><span>胡子</span></div>
+    <p><em>
+i didn&#x27;t shave</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AE%83/index.html">它</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>连接</span><span>带宽</span><span>更好</span></div>
+    <p><em>
+it is better for connection bandwidth</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>高维</span><span>模型</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>维度</span></div>
+    <p><em>
+A high-dimensional model has many dimensions</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>图形</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>一些</span><span>调试</span><span>线索</span></div>
+    <p><em>
+Graphics can give us some debugging clues</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>法定</span><span>节假</span><span>日</span></div>
+    <p><em>
+statutory holidays</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>公共</span><span>假期</span></div>
+    <p><em>
+Public vacation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>普通</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>每年</span><span>法定</span><span>带薪</span><span>年</span><span>假</span><span>9</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A9/index.html">天</a><span>，</span><span>公司</span><span>带薪</span><span>年</span><span>假</span><span>20</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A9/index.html">天</a></div>
+    <p><em>
+9 days of statutory paid annual leave for ordinary people and 20 days of paid annual leave for companies</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>休假</span><span>=</span><span>to</span><span>have</span><span>holiday</span><span>(</span><span>)</span></div>
+    <p><em>
+vacation = to have holiday ()</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>度假</span><span>=</span><span>to</span><span>have</span><span>holiday</span><span>(</span><span>usually</span><span>means</span><span>travelling</span><span>to</span><span>another</span><span>place</span><span>,</span><span>usually</span><span>some</span><span>tourist</span><span>spot</span><span>)</span></div>
+    <p><em>
+vacation = to have holiday (usually means travelling to another place, usually some tourist spot)</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>投资</span><span>银行</span></div>
+    <p><em>
+investment bank</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>整年</span><span>内</span></div>
+    <p><em>
+within a year</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>节假</span><span>日</span></div>
+    <p><em>
+have a holiday</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>复制</span><span>该</span><span>信息</span><span>，</span><span>打开</span><span>手机</span><span>腾讯</span><span>会议</span><span>即</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF/index.html">可</a><span>参与</span></div>
+    <p><em>
+Copy the information, open the mobile phone Tencent meeting to participate</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>安装</span><span>应用</span></div>
+    <p><em>
+I am installing an app</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>考试</span><span>没到</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><span>，</span><span>学生</span><span>们</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>不会</span><span>学习</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>
+Students won&#x27;t study until exams come</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>临时</span><span>抱佛</span><span>脚</span></div>
+    <p><em>
+cramming</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>也许</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>当</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>和尚</span></div>
+    <p><em>
+maybe i became a monk</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_31825b7a-ce7d-4484-b3fa-5c4359973c67.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><span>顾客</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>上帝</span></div>
+    <p><em>
+a customer is god</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

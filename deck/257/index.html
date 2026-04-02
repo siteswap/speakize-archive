@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Adriana 22_12_2022 - Flashcards - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link active" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="text-center">
+  Adriana 22_12_2022
+  <small class="text-muted">(Flashcard Deck)</small>
+</h2><br>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <span class="btn btn-secondary disabled shadow">Export as Anki Package</span>
+  <span class="btn btn-secondary disabled shadow">Export as Mp3</span>
+  <span class="btn btn-secondary disabled shadow">Export as Mp4</span>
+  <span class="btn btn-secondary disabled shadow">Study Now</span>
+  <div class="card shadow">
+    <div class="card-body">
+      <h6 class="card-title"><span class="badge bg-danger"><i class="bi bi-book"></i></span> Read (text only)</h6>
+      <h6 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span> Listen (audio only)</h6>
+      <h6 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span> Speak (translation only)</h6>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container"><div class="row row-cols-1 row-cols-md-2 g-4"><div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;tuviste una fiesta</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>you had a party</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_680e9b51-de60-43e2-b407-e24102601b30.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;he estado ocupado recientemente</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_9160d12e-5347-48f3-b8c9-b65d8c137d5f.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>i have been busy recently</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_c051e57e-08ff-47c0-967e-d646d16269e7.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;estoy tomando nota</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_f01ace3a-ab8a-46cb-9016-96f01d88939b.jpg%3Alarge" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I am taking note</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2d68c4a2-8981-46c4-be57-1321e84946be.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;practico un poco</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_2833136f-8cdc-4b97-81af-810d5e589bc2.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I practice a little</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_5efa8d54-f932-4f41-8179-ef98763a734b.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;casi todos los días</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_a13e344d-4b3f-479d-8146-d3742052452c.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>almost every day</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_e7fc9a2f-b77e-4b0b-8975-0176e5a82724.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;la forma en que aprenden es muy natural</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_9689a60d-0f28-4758-8eac-2526edd1f0b0.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>the way they learn is very natural</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_8cf0e2c4-ce15-4b91-9560-e4e40b9c1deb.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;¿ Conoces a algún niño que esté aprendiendo otro idioma ?</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_bc77385a-a436-4222-a651-5d7129c823d0.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>Do you know a child who is learning another language?</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_274510ef-299a-4b6e-9e33-6597f3d4c277.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;actualmente va a la escuela primaria , despues ira a la escuela secundaria</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_5a361245-fb4d-4ab5-836b-fb8ceb68ce9b.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>He is currently going to primary school, later he will go to secondary school</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_cc4fd9fd-13fd-44fd-943f-9914e9def2d1.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Recientemente pasó algo</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_9e9012b8-c464-4007-8ade-1cb7a75e8e5a.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>something happened recently</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f28f40e0-4ba8-4ba3-a0aa-53f5add8574d.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Mi chino se volvió peor</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_a30bca61-f3a1-4289-b6e8-d6b3b18f74d5.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>My chinese got worse</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b1a611da-748b-45f8-91b7-c1fd314849d2.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Practiqué un poco</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_6e082f4a-e40d-4a62-b245-b3b3c7af69eb.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>I practiced a little</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_c5d6bb21-921b-4a90-a08b-14ae2e615ee0.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;En la escuela primaria</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_558d3112-1caf-41dd-abb1-9e216ce557fc.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>at primary school</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_8b0efe10-034d-4f01-a296-a85d099ef36f.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;es leve</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_0fc234dc-397d-434e-81ef-8530756db705.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>it is mild</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_98ab2794-f515-418f-bf06-1d93c01c29ef.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Es inflexible</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_36967f90-8dca-4060-bcfb-e1534a5c5d04.gif" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>is inflexible</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_0c02ca28-a415-4e95-aff1-c3f29f9e4c9d.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Es muy avanzado</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_bae84515-d30d-43a1-9793-1233a7ad892c.jpg" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>It&#x27;s very advanced</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_445cf14f-7e35-4594-be42-3a3ad1923062.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge bg-success"><i class="bi bi-mic"></i></span>&nbsp;&nbsp;Muestran la palabra con la imagen</h5>
+      <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_0426afdb-bd81-45f9-9ca1-be18bb9565b7.png" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
+      <p class="text-muted"><em>Show the word with the picture</em></p>
+      <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f75f9917-bd6b-45be-9a5b-113086fcf4b4.mp3" style="width:100%; max-width:250px;"></audio>
+    </div>
+  </div>
+</div>
+</div></div>
+<br>
+<div class="text-center">
+  <a href="../../flashcards.html" class="btn btn-outline-primary">&larr; All Flashcards</a>
+</div>
+<br><br>
+<script>
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+</script>
+</body>
+</html>

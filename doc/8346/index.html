@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Hola, ¿cómo estás?  - Spanish - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  Hola, ¿cómo estás? 
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/hola/index.html">Hola</a><span>,</span><span>¿</span><a style="text-decoration:none" href="../../es/word/c%C3%B3mo/index.html">cómo</a><a style="text-decoration:none" href="../../es/word/est%C3%A1s/index.html">estás</a><span>?</span></div>
+    <p><em>Hello how are you ?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/soy/index.html">Soy</a><a style="text-decoration:none" href="../../es/word/yo/index.html">yo</a><span>,</span><span>¿</span><a style="text-decoration:none" href="../../es/word/qu%C3%A9/index.html">qué</a><a style="text-decoration:none" href="../../es/word/quieres/index.html">quieres</a><span>?</span></div>
+    <p><em>It&#x27;s me, what do you want?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/es/index.html">Es</a><a style="text-decoration:none" href="../../es/word/muy/index.html">muy</a><a style="text-decoration:none" href="../../es/word/bueno/index.html">bueno</a><span>verte</span></div>
+    <p><em>It&#x27;s very good to see you</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/no/index.html">No</a><a style="text-decoration:none" href="../../es/word/s%C3%A9/index.html">sé</a><a style="text-decoration:none" href="../../es/word/por/index.html">por</a><a style="text-decoration:none" href="../../es/word/qu%C3%A9/index.html">qué</a><a style="text-decoration:none" href="../../es/word/estoy/index.html">estoy</a><a style="text-decoration:none" href="../../es/word/aqu%C3%AD/index.html">aquí</a></div>
+    <p><em>I don&#x27;t know why I&#x27;m here</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/tengo/index.html">Tengo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><span>decir</span><a style="text-decoration:none" href="../../es/word/algo/index.html">algo</a></div>
+    <p><em>I have to say something</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/ya/index.html">Ya</a><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><a style="text-decoration:none" href="../../es/word/s%C3%A9/index.html">sé</a><a style="text-decoration:none" href="../../es/word/qu%C3%A9/index.html">qué</a><a style="text-decoration:none" href="../../es/word/hacer/index.html">hacer</a></div>
+    <p><em>I do not know what to do</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/quiero/index.html">Quiero</a><a style="text-decoration:none" href="../../es/word/hacer/index.html">hacer</a><a style="text-decoration:none" href="../../es/word/un/index.html">un</a><a style="text-decoration:none" href="../../es/word/favor/index.html">favor</a></div>
+    <p><em>I want to do a favor</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/common_lib/audio/phrase_bfbd1b13-f809-4ec2-962f-4b6d7d5729a8.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/pero/index.html">Pero</a><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><a style="text-decoration:none" href="../../es/word/s%C3%A9/index.html">sé</a><a style="text-decoration:none" href="../../es/word/c%C3%B3mo/index.html">cómo</a></div>
+    <p><em>But I do not know how</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/estoy/index.html">Estoy</a><a style="text-decoration:none" href="../../es/word/en/index.html">en</a><a style="text-decoration:none" href="../../es/word/una/index.html">una</a><span>situación</span><span>difícil</span></div>
+    <p><em>I&#x27;m in a difficult situation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/porque/index.html">Porque</a><a style="text-decoration:none" href="../../es/word/est%C3%A1/index.html">está</a><a style="text-decoration:none" href="../../es/word/muy/index.html">muy</a><span>lejos</span></div>
+    <p><em>because it is very far</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/estoy/index.html">Estoy</a><a style="text-decoration:none" href="../../es/word/muy/index.html">muy</a><span>preocupada</span></div>
+    <p><em>I am very concerned</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/d%C3%B3nde/index.html">Dónde</a><a style="text-decoration:none" href="../../es/word/est%C3%A1/index.html">está</a><a style="text-decoration:none" href="../../es/word/la/index.html">la</a><a style="text-decoration:none" href="../../es/word/casa/index.html">casa</a><span>?</span></div>
+    <p><em>Where is the house ?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/creo/index.html">Creo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/ese/index.html">ese</a><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><a style="text-decoration:none" href="../../es/word/el/index.html">el</a><span>problema</span></div>
+    <p><em>I think that&#x27;s the problem</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>¿</span><a style="text-decoration:none" href="../../es/word/qui%C3%A9n/index.html">Quién</a><a style="text-decoration:none" href="../../es/word/tiene/index.html">tiene</a><a style="text-decoration:none" href="../../es/word/la/index.html">la</a><span>respuesta</span><span>?</span></div>
+    <p><em>Who has the answer ?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/y/index.html">Y</a><a style="text-decoration:none" href="../../es/word/me/index.html">me</a><span>pregunto</span><a style="text-decoration:none" href="../../es/word/por/index.html">por</a><a style="text-decoration:none" href="../../es/word/qu%C3%A9/index.html">qué</a></div>
+    <p><em>and i wonder why</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/gracias/index.html">Gracias</a><a style="text-decoration:none" href="../../es/word/por/index.html">por</a><a style="text-decoration:none" href="../../es/word/todos/index.html">todos</a><a style="text-decoration:none" href="../../es/word/los/index.html">los</a><span>consejos</span></div>
+    <p><em>Thanks for all the tips</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/t%C3%BA/index.html">Tú</a><a style="text-decoration:none" href="../../es/word/eres/index.html">eres</a><a style="text-decoration:none" href="../../es/word/mi/index.html">mi</a><span>única</span><span>esperanza</span></div>
+    <p><em>You are my only hope</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/tengo/index.html">Tengo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/hacer/index.html">hacer</a><a style="text-decoration:none" href="../../es/word/algo/index.html">algo</a><span>rápido</span></div>
+    <p><em>i have to do something quick</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/como/index.html">Como</a><span>decir</span><a style="text-decoration:none" href="../../es/word/la/index.html">la</a><a style="text-decoration:none" href="../../es/word/verdad/index.html">verdad</a></div>
+    <p><em>how to tell the truth</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/fue/index.html">Fue</a><a style="text-decoration:none" href="../../es/word/una/index.html">una</a><span>decisión</span><span>difícil</span></div>
+    <p><em>It was a difficult decision</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/s%C3%B3lo/index.html">Sólo</a><a style="text-decoration:none" href="../../es/word/quiero/index.html">quiero</a><a style="text-decoration:none" href="../../es/word/lo/index.html">lo</a><span>mejor</span><a style="text-decoration:none" href="../../es/word/para/index.html">para</a><a style="text-decoration:none" href="../../es/word/m%C3%AD/index.html">mí</a></div>
+    <p><em>I only want the best for myself</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/common_lib/audio/phrase_71aeb2b6-2e29-44a6-baec-8f1eb257327f.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/del/index.html">Del</a><a style="text-decoration:none" href="../../es/word/tiempo/index.html">tiempo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/tengo/index.html">tengo</a></div>
+    <p><em>of the time that I have</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/pero/index.html">Pero</a><span>siempre</span><a style="text-decoration:none" href="../../es/word/hay/index.html">hay</a><a style="text-decoration:none" href="../../es/word/algo/index.html">algo</a><a style="text-decoration:none" href="../../es/word/m%C3%A1s/index.html">más</a></div>
+    <p><em>But there&#x27;s always something more</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/vamos/index.html">Vamos</a><a style="text-decoration:none" href="../../es/word/a/index.html">a</a><span>ver</span><a style="text-decoration:none" href="../../es/word/qu%C3%A9/index.html">qué</a><span>pasa</span></div>
+    <p><em>Let&#x27;s see what happens</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/si/index.html">Si</a><a style="text-decoration:none" href="../../es/word/sabes/index.html">sabes</a><a style="text-decoration:none" href="../../es/word/lo/index.html">lo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/quieres/index.html">quieres</a></div>
+    <p><em>if you know what you want</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/entonces/index.html">Entonces</a><span>hazlo</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><a style="text-decoration:none" href="../../es/word/una/index.html">una</a><a style="text-decoration:none" href="../../es/word/vez/index.html">vez</a></div>
+    <p><em>So do it once</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/es/index.html">Es</a><a style="text-decoration:none" href="../../es/word/tan/index.html">tan</a><span>difícil</span><span>decidir</span></div>
+    <p><em>It&#x27;s so hard to decide</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/pero/index.html">Pero</a><a style="text-decoration:none" href="../../es/word/s%C3%A9/index.html">sé</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><a style="text-decoration:none" href="../../es/word/lo/index.html">lo</a><span>correcto</span></div>
+    <p><em>But I know it&#x27;s right</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/nunca/index.html">Nunca</a><a style="text-decoration:none" href="../../es/word/fue/index.html">fue</a><a style="text-decoration:none" href="../../es/word/tan/index.html">tan</a><span>fácil</span><a style="text-decoration:none" href="../../es/word/para/index.html">para</a><a style="text-decoration:none" href="../../es/word/m%C3%AD/index.html">mí</a></div>
+    <p><em>It was never so easy for me</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/estoy/index.html">Estoy</a><a style="text-decoration:none" href="../../es/word/tan/index.html">tan</a><span>confundida</span></div>
+    <p><em>I am so confused</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/dios/index.html">Dios</a><a style="text-decoration:none" href="../../es/word/nos/index.html">nos</a><a style="text-decoration:none" href="../../es/word/ha/index.html">ha</a><span>bendecido</span></div>
+    <p><em>God has blessed us</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/s%C3%AD/index.html">Sí</a><span>,</span><a style="text-decoration:none" href="../../es/word/todos/index.html">todos</a><span>somos</span><span>felices</span></div>
+    <p><em>yes we are all happy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/ya/index.html">Ya</a><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><span>hora</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><span>vaya</span></div>
+    <p><em>It&#x27;s time for me to go</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/ahora/index.html">Ahora</a><a style="text-decoration:none" href="../../es/word/s%C3%A9/index.html">sé</a><a style="text-decoration:none" href="../../es/word/lo/index.html">lo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><span>debo</span><a style="text-decoration:none" href="../../es/word/hacer/index.html">hacer</a></div>
+    <p><em>Now I know what I must do</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/es/index.html">Es</a><a style="text-decoration:none" href="../../es/word/como/index.html">como</a><a style="text-decoration:none" href="../../es/word/si/index.html">si</a><a style="text-decoration:none" href="../../es/word/todo/index.html">todo</a><span>hubiera</span><span>cambiado</span></div>
+    <p><em>It&#x27;s like everything has changed</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

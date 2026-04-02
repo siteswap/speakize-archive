@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>HSK 3 Sentences - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  HSK 3 Sentences
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><span>二十</span><span>块</span><span>零五</span><span>分</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>坐船</span><span>旅游</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>欢迎</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>我家</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>回答</span><span>错</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%91%8A%E8%AF%89/index.html">告诉</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>姓</span><span>张</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>公斤</span><span>鸡蛋</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>还是</span><span>孩子</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>红颜色</span><span>还是</span><span>黑</span><span>颜色</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>马上</span><span>问路</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>向</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><span>门外走</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>大家</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>作业</span><span>本儿</span><span>拿</span><span>出来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>超市</span><span>买点</span><span>儿菜</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>三</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%BF%AB/index.html">快</a><span>迟到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>跑</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><a style="text-decoration:none" href="../../zh/word/%E5%BF%AB/index.html">快</a><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>！</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>衣服</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><span>漂亮</span><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>！</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>李</span><span>小姐</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>漂亮</span><span>。</span></div>
+    <p><em>Miss Li is very beautiful.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>名字</span><span>叫</span><span>李明</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>学校</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>每年</span><span>夏天</span><span>开</span><span>运动</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b8475e35-1c01-464e-bf9b-91d892de521e.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><span>朋友</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>块</span><span>儿</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a><span>。</span></div>
+    <p><em>I&#x27;m with my friends.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><span>关系</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>请</span><span>老师</span><span>帮忙</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>坐</span><span>电梯</span><span>上楼</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>李</span><span>医生</span><span>今年</span><span>40</span><span>岁</span><span>。</span></div>
+    <p><em>Dr. Li is 40 years old this year.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>喂</span><span>，</span><span>李</span><span>老师</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    <p><em>Hello, is Teacher Li here?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>八点</span><span>下班</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>只有</span><span>一点</span><span>儿</span><span>钱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>每天</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><span>作业</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>自行</span><span>车</span><span>五百多</span><span>元</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>帮助</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%89%BE/index.html">找</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>家</span><span>搬家</span><span>公司</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>姐姐</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>腿长</span><span>，</span><span>跑</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><a style="text-decoration:none" href="../../zh/word/%E5%BF%AB/index.html">快</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>脸上</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><span>看出</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>难过来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>奶奶</span><span>非常</span><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>送</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>礼物</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>本</span><span>书</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>除</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>不吃</span><span>肉</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><span>不吃</span><span>鸡蛋</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>自行</span><span>车</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>红色</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>欢迎</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0%E4%BB%AC/index.html">你们</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>家</span><span>。</span></div>
+    <p><em>Welcome to our home.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><span>回答</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>回答</span><span>不能</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>满意</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b1bfe80b-7711-497d-9e81-7e9ebbac5c01.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>马上</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>进</span><span>机场</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    <p><em>I&#x27;m going into the airport soon.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>您</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>喝</span><span>咖啡</span><span>，</span><span>还是</span><span>茶</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>（</span><span>学</span><span>汉</span><span>字</span><span>）</span><span>开始</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E8%A7%89%E5%BE%97/index.html">觉得</a><span>有点</span><span>难</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>为了</span><span>准备</span><span>考试</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>每天</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>学习</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>很晚</span><span>。</span></div>
+    <p><em>To prepare for the exam, he studied late every day.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>苹果</span><span>两</span><span>块</span><span>钱</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>斤</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>商店</span><span>卖</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>东西</span><span>比较</span><span>便宜</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>手机</span><span>一千</span><span>元</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>七</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><span>半</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>上班</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>身体</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%AA/index.html">太</a><span>舒服</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><span>太难</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>！</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>姓</span><span>张</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今年</span><span>冬天</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>几</span><span>次</span><span>大雪</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>哪</span><span>种</span><span>颜色</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>认真</span><span>地</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>斤菜</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>两</span><span>块</span><span>钱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>词</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_7653a106-7342-4d8d-b40f-0d3261997b18.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>意思</span><a style="text-decoration:none" href="../../zh/word/%E5%91%8A%E8%AF%89/index.html">告诉</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    <p><em>Tell me what you mean.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>……</span><span>下雨</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>……</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>跑步</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><span>考试</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><span>准备</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>新</span><span>买</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>自行</span><span>车</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>阿姨</span><span>，</span><span>附近</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>地铁</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>阿姨</span><span>，</span><span>这儿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>环境</span><span>多么</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>！</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0%E4%BB%AC/index.html">你们</a><span>家住</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>哪儿</span><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_74559f44-60be-46af-b8f6-30c4c58c5cbb.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>。</span></div>
+    <p><em>Ah, ok, I&#x27;ll go now.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>弟弟</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>个子</span><span>比</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>矮</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>最大</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>爱好</span><span>就是</span><span>打</span><span>篮球</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>从小</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>爱好</span><span>音乐</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>孩子</span><span>们</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>睡着</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>家里</span><span>安静</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>下来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>安静</span><span>桌子</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>铅笔</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>房间</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>四</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>椅子</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>三</span><span>年级</span><span>二</span><span>班</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>帮</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>张</span><span>桌子</span><span>搬到</span><span>楼下</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>别急</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>办法</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请问</span><span>，</span><span>校长</span><span>办公</span><span>室</span><a style="text-decoration:none" href="../../zh/word/%E6%80%8E%E4%B9%88/index.html">怎么</a><a style="text-decoration:none" href="../../zh/word/%E8%B5%B0/index.html">走</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6ee8d658-c52d-41f8-a1b2-565cfc706bca.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>三</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><span>半</span><span>。</span></div>
+    <p><em>It&#x27;s half past three.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>包</span><span>忘</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>房间</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>吃饱</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_e2606d97-bf2f-49d9-b050-85812d5ac2df.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>姐姐</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>鼻子</span><span>很高</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>漂亮</span><span>。</span></div>
+    <p><em>My sister&#x27;s nose is very high and beautiful.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><span>天气</span><span>比较</span><span>冷</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><span>晚上</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>足球</span><span>比赛</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>比赛</span><span>跑步</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>新</span><span>买</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>笔记</span><span>本</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>今天</span><span>必须</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>上班</span><span>。</span></div>
+    <p><em>I have to go to work today.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>城市</span><span>变化</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><span>太快</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>别人</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E8%B5%B0/index.html">走</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><span>，</span><span>只有</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>才</span><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><span>做好</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>服务</span><span>员</span><span>，</span><span>请</span><span>帮</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>菜单</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>次</span><span>会议</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>两百多</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>参加</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>春天</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>小草绿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>住</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>三</span><span>层</span><span>，</span><span>306</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>次</span><span>考试</span><span>考得</span><span>很差</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>差5</span><span>分</span><span>12</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_14b19ac8-0eb4-48cc-9692-f4b885ae63bb.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>姐姐</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>头发</span><span>又</span><span>黑</span><span>又</span><span>长</span><span>。</span></div>
+    <p><em>My sister&#x27;s hair is black and long.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>家</span><span>超市</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>东西</span><span>比较</span><span>便宜</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>穿</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><span>衬衫</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>网上</span><span>查到</span><span>考试</span><span>成绩</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>城市</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>起</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>今天</span><span>又</span><span>迟到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>春天</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>年</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>开始</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>本</span><span>词典</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>学习</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>帮助</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>准备</span><span>周末</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>房间</span><span>打扫</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>打算</span><span>下个</span><span>星期</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>旅游</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_9ebfb9f6-3a54-4b2e-a86c-df2a2b65f033.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>结婚</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>打算</span><span>。</span></div>
+    <p><em>I have no plans to get married yet.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>今天</span><span>忘记</span><span>带钱</span><span>包</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>爷爷</span><span>住院</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>担心</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>饿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span><span>先</span><span>吃</span><span>块</span><span>蛋糕</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>生病</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>当然</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>看看</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A4%A9/index.html">天</a><span>慢慢</span><span>地</span><span>黑</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_60be21c7-1e04-411c-934a-bc5dd056a096.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>地方</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>三</span><span>次</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    <p><em>I&#x27;ve been to this place three times.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>先</span><span>坐</span><span>三</span><span>站</span><span>地铁</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E8%B5%B0/index.html">走</a><span>一会儿</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>手机</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>电子</span><span>地图</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>坐</span><span>电梯</span><span>上去</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>晚上</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>发</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>电子</span><span>邮件</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>一直</span><span>向</span><span>东走</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>北方</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>冬天</span><span>很冷</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>动物</span><span>园</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>一百多</span><span>种</span><span>动物</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>段</span><span>时间</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>很忙</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>每天</span><span>早上</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>锻炼</span><span>身体</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_27d3ed9d-c294-4e3a-82d1-c0030816489f.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a><span>多么</span><span>漂亮</span><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>！</span></div>
+    <p><em>How beautiful it is here!</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_c1ef12a9-79eb-4e27-90be-003e00304f00.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>饿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>吃</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><span>东西</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>耳朵</span><span>有点</span><span>疼</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>医院</span><span>看看</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>发</span><span>电子</span><span>邮件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>身体</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>舒服</span><span>，</span><span>发烧</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>发现</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>瘦</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>很多</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>坐</span><span>地铁</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>上班</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>方便</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>书放</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>桌子</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>放心</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>事情</span><span>办</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>苹果</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>分成</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>两</span><span>块儿</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>他家</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>住</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>公司</span><span>附近</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2779cffc-2202-4f78-b0a0-a1d9f8aaa80d.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>考试</span><span>前</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>好好</span><span>地</span><span>复习</span><span>。</span></div>
+    <p><em>Review well before the exam.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>衣服</span><span>洗</span><span>干净</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>感冒</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>吃</span><span>点儿</span><span>药</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>刚才</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%B0%81/index.html">谁</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>电话</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_c1343b84-45fb-44b0-9e88-424eb43678bc.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>哥哥</span><span>比</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>子</span><span>高</span><span>。</span></div>
+    <p><em>My brother is taller than me.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>根据</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>姐姐</span><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><span>妈妈</span><span>一起</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>公园</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>比</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>更</span><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>游泳</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>买</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>公斤</span><span>鸡蛋</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_ba50b30e-7dcc-4e2b-90c8-3788c60aac7a.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>睡觉</span><span>前</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>女儿</span><span>讲</span><span>故事</span><span>。</span></div>
+    <p><em>Before going to bed, I tell my daughter a story.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><span>刮风</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%88%AB/index.html">别</a><span>骑</span><span>自行</span><span>车</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>关上</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>门</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>电视</span><span>关</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><a style="text-decoration:none" href="../../zh/word/%E5%A5%B9/index.html">她</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>关系</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_340998e9-a6f2-427d-a2b8-04970a48b892.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>爸爸</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>关心</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>学习</span><span>。</span></div>
+    <p><em>Dad is very concerned about my study.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%B0%A2%E8%B0%A2/index.html">谢谢</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>关心</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>身体</span><span>好多</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>关于</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>一想</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>爱</span><span>旅游</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>几十</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>国家</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_4c36c80a-a274-4d49-a19e-1bbb437d4975.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>奶奶</span><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>讲</span><span>过去</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>事情</span><span>。</span></div>
+    <p><em>Grandma often tells me about the past.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>过去</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>北京</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>其他</span><span>地方</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>还是</span><span>吃</span><span>点儿</span><span>水果</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%88%AB/index.html">别</a><span>喝</span><span>啤酒</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>开车</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>还是</span><span>坐</span><span>公共</span><span>汽车</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>大家</span><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>黑板</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>后来</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><span>见</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>护照</span><span>办</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>花</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>不少</span><span>钱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>妈妈</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>生日</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>送</span><span>一些</span><span>花给</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%B9/index.html">她</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>小</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>画画儿</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>面包</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>新鲜</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>坏</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>坏</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>忘记</span><span>带</span><span>护照</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>书</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>图书</span><span>馆</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>环境</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>不错</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a><span>住</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>舒服</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>等</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>换件</span><span>衣服</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>银行</span><span>换</span><span>点儿</span><span>钱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>黄河</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>中国</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>第二</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>河</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>下午</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>会议</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>，</span><span>或者</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>。</span></div>
+    <p><em>You go, or I go, it doesn&#x27;t matter.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>希望</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>机会</span><span>参加</span><span>比赛</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_ec7b8380-4b51-474d-8f73-7938b7125b3c.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>音乐</span><span>极</span><span>感</span><span>兴趣</span><span>。</span></div>
+    <p><em>He is very interested in music.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>节目</span><span>好看</span><span>极</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>记得</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>住</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>哪儿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>年</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>四</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>季节</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>医院</span><span>检查</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>身体</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>这些</span><span>题</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>简单</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>上次</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>见面</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>去年</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b366311a-b81e-46b9-8d14-a34d532403cc.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>爸爸</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>身体</span><span>特别</span><span>健康</span><span>。</span></div>
+    <p><em>Dad is very healthy.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>桌子</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>五</span><span>角</span><span>钱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>房间</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>角</span><span>放</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>很多</span><span>书</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>妹妹</span><span>脚上</span><span>穿</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><span>漂亮</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>红皮鞋</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>李</span><span>老师</span><span>教</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>数学</span><span>。</span></div>
+    <p><em>Teacher Li teaches us mathematics.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>下午</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>机场</span><span>接</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>条</span><span>街道</span><span>很长</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>四千多米</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>结婚</span><span>10</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>会议</span><span>马上</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>结束</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>打算</span><a style="text-decoration:none" href="../../zh/word/%E6%80%8E%E4%B9%88/index.html">怎么</a><span>解决</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>图书</span><span>馆</span><span>借</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>三</span><span>本</span><span>书</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>学校</span><span>遇到</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>下班</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>经过</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>条</span><span>街道</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>经过</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>终于</span><span>明白</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>公司</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>经理</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>很久</span><span>才</span><span>明白</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><span>衣服</span><span>穿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>两</span><span>年</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>旧</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>经理</span><span>决定</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>做出</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>决定</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>儿子</span><a style="text-decoration:none" href="../../zh/word/%E7%9C%9F/index.html">真</a><span>可爱</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>渴</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>喝点</span><span>儿</span><span>水</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>三点</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>刻</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>太热</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>请</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>空调</span><span>打开</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>家</span><span>一共</span><span>三</span><span>空调</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>学好</span><span>外语</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><span>开口</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>孩子</span><span>又</span><span>哭</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>起来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_eca1521d-d8e5-4729-bc4d-a0fbda2aa5f8.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>条</span><span>裤子</span><span>有点</span><span>儿</span><span>短</span><span>。</span></div>
+    <p><em>These trousers are a little short.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>条</span><span>蓝</span><span>裙子</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>爷爷</span><span>六十</span><span>岁</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>起来</span><span>一点</span><span>儿</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>不老</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>下个</span><span>月</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>离开</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>段</span><span>时间</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>好好</span><span>照顾</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>学</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>东西</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><span>练习</span><span>才</span><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><span>记住</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>同学</span><span>们</span><span>，</span><span>下面</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>开始</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><span>练习</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>辆</span><span>车</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>新</span><span>买</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>网上</span><span>聊天</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E5%A5%B9/index.html">她</a><span>了解</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><span>不多</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><span>邻居</span><span>们</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>关系</span><span>非常</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>哥哥</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>中国</span><span>留学</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>家</span><span>楼下</span><span>等</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>春天</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>树</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>草</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>绿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>学会</span><span>骑马</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6efccc24-6d75-4efc-ac5d-6f42a607865d.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>马上</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>学校</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><span>等</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>几</span><span>分钟</span><span>。</span></div>
+    <p><em>I&#x27;ll be at school right away, wait for me for a few more minutes.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>经理</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>满意</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>帽子</span><span>太小</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>一点</span><span>儿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_55d9d344-fdbe-496b-95ee-0be3ad58ba9a.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>张</span><span>桌子</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>两</span><span>米</span><span>长</span><span>。</span></div>
+    <p><em>This table is two meters long.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>面包</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>卖完</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_b8057bfb-9600-4a3b-ab36-e871e92168b3.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>服务</span><span>员</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>碗</span><span>面条</span><span>。</span></div>
+    <p><em>Waiter, I want a bowl of noodles.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>明白</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>意思</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>明白</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>懂</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>手里</span><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>奶奶</span><span>住</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>北京</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>我家</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>火车</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>南边</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>题</span><span>很难</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>离开</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>难过</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>儿子</span><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>三</span><span>年级</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>树上</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>鸟</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>唱歌</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>学生</span><span>们</span><span>学习</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>努力</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>决定</span><span>明天</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>爬山</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>盘子</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><span>有鱼</span><span>，</span><span>请</span><span>吃</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>月</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>胖</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>五</span><span>斤</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>穿着</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>双</span><span>黑色</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>皮鞋</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_e0637220-7a65-4c06-ab01-202379215e5f.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>爸爸</span><span>爱</span><span>喝</span><span>啤酒</span><span>。</span></div>
+    <p><em>Dad loves beer.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>其实</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%AA/index.html">太</a><span>了解</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>只有</span><span>小明</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>教室</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><span>，</span><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>回家</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%A7%89%E5%BE%97/index.html">觉得</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>奇怪</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>骑</span><span>自行</span><span>车</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>学校</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><span>事儿</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>清楚</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    <p><em>He made the matter very clear.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_0dc01b07-bccb-469c-a7d3-6bd5751f03ad.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>清楚</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>句</span><span>话</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>意思</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>秋天</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><span>舒服</span><span>，</span><span>不冷</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>不热</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2e705932-5e03-475a-b0f2-e8479ed2be49.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>姐姐</span><span>穿</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><span>漂亮</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>裙子</span><span>。</span></div>
+    <p><em>My sister is wearing a beautiful dress.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>先</span><span>写完</span><span>作业</span><span>，</span><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>电视</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>热情</span><span>地</span><span>欢迎</span><span>客人</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>认为</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    <p><em>Do you think he will come?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>同学</span><span>学习</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>认真</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>努力</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>问题</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>容易</span><span>回答</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_c4abae05-91ef-4397-baa1-c3d397045794.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A6%82%E6%9E%9C/index.html">如果</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>一起</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>。</span></div>
+    <p><em>If you go, I will go with you.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>下雨</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%88%AB/index.html">别</a><span>忘</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>带伞</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>上网</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>看看</span><span>新闻</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><a style="text-decoration:none" href="../../zh/word/%E5%88%AB/index.html">别</a><span>生气</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>错</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>起</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%90%AC/index.html">听</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>声音</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6381c6e8-c59f-4eb0-a916-129ea15a5141.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>世界</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>国家</span><span>。</span></div>
+    <p><em>There are many countries in the world.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>试</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><span>件</span><span>红色</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>姐姐</span><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><span>很瘦</span><span>，</span><span>只有</span><span>45</span><span>公斤</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>月</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>瘦</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>三</span><span>斤</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>叔叔</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>本</span><span>书</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>坐</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E7%9C%9F/index.html">真</a><span>舒服</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>学校</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>树</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>睡觉</span><span>前</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>刷牙</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>汉</span><span>语</span><span>水平</span><span>很高</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>位</span><span>司机</span><span>开出</span><span>租</span><span>车</span><span>5</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>，</span><span>太阳</span><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_11c333d8-0a46-45c0-bed0-86b7b86aebfd.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>特别</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>一起</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>。</span></div>
+    <p><em>I especially want to go with you.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>菜</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>做法</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>特别</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>腿</span><span>有点</span><span>儿</span><span>疼</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>数学</span><span>成绩</span><span>提高</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>不少</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>体育</span><span>运动</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>西瓜</span><a style="text-decoration:none" href="../../zh/word/%E7%9C%9F/index.html">真</a><span>甜</span><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><span>！</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>条</span><span>裤子</span><span>有点</span><span>儿</span><span>长</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%AA/index.html">太</a><span>同意</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>想法</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>突然</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>起来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>小狗</span><span>突然</span><span>跑</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>出来</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>图书</span><span>馆</span><span>借来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>两</span><span>本</span><span>书</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>腿</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><span>疼</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>周末</span><span>前</span><span>必须</span><span>完成</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>米饭</span><span>放</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>碗</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>吃</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>碗</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>学校</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>一万</span><span>名</span><span>学生</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>忘记</span><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>生日</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>这些</span><span>菜</span><span>都是</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>准备</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>为了</span><span>身体</span><span>健康</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>每天</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>运动</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>真是</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><span>老师</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>中国</span><span>文化</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>感</span><span>兴趣</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>火车</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>西边</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>走错</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>饭前</span><span>洗手</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><span>习惯</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>洗手</span><span>间</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>太热</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>先</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>洗澡</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今年</span><span>夏天</span><span>太热</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>先</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小时</span><span>后</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>吃</span><span>香蕉</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>向东走</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>看到</span><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>学校</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>长</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><a style="text-decoration:none" href="../../zh/word/%E5%83%8F/index.html">像</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>爸爸</span><span>。</span></div>
+    <p><em>He looks like his father.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f128dd8f-80bf-48d6-bf51-3561f4c21e47.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>请</span><span>小心</span><span>，</span><span>路上</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>水</span><span>。</span></div>
+    <p><em>Be careful, there is a lot of water on the road.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>每天</span><span>晚上</span><span>七</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>新闻</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>这些</span><span>都是</span><span>新鲜</span><span>水果</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>银行</span><span>办</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>张</span><span>信用</span><span>卡</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>行李</span><span>箱</span><span>打开</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>特别</span><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>动物</span><span>园</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>大熊猫</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f3d19ae1-ea3b-4b18-9e7f-0609dcc718f8.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>需要</span><span>一些</span><span>帮助</span><span>。</span></div>
+    <p><em>We need some help.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今年</span><span>夏天</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>选择</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>哪儿</span><span>旅游</span><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>需要</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><span>做出</span><span>选择</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>老师</span><span>要求</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>这些</span><span>题</span><span>做完</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>爸爸</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>要求</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_03278836-3d71-4934-9669-79951f5f8414.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>爷爷</span><span>，</span><span>请</span><span>您</span><span>坐</span><span>这儿</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    <p><em>Grandpa, please sit here.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>明天</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>会议</span><span>，</span><span>请</span><span>大家</span><span>一定</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>参加</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>汉</span><span>语</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>一定</span><span>水平</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_26dfd4ce-12a1-45be-97a8-bad29e80175e.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>班</span><span>一共</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>20</span><span>名</span><span>学生</span><span>。</span></div>
+    <p><em>There are 20 students in our class.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>一会儿</span><span>电视</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>睡觉</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><span>爸爸</span><span>长</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><span>一样</span><span>。</span></div>
+    <p><em>He looks just like dad.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>一般</span><span>7</span><span>点钟</span><span>起床</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>一边</span><span>看书</span><span>，</span><span>一边</span><a style="text-decoration:none" href="../../zh/word/%E5%90%AC/index.html">听</a><span>音乐</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>一直</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>明白</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>句</span><span>话</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>意思</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>电影</span><span>以前</span><span>，</span><span>先</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>吃</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>饭</span><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_a3d3d335-ae38-410b-b049-9bb970d32fc2.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A5%B9/index.html">她</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>音乐</span><span>节目</span><span>。</span></div>
+    <p><em>She likes watching music shows the most.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>银行</span><span>下午</span><span>5</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><span>关门</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>冰箱</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>饮料</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>8</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>应该</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>上班</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>不要</span><span>影响</span><span>别人</span><span>休息</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>环境</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很大</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>影响</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>两</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小时</span><span>打扫</span><span>房间</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>孩子</span><span>们</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>玩儿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>游戏</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>本</span><span>书</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>有名</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>休息</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>一会儿</span><span>，</span><span>又</span><span>开始</span><span>工作</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>刚才</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>街上</span><span>遇到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>张先生</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>愿意</span><span>帮助</span><span>别人</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>越</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>越</span><span>高兴</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>爸爸</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>身边</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>火车</span><span>站</span><span>，</span><span>坐</span><span>地铁</span><span>3</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_4d548394-fbdf-4838-88ec-2a6b211ce1e9.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>请</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>站</span><span>纸</span><span>。</span></div>
+    <p><em>Please give me a stop of paper.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>小</span><span>女孩</span><span>儿</span><span>张开</span><span>嘴</span><span>，</span><span>笑</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>生病</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>，</span><span>妈妈</span><span>一直</span><span>照顾</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>这些</span><span>年</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>很多</span><span>照顾</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>小</span><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>照片</span><span>。</span></div>
+    <p><em>This is a photo of me when I was a child.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>新</span><span>买</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>照相</span><span>机</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><span>鞋</span><a style="text-decoration:none" href="../../zh/word/%E6%89%BE/index.html">找</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>树上</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><span>小猫</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>中间</span><span>，</span><span>旁边</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>同学</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>春天</span><span>终于</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>超市</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>很多</span><span>种</span><span>新鲜</span><span>水果</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d82bc5a6-a236-4e6b-b957-67c67b5f1c27.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>忘</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>件</span><span>重要</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>事情</span><span>。</span></div>
+    <p><em>I forgot one important thing.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d765153b-42cd-4bc6-8090-898a9b2a919c.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>本</span><span>书</span><span>主要</span><span>讲</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>些</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>？</span></div>
+    <p><em>What is this book mainly about?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>遇到</span><span>事情</span><span>，</span><span>不要</span><span>着急</span><span>。</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>总</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a></div>
+    
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

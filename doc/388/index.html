@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>similar 汉字 - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  similar 汉字
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><span>勒</span><span>。</span><span>勤</span><span>。</span></div>
+    <p><em>Le. diligent.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>眠</span><span>。</span><span>眼</span><span>。</span></div>
+    <p><em>
+sleep. Eye.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f166370c-9632-471b-ba69-b1ac5914e622.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>凑</span><span>。</span><span>棒</span><span>。</span><span>捧杀</span><span>。</span><span>泰</span></div>
+    <p><em>
+get together. Great. to kill. Thai</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>大楼</span><span>vs</span><span>数值</span></div>
+    <p><em>
+Building vs Value</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>束</span><span>vs</span><span>柬</span></div>
+    <p><em>
+Bunch vs Cambodia</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>胸</span><span>vs</span><span>脑</span></div>
+    <p><em>
+chest vs brain</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>灾难</span><span>vs</span><span>灭</span></div>
+    <p><em>
+disaster vs extinction</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>锅</span><span>vs</span><span>燕窝</span><span>vs</span><span>祸</span></div>
+    <p><em>
+Pot vs Bird&#x27;s Nest vs Bane</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>臣</span><span>vs</span><span>康熙</span><span>vs</span><span>卧室</span><span>vs</span><span>俯卧</span><span>撑</span></div>
+    <p><em>
+Chen vs Kangxi vs Bedroom vs Pushups</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>精髓</span><span>vs</span><span>骨骼</span></div>
+    <p><em>
+Essence vs Bones</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>祈</span><span>vs</span><span>折</span></div>
+    <p><em>
+Pray vs Fold</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>损</span><span>vs</span><span>捐</span></div>
+    <p><em>
+Lose vs Donate</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>鬼伐</span><span>vs</span><span>代</span></div>
+    <p><em>
+Ghost Fell vs Generation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>架构</span><span>祝贺</span></div>
+    <p><em>
+architecture congratulations</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>吕</span><span>小军</span><span>宫</span><span>营</span><span>铝</span></div>
+    <p><em>
+Lu Xiaojun Palace Camp Aluminum</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>讳</span><span>Avoid</span><span>mentioning</span><span>,</span><span>taboo</span><span>word</span></div>
+    <p><em>
+Taboo Avoid mentioning, taboo word</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>嫌</span><span>double</span><span>women</span><span>==</span><span>suspicion</span><span>and</span><span>resentment</span></div>
+    <p><em>
+Suspect double women == suspicion and resentment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>揭秘</span><span>vs</span><span>喝</span><span>vs</span><span>渴</span><span>vs</span><span>歇</span><span>vs</span><span>葛</span><span>vs</span><span>竭</span></div>
+    <p><em>
+Reveal vs drink vs thirst vs rest vs ge vs exhaustion</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>常务</span><span>委员</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>vs</span><span>人类</span></div>
+    <p><em>
+Standing Committee vs Humans</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>准备</span><span>vs</span><span>番茄</span></div>
+    <p><em>
+Prep vs Tomato</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>稳定</span><span>vs</span><span>隐私</span></div>
+    <p><em>
+Stability vs Privacy</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d6169253-ba33-4269-beaa-969763709258.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>消失</span><span>vs</span><span>大跌</span><span>vs</span><span>朱</span><span>vs</span><span>。</span><span>矢</span><span>vs</span><span>知</span><span>vs</span><span>族</span></div>
+    <p><em>
+Disappeared vs Slumped vs Zhu vs. Yav vs Chi vs Clan</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>莱</span><span>vs</span><span>菜</span></div>
+    <p><em>
+Lai vs Dish</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>伊</span><span>vs</span><span>君</span><span>vs</span><span>群众</span><span>vs</span><span>裙子</span></div>
+    <p><em>
+Yi vs Jun vs Mass vs Skirt</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>蓬勃</span><span>，</span><span>降落</span><span>。。。</span><span>网络</span></div>
+    <p><em>
+boom, drop. . . network</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>尖尖</span><span>。</span><span>吸尘</span><span>机</span><span>。</span></div>
+    <p><em>
+Pointy. vacuum cleaner.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>叶</span><span>vs</span><span>吐掉</span></div>
+    <p><em>
+leaf vs spit</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>粗鲁</span><span>vs</span><span>兽</span></div>
+    <p><em>
+rude vs beast</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>舍</span><span>vs</span><span>啥</span><span>vs</span><span>舒服</span></div>
+    <p><em>
+Home vs What vs Comfort</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>诱惑</span><span>vs</span><span>感觉</span></div>
+    <p><em>
+Temptation vs feeling</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>辛勤</span><span>vs</span><span>鞋子</span><span>vs</span><span>霸</span></div>
+    <p><em>
+hard work vs shoes vs bully</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>庄</span><span>vs</span><span>压力</span></div>
+    <p><em>
+Chuang vs pressure</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3da2a77d-f434-4f76-916d-00db763fae4a.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>暂停</span><span>vs</span><span>哲学</span><span>vs</span><span>智慧</span></div>
+    <p><em>
+Pause vs Philosophy vs Wisdom</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>族</span><span>vs</span><span>游</span></div>
+    <p><em>
+clan vs tour</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>致富</span><span>vs</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a></div>
+    <p><em>
+get rich vs to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>货币</span><span>vs</span><span>市场</span></div>
+    <p><em>
+currency vs market</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>撞到</span><span>vs</span><span>摘</span><span>vs</span><span>滴滴</span></div>
+    <p><em>
+bumped vs pick vs drip</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>旅</span><span>，</span><span>游戏</span><span>，</span><span>游泳</span><span>，</span><span>族</span><span>，</span><span>放</span></div>
+    <p><em>
+trip, game, swimming, clan, put</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>各</span><span>，</span><span>洛</span><span>，</span><span>落</span><span>，</span><span>客</span><span>，</span><span>合格</span></div>
+    <p><em>
+Each, Luo, Fall, Guest, Qualified</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>禁止</span><span>。</span><span>清楚</span><span>。</span></div>
+    <p><em>
+prohibit. clear.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>临时</span><span>，</span><span>蓝色</span><span>，</span><span>监督</span><span>，</span><span>浏览</span><span>，</span><span>打</span><span>篮球</span><span>。</span></div>
+    <p><em>
+Temporary, blue, supervising, browsing, playing basketball.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>区域</span><span>，</span><span>领域</span><span>，</span><span>或</span><span>，</span><span>咸</span><span>，</span><span>感</span><span>。</span></div>
+    <p><em>
+area, realm, or, salty, sense.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>详细</span><span>vs</span><span>一样</span></div>
+    <p><em>
+detailed vs same</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>杨</span><span>vs</span><span>场</span></div>
+    <p><em>
+Young vs Field</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>营</span><span>vs</span><span>宫</span></div>
+    <p><em>
+Camp vs Palace</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_358369b1-18f8-4b90-8afa-1d7f6cf24965.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>洛</span><span>vs</span><span>落</span></div>
+    <p><em>
+Lo vs Drop</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>夏季</span><span>vs</span><span>李</span></div>
+    <p><em>
+Summer vs Lee</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>希腊</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>艘</span><span>油轮</span><span>vs</span><span>散步</span></div>
+    <p><em>
+Greece, a tanker vs a walk</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>遇到</span><span>vs</span><span>偶</span></div>
+    <p><em>
+encounter vs couple</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>繁 敏</span></div>
+    <p><em>
+fanciful</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>瓜</span><span>孤</span></div>
+    <p><em>
+melon solitary</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>教授</span><span>vs</span><span>援助</span></div>
+    <p><em>
+Professor vs Aid</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>缩略</span><span>。</span><span>宿营</span><span>。</span></div>
+    <p><em>
+Abbreviated. Camp.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>措施</span><span>，</span><span>错失</span><span>，</span><span>希腊</span></div>
+    <p><em>
+measure, miss, greece</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_0537a194-c695-4e06-bb8f-e96446551a72.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>欺负</span><span>，</span><span>欺骗</span><span>，</span><span>斯</span><span>，</span><span>期间</span><span>，</span><span>其</span></div>
+    <p><em>
+bully, deceive, s, period, its</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>惩罚</span></div>
+    <p><em>
+i may be punished</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>纯</span><span>vs</span><span>顿</span></div>
+    <p><em>
+Pure vs Dayton</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6752c62b-11e8-4d40-bc30-5bdc1a40a765.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>疏散</span><span>vs</span><span>蔬菜</span><span>vs</span><span>撒谎</span></div>
+    <p><em>
+Evacuation vs Vegetables vs Lying</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>间</span><span>vs</span><span>简</span><span>vs</span><span>箭</span></div>
+    <p><em>
+Room vs Jane vs Arrow</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>埃及</span><span>vs</span><span>挨打</span></div>
+    <p><em>
+egypt vs beaten</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>埋</span><span>vs</span><span>理</span></div>
+    <p><em>
+Buried vs.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>庇护</span><span>vs</span><span>屁股</span></div>
+    <p><em>
+Asylum vs Ass</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>瑟</span><span>vs</span><span>钢琴</span><span>vs</span><span>智慧</span></div>
+    <p><em>
+Se vs Piano vs Wisdom</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>逮捕</span><span>vs</span><span>店铺</span></div>
+    <p><em>
+Arrest vs Shop</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>椅</span><span>vs</span><span>奇</span><span>vs</span><span>骑</span><span>vs</span><span>寄</span></div>
+    <p><em>
+Chair vs Odd vs Ride vs Send</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>卢旺达</span></div>
+    <p><em>
+Rwanda</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>篮子</span><span>vs</span><span>蓝色</span></div>
+    <p><em>
+Basket vs Blue</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>愉悦</span><span>vs</span><span>税</span><span>vs</span><span>脱</span><span>vs</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>vs</span><span>新锐</span></div>
+    <p><em>
+Pleasure vs Tax vs Strip vs Say vs Cutie</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>偷懒</span><span>vs</span><span>愉悦</span></div>
+    <p><em>
+Lazy vs Pleasure</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>删</span><span>vs</span><span>注册</span></div>
+    <p><em>
+delete vs register</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>参加</span><span>vs</span><span>悲惨</span><span>vs</span><span>诊</span><span>vs</span><span>珍</span><span>vs</span><span>皮疹</span></div>
+    <p><em>
+Attend vs Miserable vs Diagnosis vs Jen vs Rash</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>嘴唇</span><span>vs</span><span>辱</span><span>vs</span><span>凌晨</span></div>
+    <p><em>
+Lips vs Humiliation vs Wee</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>晚</span><span>vs</span><span>挽</span><span>vs</span><span>换</span><span>vs</span><span>唤</span></div>
+    <p><em>
+night vs pull vs swap vs call</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>伊朗</span><span>vs</span><span>君子</span><span>vs</span><span>裙子</span></div>
+    <p><em>
+iran vs gentleman vs skirt</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>确诊</span><span>vs</span><span>珍贵</span></div>
+    <p><em>
+Diagnosed vs Precious</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>装甲</span><span>vs</span><span>甲骨文</span><span>vs</span><span>申</span><span>vs</span><span>由</span><span>vs</span><span>审</span><span>vs</span><span>抽象</span></div>
+    <p><em>
+Armor vs Oracle vs Shen vs By vs Trial vs Abstract</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>夫</span><span>vs</span><span>未</span><span>vs</span><span>末</span></div>
+    <p><em>
+husband vs not vs last</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>申</span><span>vs</span><span>甲</span></div>
+    <p><em>
+Shen vs A</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d0193cdf-e1ba-4557-8311-2302b76091e6.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>某</span><span>vs</span><span>莫</span></div>
+    <p><em>
+a vs mo</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>答</span><span>vs</span><span>签</span></div>
+    <p><em>
+Answer vs sign</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>县</span><span>vs</span><span>外套</span><span>vs</span><span>教育</span><span>vs</span><span>磁悬浮</span><span>vs</span><span>肆意</span></div>
+    <p><em>
+county vs coat vs education vs maglev vs wanton</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>毕</span><span>vs</span><span>华</span></div>
+    <p><em>
+Bi vs Hua</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>诺</span><span>vs</span><span>若</span><span>vs</span><span>左</span><span>vs</span><span>苦</span></div>
+    <p><em>
+Nuo vs Ruo vs Left vs Bitter</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>着急</span><span>vs</span><span>稳定</span></div>
+    <p><em>
+anxious vs stable</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_dabe1b2f-cf64-4f50-89cd-d4cf1599b4d9.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>可惜</span><span>。</span><span>散步</span><span>。</span><span>借</span><span>。</span><span>错误</span><span>。</span><span>希腊</span><span>。</span><span>猎人</span><span>。</span></div>
+    <p><em>
+pity. walk. borrow. mistake. Greece. hunter.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_f8a5de73-d992-400a-ae20-445394e04bd1.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>儿童</span><span>vs</span><span>意</span><span>vs</span><span>文章</span></div>
+    <p><em>
+Children vs Italians vs Articles</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>午</span><span>vs</span><span>牛</span></div>
+    <p><em>
+Lunch vs Bull</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>伊朗</span><span>vs</span><span>立即</span></div>
+    <p><em>
+iran vs immediate</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>尊</span><span>vs</span><span>遵</span></div>
+    <p><em>
+Respect vs Obey</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_de200082-b85f-46d6-b188-71262e9c0e17.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>忽视</span><span>vs</span><span>残忍</span></div>
+    <p><em>
+Neglect vs Cruelty</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>暴</span><span>vs</span><span>比赛</span></div>
+    <p><em>
+violence vs match</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>竟</span><span>vs</span><span>意</span></div>
+    <p><em>
+actually vs intention</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>充</span><span>vs</span><span>允</span></div>
+    <p><em>
+Charge vs allow</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>放弃</span><span>vs</span><span>差异</span><span>vs</span><span>领导</span><span>vs</span><span>弈</span></div>
+    <p><em>
+Abandon vs Difference vs Lead vs Che</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>斯</span><span>vs</span><span>期</span></div>
+    <p><em>
+s vs period</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

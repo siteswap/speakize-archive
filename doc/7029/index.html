@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Adriana 28_12_2022 - Spanish - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  Adriana 28_12_2022
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_6eee9886-1742-4c6f-b07d-ef33b3c70bf0.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/lo/index.html">lo</a><span>borré</span><a style="text-decoration:none" href="../../es/word/porque/index.html">porque</a><span>pierdo</span><a style="text-decoration:none" href="../../es/word/el/index.html">el</a><a style="text-decoration:none" href="../../es/word/tiempo/index.html">tiempo</a></div>
+    <p><em>I deleted it because I waste time</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_a65782a0-d4f1-44aa-8c3d-1dcb9be014c3.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/para/index.html">Para</a><span>chicas</span><span>jóvenes</span><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><span>especialmente</span><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><span>saludable</span></div>
+    <p><em>For young girls it is especially unhealthy</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_47d4ad74-7bef-4fea-966b-8e403fd1f859.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/la/index.html">la</a><span>pandemia</span><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><a style="text-decoration:none" href="../../es/word/un/index.html">un</a><span>factor</span></div>
+    <p><em>the pandemic is a factor</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>mucho</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><a style="text-decoration:none" href="../../es/word/algo/index.html">algo</a><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><span>malo</span></div>
+    <p><em>Much of something is bad</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/la/index.html">La</a><span>hija</span><a style="text-decoration:none" href="../../es/word/del/index.html">del</a><span>medio</span></div>
+    <p><em>The middle daughter</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_37ca3fb4-d284-4acc-835b-95ff1991ae12.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/por/index.html">por</a><span>suerte</span><span>,</span><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><span>usarán</span><a style="text-decoration:none" href="../../es/word/las/index.html">las</a><span>redes</span><span>sociales</span><a style="text-decoration:none" href="../../es/word/por/index.html">por</a><span>muchos</span><span>años</span></div>
+    <p><em>luckily, they will not use social networks for many years</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>tienen</span><a style="text-decoration:none" href="../../es/word/su/index.html">su</a><span>propia</span><span>cuenta</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><span>tiktok</span><span>,</span><a style="text-decoration:none" href="../../es/word/pero/index.html">pero</a><a style="text-decoration:none" href="../../es/word/se/index.html">se</a><span>sienten</span><span>solos</span></div>
+    <p><em>they have their own tiktok account, but they feel lonely</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>normalmente</span><span>,</span><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><span>espero</span><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><span>coma</span><span>tanto</span></div>
+    <p><em>Normally, I don&#x27;t expect him to eat that much.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/le/index.html">le</a><span>dije</span><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/no/index.html">no</a><span>puede</span><span>tener</span><a style="text-decoration:none" href="../../es/word/su/index.html">su</a><span>propio</span><span>tiktok</span><span>,</span><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><span>demasiado</span><span>adictivo</span></div>
+    <p><em>I told him he can&#x27;t have his own tiktok, it&#x27;s too addictive</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/tengo/index.html">tengo</a><a style="text-decoration:none" href="../../es/word/un/index.html">un</a><span>problema</span><a style="text-decoration:none" href="../../es/word/con/index.html">con</a><a style="text-decoration:none" href="../../es/word/las/index.html">las</a><span>recomendaciones</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><span>youtube</span></div>
+    <p><em>I have a problem with youtube recommendations</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/porque/index.html">porque</a><a style="text-decoration:none" href="../../es/word/nunca/index.html">nunca</a><span>tuve</span><a style="text-decoration:none" href="../../es/word/una/index.html">una</a><span>cuenta</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><span>twitter</span><span>,</span><a style="text-decoration:none" href="../../es/word/nunca/index.html">nunca</a><a style="text-decoration:none" href="../../es/word/la/index.html">la</a><span>borré</span></div>
+    <p><em>because I never had a twitter account, I never deleted it</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/creo/index.html">creo</a><a style="text-decoration:none" href="../../es/word/que/index.html">que</a><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><a style="text-decoration:none" href="../../es/word/una/index.html">una</a><span>pérdida</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><a style="text-decoration:none" href="../../es/word/tiempo/index.html">tiempo</a></div>
+    <p><em>I think it&#x27;s a waste of time</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>¿</span><a style="text-decoration:none" href="../../es/word/esta/index.html">Esta</a><span>frase</span><span>suena</span><span>natural</span><span>?</span></div>
+    <p><em>Does this sentence sound natural?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>¿</span><span>Estudias</span><a style="text-decoration:none" href="../../es/word/los/index.html">los</a><span>efectos</span><a style="text-decoration:none" href="../../es/word/de/index.html">de</a><a style="text-decoration:none" href="../../es/word/las/index.html">las</a><span>redes</span><span>sociales</span><a style="text-decoration:none" href="../../es/word/en/index.html">en</a><a style="text-decoration:none" href="../../es/word/los/index.html">los</a><span>jóvenes</span><span>?</span></div>
+    <p><em>Do you study the effects of social networks on young people?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/es/index.html">es</a><a style="text-decoration:none" href="../../es/word/un/index.html">un</a><span>fenómeno</span><span>nuevo</span><span>,</span><a style="text-decoration:none" href="../../es/word/era/index.html">era</a><span>diferente</span><span>hace</span><span>10</span><span>años</span></div>
+    <p><em>It&#x27;s a new phenomenon, it was different 10 years ago</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Ellos</span><a style="text-decoration:none" href="../../es/word/se/index.html">se</a><span>sienten</span><span>solos</span></div>
+    <p><em>they feel alone</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../es/word/cuando/index.html">cuando</a><span>consiga</span><a style="text-decoration:none" href="../../es/word/un/index.html">un</a><span>teléfono</span><span>será</span><span>difícil</span></div>
+    <p><em>when i get a phone it will be hard</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

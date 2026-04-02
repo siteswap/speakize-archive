@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>很可能是的 - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  很可能是的
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>probably yes</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>两</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>一起</span></div>
+    <p><em>two people together</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><span>只有</span><span>一切</span></div>
+    <p><em>now only everything</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>妈妈</span><span>带</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a></div>
+    <p><em>mom take us</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>又</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>次</span></div>
+    <p><em>here we go again</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>看到</span><a style="text-decoration:none" href="../../zh/word/%E5%85%88%E7%94%9F/index.html">先生</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a></div>
+    <p><em>do you see sir</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9F%A5%E9%81%93/index.html">知道</a><a style="text-decoration:none" href="../../zh/word/%E6%80%8E%E4%B9%88/index.html">怎么</a><span>样</span></div>
+    <p><em>he knows how</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>打死</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>was killed</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>找到</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a></div>
+    <p><em>find a point</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>真的</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a></div>
+    <p><em>Really</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>起</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>见</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a></div>
+    <p><em>sorry i saw</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>后来</span><span>又</span><span>叫</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a></div>
+    <p><em>what was it called later</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a></div>
+    <p><em>can you please</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>小孩</span><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><span>嘿</span></div>
+    <p><em>kids like hey</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><span>多大</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>how old is that</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比起</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a></div>
+    <p><em>compared to what</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>一起</span><span>这儿</span></div>
+    <p><em>here with them</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>看看</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>回来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>look he&#x27;s back</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>该</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a></div>
+    <p><em>what to say</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>快点</span><span>将</span><span>一切</span></div>
+    <p><em>hurry everything up</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>孩子</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E9%87%8C/index.html">这里</a></div>
+    <p><em>kid here</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>can come out</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>准备</span></div>
+    <p><em>we are also ready</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>杀</span></div>
+    <p><em>but didn&#x27;t kill</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>事情</span><span>也许</span></div>
+    <p><em>a thing maybe</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>前面</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a></div>
+    <p><em>what&#x27;s ahead</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>死</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>里面</span></div>
+    <p><em>dead from inside</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>得到</span><span>最后</span><span>结果</span></div>
+    <p><em>get the final result</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>找到</span><span>几</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>朋友</span></div>
+    <p><em>find some friends</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>叫</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>起来</span></div>
+    <p><em>wake us up</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>需要</span><span>当然</span></div>
+    <p><em>need of course</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>么</span><span>等到</span><span>最后</span></div>
+    <p><em>so wait until the end</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>不过</span></div>
+    <p><em>why not</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>问题</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>发生</span></div>
+    <p><em>problem has occurred</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>吃</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>一样</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>ate the same</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>应该</span><span>抱歉</span></div>
+    <p><em>should be sorry</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>噢</span><span>，</span><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><span>时间</span></div>
+    <p><em>oh take the time</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

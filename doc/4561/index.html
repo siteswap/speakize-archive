@@ -1,0 +1,3169 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Axton - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  Axton
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width: 100%;">
+  <iframe class="embed-responsive-item" style="width:100%; aspect-ratio:16/9;"
+    src="https://www.youtube.com/embed/vzRnF18d4AY"
+    title="YouTube video" allowfullscreen></iframe>
+</div><br>
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><span>hello</span><span>大家</span><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a></div>
+    <p><em>hello everyone</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>欢迎</span><span>回到</span><span>Axton</span></div>
+    <p><em>Welcome back to Axton</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>几乎</span><span>每个</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E5%95%8A/index.html">啊</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>种</span><span>自信</span></div>
+    <p><em>Almost everyone has a kind of self-confidence</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>就是</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>主见</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>I&#x27;m an opinionated person</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>才</span><span>不会</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>别人</span><span>左右</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>思想</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>I won&#x27;t let others control my thoughts</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86/index.html">但</a><span>事实</span><span>真的</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a></div>
+    <p><em>But is it really so?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>心灵</span><span>魔术</span></div>
+    <p><em>Today we start with mind magic</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>CIA</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>思想</span><span>控制</span><span>项目</span><span>以及</span></div>
+    <p><em>CIA&#x27;s Thought Control Program and</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_cd59e64c-5127-4b6d-b9f0-f9741bb68243.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>心理</span><span>原则</span><span>三</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>方面</span></div>
+    <p><em>Three aspects of psychological principles</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>看看</span><span>那些</span><span>令</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>细思</span><span>极</span><span>恐</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>思想</span><span>控制</span></div>
+    <p><em>Let&#x27;s take a look at those terrifying thought control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>达伦布朗</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>如今</span><span>英国</span><span>著名</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Darren Brown is now famous in England</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>心理</span><span>学</span><span>家</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>魔术</span><span>师</span></div>
+    <p><em>Psychologist and magician</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>两千</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>电视</span><span>节目</span></div>
+    <p><em>He has been on TV for two thousand years</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>达伦布朗</span></div>
+    <p><em>Darren Brown</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Mind</span><span>Control</span><span>中</span><span>首次</span><span>亮相</span></div>
+    <p><em>Debut in Mind Control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>制作</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>系列</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>心理</span><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>节目</span></div>
+    <p><em>After that, he produced a series of psychological experiments.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><span>并</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>声称</span><span>拥有</span><span>任何</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>超</span><span>自然</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>力量</span></div>
+    <p><em>Brown does not claim to have any supernatural powers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>表演</span><span>当中</span></div>
+    <p><em>in the performance</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>效果</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>通过</span><span>魔术</span><span>暗示</span></div>
+    <p><em>He often said that his effect was implied by magic</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>心理</span><span>误导</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>表演</span><span>技巧</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>实现</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Psychological misdirection and performance skills to achieve</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>介绍</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>使用</span><span>催眠</span><span>术</span></div>
+    <p><em>Today we are going to introduce him using hypnotism</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>操控</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>普通</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>刺杀</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>实验</span></div>
+    <p><em>An experiment that manipulated the assassination of an ordinary person</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>目的</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>为了</span><span>验证</span><span>是否</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>通过</span><span>类似</span></div>
+    <p><em>The purpose of the experiment is to verify whether it is possible to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>编写</span><span>程序</span><span>控制</span><span>电脑</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>手段</span></div>
+    <p><em>This means of writing a program to control a computer</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>控制</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>to control a person</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>谋杀</span></div>
+    <p><em>let him murder</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>又</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><span>察觉</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a></div>
+    <p><em>without letting him notice</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>起因</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>关于</span><span>射杀</span></div>
+    <p><em>The reason for this experiment is about shooting</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>罗伯特</span><span>肯尼迪</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>凶手</span></div>
+    <p><em>murderer of robert kennedy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Sirhan</span><span>Sirhan</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>种</span><span>阴谋</span><span>论</span></div>
+    <p><em>A conspiracy theory by Sirhan Sirhan</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>罗伯特</span><span>肯尼迪</span><span>就是</span><span>美国</span><span>总统</span></div>
+    <p><em>robert kennedy is president of the united states</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>约翰</span><span>肯尼迪</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>弟弟</span></div>
+    <p><em>brother of john kennedy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>凶手</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>what about the murderer?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Sirhan</span><span>Sirhan</span></div>
+    <p><em>Sirhan Sirhan</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>40多</span><span>年</span><span>以后</span></div>
+    <p><em>after more than 40 years</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>依然</span><span>声称</span></div>
+    <p><em>still claim</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>刺杀</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>过程</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>任何</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>记忆</span></div>
+    <p><em>I have no memory of the assassination.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>因</span><span>此</span></div>
+    <p><em>therefore</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部</span><span>名</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><span>RFK</span><span>Must</span><span>Die</span></div>
+    <p><em>In a film called RFK Must Die</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>纪录</span><span>片</span><span>当中</span></div>
+    <p><em>in the documentary</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>认为</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>思想</span><span>控制</span></div>
+    <p><em>I think he was under mind control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>操纵</span><a style="text-decoration:none" href="../../zh/word/%E5%AE%83/index.html">它</a><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>谋杀</span></div>
+    <p><em>to manipulate it into murder</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>达伦</span><span>·</span><span>布朗</span></div>
+    <p><em>Darren Brown</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>所有</span><span>申请</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>参加</span><span>节目</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>候选</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>当中</span></div>
+    <p><em>from all candidates who applied to the programme</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>挑选</span><span>出</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><span>容易</span><span>接受</span><span>暗示</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>Picked out the one most receptive to hints</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>chris</span></div>
+    <p><em>chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>筛选</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>过程</span><span>中</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>体现</span><span>出</span></div>
+    <p><em>During the screening process, it has been shown that</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>催眠</span><span>术</span><span>惊人</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>力量</span></div>
+    <p><em>The amazing power of hypnotism</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比如</span><span>瞬间</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>睡倒</span></div>
+    <p><em>Like falling asleep instantly</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比如</span><span>受试</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>手伸到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>For example, the subject stretched his hand to the</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>将</span><span>近</span><span>零</span><span>度</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>冰水</span><span>当中</span></div>
+    <p><em>in near-zero ice water</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>最多</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><span>坚持</span><span>7</span><span>秒钟</span></div>
+    <p><em>Can only last up to 7 seconds</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>达伦</span><span>·</span><span>布朗</span></div>
+    <p><em>But in Darren Brown</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>注入</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>水</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>温暖</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>暗示</span><span>之后</span></div>
+    <p><em>After injecting a hint that the water is warm</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>居然</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>躺</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>冰水</span><span>当中</span></div>
+    <p><em>You can lie down in ice water</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>一直</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><span>止</span></div>
+    <p><em>Until Brown lets him out</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span></div>
+    <p><em>after</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>传说</span><span>中</span><span>CIA</span><span>MKUltra</span></div>
+    <p><em>Brown used the legendary CIA MKUltra</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>计划</span><span>曾经</span><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>洗脑</span><span>技术</span></div>
+    <p><em>Brainwashing techniques the program has ever used</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>chris</span><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>训练</span></div>
+    <p><em>trained chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>视频</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>后面</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>讲到</span><span>CIA</span><span>MKUltra</span><span>计划</span></div>
+    <p><em>Later in the video we will talk about the CIA MKUltra program</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>为了</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>chris</span><span>进入</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>刺客</span><span>状态</span></div>
+    <p><em>To put chris into assassin state</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>需要</span><span>训练</span><span>触发</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>两</span><span>种</span><span>模式</span></div>
+    <p><em>Requires training to trigger his two modes</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>种</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>神枪</span><span>手</span><span>模式</span></div>
+    <p><em>One is the sharpshooter mode</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>另外</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>种</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>自发</span><span>失忆</span></div>
+    <p><em>Another is spontaneous amnesia</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>刺杀</span><span>肯尼迪</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>凶手</span><span>Sirhan</span><span>Sirhan</span><span>后来</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>JFK assassin Sirhan Sirhan later says</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>以为</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>射击</span><span>场</span><span>开</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>枪</span></div>
+    <p><em>He thought he was shooting at a shooting range</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>不是</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>开</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>枪</span></div>
+    <p><em>rather than shooting at people</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>声称</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><span>穿</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><span>圆点</span><span>图案</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>He claimed that there was a man wearing a polka dot pattern</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>裙子</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>神秘</span><span>女士</span></div>
+    <p><em>Such a mysterious lady in a skirt</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>捏</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>肩膀</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a></div>
+    <p><em>pinched his shoulder</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>送入</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>神枪</span><span>手</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>模式</span></div>
+    <p><em>put him in sharpshooter mode</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>因</span><span>此</span></div>
+    <p><em>therefore</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>类似</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>训练</span></div>
+    <p><em>Brown did a similar workout with Chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>首先</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>将</span><span>Chris</span><span>带到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>射击</span><span>场</span></div>
+    <p><em>First he took Chris to a shooting range</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Chris</span><span>从来</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>开</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>枪</span></div>
+    <p><em>Chris never fired a gun</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>第一</span><span>轮</span><span>射击</span><span>自然</span><span>准确</span><span>度</span><span>很差</span></div>
+    <p><em>So his first round shot is naturally poor accuracy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span></div>
+    <p><em>after</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><span>将</span><span>chris</span><span>催眠</span></div>
+    <p><em>Brown hypnotizes chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>段</span><span>手机</span><span>铃声</span></div>
+    <p><em>used a ringtone</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>诱发</span><span>Chris</span><span>进入</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>神枪</span><span>手</span><span>模式</span></div>
+    <p><em>Induced Chris into sharpshooter mode</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>再次</span><span>进行</span><span>射击</span></div>
+    <p><em>shoot again</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>结果</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>八</span><span>发</span><span>子弹</span></div>
+    <p><em>The result is eight bullets</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>六</span><span>发</span><span>十</span><span>环</span></div>
+    <p><em>Six rounds and ten rings</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其中</span><span>四</span><span>发</span><span>正中</span><span>靶心</span></div>
+    <p><em>Four of them hit the bullseye</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span></div>
+    <p><em>after</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>圆点</span><span>图案</span></div>
+    <p><em>Brown used another polka dot pattern</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>触发</span><span>chris</span><span>进入</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>种</span><span>恍惚</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>状态</span></div>
+    <p><em>to trigger chris into a trance state</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>并且</span><span>暗示</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a></div>
+    <p><em>and imply him</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>将</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>状态</span><span>中</span><span>发生</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>what happens in this state</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>任何</span><span>事情</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>记忆</span></div>
+    <p><em>no memory of anything</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>最后</span><span>为了</span><span>测试</span><span>效果</span></div>
+    <p><em>Finally, to test the effect</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>chris</span><span>站</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>屏幕</span><span>前</span></div>
+    <p><em>brown and chris standing in front of a big screen</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Chris</span><span>正</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>屏幕</span></div>
+    <p><em>Chris is facing this screen</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>尝试</span><span>猜出</span></div>
+    <p><em>Brown said he&#x27;d try to guess</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>银行</span><span>密码</span></div>
+    <p><em>Chris&#x27;s bank password</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>脑海</span><span>中</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>密码</span></div>
+    <p><em>He made Chris think about his own password in his head</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>脑中</span><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a></div>
+    <p><em>only in mind</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><span>屏幕</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>图案</span></div>
+    <p><em>Then the pattern on the screen</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>变成</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>圆点</span><span>图案</span></div>
+    <p><em>becomes a polka dot pattern</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><span>问道</span></div>
+    <p><em>Brown asked</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>银行</span><span>密码</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a></div>
+    <p><em>what is your bank password</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>1054</span></div>
+    <p><em>Chris says 1054</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>屏幕</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>图案</span><span>换掉</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>After that, the pattern on this screen was changed.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>Brown says</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>猜</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>密码</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>1054</span></div>
+    <p><em>I guess your password might be 1054</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>看到</span><span>Chris</span><span>非常</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>震惊</span></div>
+    <p><em>We can see that Chris is very shocked</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>想到</span><span>布朗</span><span>居然</span><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a></div>
+    <p><em>He didn&#x27;t expect Brown to be able to put himself</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>密码</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>完全</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>猜</span><span>出来</span></div>
+    <p><em>The password is completely guessed</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>完全</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>记得</span><span>刚刚</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a></div>
+    <p><em>He doesn&#x27;t remember at all</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>密码</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Said the password</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>训练</span><span>完成</span><span>之后</span></div>
+    <p><em>After training</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><span>带</span><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a><span>剧场</span><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>stephen</span><span>fry</span></div>
+    <p><em>Brown takes Chris to the theatre to see stephen fry</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>演讲</span></div>
+    <p><em>speech</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>并</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><a style="text-decoration:none" href="../../zh/word/%E5%91%8A%E8%AF%89/index.html">告诉</a><span>chris</span></div>
+    <p><em>he didn&#x27;t tell chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部分</span></div>
+    <p><em>This is part of the experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><span>Chris</span><span>认为</span></div>
+    <p><em>So Chris thinks</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>并</span><span>不是</span><span>实验</span></div>
+    <p><em>This is not an experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>日常</span><span>生活</span><span>当中</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>场景</span><span>而已</span></div>
+    <p><em>It&#x27;s just a scene in everyday life</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>演讲</span><span>当中</span></div>
+    <p><em>in the speech</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><span>身穿</span><span>圆点</span><span>图案</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>裙子</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>女士</span></div>
+    <p><em>A lady wearing a polka dot dress</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>坐到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>Chris</span><span>面前</span></div>
+    <p><em>Sitting in front of Chris</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>女士</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>手机</span><span>响起</span></div>
+    <p><em>Then the lady&#x27;s phone rang</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>熟悉</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>铃声</span></div>
+    <p><em>the familiar ringtone</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span></div>
+    <p><em>after</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>位</span><span>女士</span><span>转身</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>The lady turned to Chris and said</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>目标</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>stephen</span><span>fry</span></div>
+    <p><em>your goal is stephen fry</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>片刻</span><span>之后</span></div>
+    <p><em>a moment later</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Chris</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%83%8F/index.html">像</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>机器</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>一样</span></div>
+    <p><em>Chris is like a robot</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>十分</span><span>稳定</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>拿出</span><span>枪</span><span>站</span><span>起来</span><span>开枪</span><span>射击</span></div>
+    <p><em>Very stable, take out the gun, stand up and shoot</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>很多</span><span>表演</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>宣扬</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>内容</span></div>
+    <p><em>what many of brown&#x27;s performances are promoting</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_51a8f959-83c6-4eca-823a-b2596c7c311b.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>倾向</span><span>性</span><span>以及</span><span>真实</span><span>性</span><span>方面</span></div>
+    <p><em>Tendency and authenticity</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>引起</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>很多</span><span>争议</span></div>
+    <p><em>has caused a lot of controversy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>收到</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>很多</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>投诉</span></div>
+    <p><em>also received many complaints</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>那么</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>以上</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%80%8E%E4%B9%88/index.html">怎么</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>So what do you think of the above experiment?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>大家</span><span>留言</span><span>分享</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>看法</span></div>
+    <p><em>Please leave a message to share your views</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>Sirhan</span><span>Sirhan</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>律师</span><span>认为</span><span>Sirhan</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a></div>
+    <p><em>Sirhan Sirhan&#x27;s lawyers believe that Sirhan was in the</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>MKUltra</span><span>心智</span><span>控制</span><span>技术</span><span>之下</span></div>
+    <p><em>Under MKUltra Mind Control Technology</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>操纵</span><span>进行</span><span>谋杀</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>manipulated into murder</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>MKUltra</span><span>计划</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>叫做</span></div>
+    <p><em>The MKUltra program is also called</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>CIA</span><span>精神</span><span>控制</span><span>项目</span></div>
+    <p><em>CIA Mind Control Program</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>由</span><span>美国</span><span>中央</span><span>情报</span><span>局</span><span>设计</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>实施</span></div>
+    <p><em>was designed and implemented by the CIA</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>针对</span><span>人类</span><span>受试</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>实验</span><span>程序</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>代号</span></div>
+    <p><em>Codename for an experimental procedure on human subjects</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AE%83/index.html">它</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>目的</span><span>简单</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>就是</span><span>逼供</span></div>
+    <p><em>Its purpose is simply to coerce confessions</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>研究</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>开发</span><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><span>于</span><span>审讯</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>is researched and developed for interrogation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>药物</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>思想</span><span>控制</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>方法</span></div>
+    <p><em>Drugs and Methods of Thought Control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以</span><span>便</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>审</span><span>者</span><span>进行</span><span>招供</span></div>
+    <p><em>in order for the accused to confess</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>MKUltra</span><span>计划</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>1953</span><span>年</span><span>开始</span></div>
+    <p><em>MKUltra program started in 1953</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1973</span><span>年</span><span>正式</span><span>停止</span></div>
+    <p><em>Officially discontinued in 1973</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>20</span><span>年</span><span>当中</span><span>MKUltra</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><span>种</span></div>
+    <p><em>In the past 20 years, MKUltra has used a variety of</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>方法</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>操纵</span><span>受</span><span>试</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>心理</span><span>状态</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a></div>
+    <p><em>methods to manipulate subjects&#x27; psychological states and</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>大脑</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>功能</span></div>
+    <p><em>brain function</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>包括</span><span>服用</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>剂量</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>精神</span><span>药物</span></div>
+    <p><em>including taking large doses of psychotropic drugs</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>尤其</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>致幻</span><span>剂</span><span>lsd</span></div>
+    <p><em>especially hallucinogens lsd</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以及</span><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>化学</span><span>药品</span></div>
+    <p><em>and other chemicals</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>电击</span><span>催眠</span><span>、</span><span>虐待</span><span>以及</span><span>其他</span><span>形式</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>酷刑</span></div>
+    <p><em>And electroshock hypnosis, ill-treatment, and other forms of torture</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1973</span><span>年</span></div>
+    <p><em>1973</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>中央</span><span>情报</span><span>局</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>局长</span><span>理查德赫尔姆斯</span><span>下令</span></div>
+    <p><em>CIA director Richard Helms ordered</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>销毁</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>所有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>MKUltra</span><span>文件</span></div>
+    <p><em>Destroyed all MKUltra files</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1977</span><span>年</span></div>
+    <p><em>1977</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>按照</span><span>美国</span><span>信息</span><span>自由</span><span>法</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>要求</span></div>
+    <p><em>as required by the U.S. Freedom of Information Act</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>披露</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>与</span><span>MKUltra</span><span>项目</span><span>相关</span></div>
+    <p><em>Disclosed related to the MKUltra project</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>剩余</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>2万</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>文档</span></div>
+    <p><em>The remaining 20,000 documents of</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>多数</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>记录</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>销毁掉</span></div>
+    <p><em>But because most of the records have been destroyed</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a><span>无法</span><span>了解</span></div>
+    <p><em>So we can&#x27;t understand now</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>该</span><span>项目</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>更多</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>细节</span></div>
+    <p><em>More details of the project</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>MKUltra</span><span>项目</span></div>
+    <p><em>MKUltra project</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>由</span><span>149</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>子</span><span>项目</span><span>组成</span></div>
+    <p><em>Consists of 149 sub-projects</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_be8804cd-bb3a-4392-8450-806741297f55.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>很多</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>与</span><span>改变</span><span>思想</span><span>以及</span><span>行为</span></div>
+    <p><em>Much has to do with changing thoughts and behaviors</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>药物</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>方法</span><span>相关</span></div>
+    <p><em>drugs and methods related to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>包括</span><span>催眠</span><span>、</span><span>心理</span><span>治疗</span><span>、</span><span>药品</span><span>以及</span><span>毒品</span><span>等等</span></div>
+    <p><em>Including hypnosis, psychotherapy, drugs and drugs, etc.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>项目</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>早期</span><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>大量</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>与</span><span>致幻</span><span>剂</span></div>
+    <p><em>The early days of the project were heavily associated with hallucinogens</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>lsd</span><span>相关</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>试验</span></div>
+    <p><em>lsd related experiments</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>lsd</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>目前</span><span>并</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a></div>
+    <p><em>lsd does not currently have</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>批准</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>医疗</span><span>用途</span></div>
+    <p><em>Approved Medical Use</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_affe2e83-86a5-4919-8dda-d0f8fe6e08d3.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>其</span><span>目的</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>its purpose</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AE%83/index.html">它</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>为了</span><span>了解</span><span>lsd</span></div>
+    <p><em>it is for understanding lsd</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>是否</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>敌方</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>间谍</span><span>背叛</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>意愿</span></div>
+    <p><em>Is it possible to make an enemy spy betray his will</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以及</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>应用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>lsd</span><span>之后</span></div>
+    <p><em>And after my own person has been applied lsd</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>应该</span><span>采取</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>对策</span></div>
+    <p><em>countermeasures to be taken</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>受试</span><span>者</span><span>往往</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>并</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>知情</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>情况</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a></div>
+    <p><em>Subjects are often unknowingly</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>大量</span><span>长期</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>给予</span><span>LSD</span></div>
+    <p><em>have been given LSD in large amounts and chronically</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>案例</span><span>中</span></div>
+    <p><em>in one case</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>肯塔基</span><span>州</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>精神</span><span>病</span><span>患者</span><span>服用</span></div>
+    <p><em>they give to the mentally ill in Kentucky</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>174</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A9/index.html">天</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>lsd</span></div>
+    <p><em>174 days of lsd</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>甚至</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><span>向</span><span>中央</span><span>情报</span><span>局</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>雇员</span></div>
+    <p><em>even to CIA employees</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>军人</span><span>、</span><span>医生</span></div>
+    <p><em>soldier, doctor</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>政府</span><span>人员</span><span>甚至</span><span>普通</span><span>民众</span></div>
+    <p><em>Other government officials and even ordinary people</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>LSD</span><span>并且</span><span>研究</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>反应</span></div>
+    <p><em>Give LSD and study their response</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>导致</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>很多</span><span>受试</span><span>者</span><span>深受</span><span>其害</span></div>
+    <p><em>This caused many subjects to suffer</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比如</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>名</span><span>操作</span><span>人员</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>早上</span><span>喝</span></div>
+    <p><em>Like an operator drinking in the morning</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>咖啡</span><span>时</span><span>服用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>药物</span></div>
+    <p><em>this drug was taken with coffee</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>变成</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>精神</span><span>病</span></div>
+    <p><em>then becomes a psychopath</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>跑遍</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>华盛顿</span><span>所有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>街道</span></div>
+    <p><em>Ran all the streets of Washington</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>看到</span><span>每辆</span><span>车上</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>怪物</span></div>
+    <p><em>see a monster in every car</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>就是</span><span>从未</span><span>服用</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>lsd</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Also, those who have never taken lsd</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>陆军</span><span>化学</span><span>家</span><span>弗兰克</span><span>奥尔森</span><span>博士</span></div>
+    <p><em>Dr. Frank Olson, Army Chemist</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>CIA</span><span>主管</span><span>秘密</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>暗中</span><span>给药</span></div>
+    <p><em>Secretly smuggled by his CIA director</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>9</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A9/index.html">天</a><span>以后</span></div>
+    <p><em>9 days later</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>纽约</span><span>市</span><span>13</span><span>层</span><span>楼</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>酒店</span><span>房间</span><span>坠楼</span><span>身亡</span></div>
+    <p><em>He fell to his death from a 13-story hotel room in New York City</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>原因</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>由</span><span>药物</span><span>诱导</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>抑郁</span><span>症</span></div>
+    <p><em>The cause may be drug-induced depression</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>当然</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>后来</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>家人</span><span>认为</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>谋杀</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Of course his later family thought he was murdered</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>MKUltra</span><span>计划</span><span>中</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>68</span><span>号</span></div>
+    <p><em>Number 68 in the MKUltra plan</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>此</span><span>项目</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>由</span><span>英国</span><span>精神</span><span>病</span><span>学</span><span>家</span><span>唐纳德</span><span>艾伦</span><span>卡梅伦</span></div>
+    <p><em>This project was developed by British psychiatrist Donald Alan Cameron</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>负责</span></div>
+    <p><em>Responsible</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>创造</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>精神</span><span>驾驭</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>概念</span></div>
+    <p><em>He created the concept of spiritual mastery</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>意图</span><span>消除</span><span>人们</span><span>现有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>记忆</span></div>
+    <p><em>Intent to erase people&#x27;s existing memories</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>并且</span><span>重新</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>思想</span><span>进行</span><span>编程</span></div>
+    <p><em>and reprogram the mind</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>除</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>使用</span><span>LSD</span><span>之外</span></div>
+    <p><em>In addition to using LSD</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>卡梅伦</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><span>以</span><span>正常</span><span>功率</span><span>30</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>40</span><span>倍</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>电击</span></div>
+    <p><em>Cameron also shocks 30 to 40 times the normal power</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>进行</span><span>电</span><span>惊厥</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>疗法</span></div>
+    <p><em>electroconvulsive therapy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>驾驭</span><span>实验</span><span>包括</span><span>将</span><span>受试</span><span>者</span><span>至于</span></div>
+    <p><em>His driving experiments involved subjecting subjects to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>药物</span><span>诱发</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>昏迷</span><span>当中</span></div>
+    <p><em>In drug-induced coma</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3bc5cc27-9ff8-4e20-beeb-dc6c04ef67e3.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>持续</span><span>数</span><span>周</span></div>
+    <p><em>for several weeks</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>最多</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>次</span><span>昏睡</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>3</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>月</span></div>
+    <p><em>Most lethargic for 3 months</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>昏迷</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>同时</span><span>循环</span><span>播放</span><span>磁带</span><span>录音</span></div>
+    <p><em>Play tape recordings on loop while in a coma</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>注入</span><span>暗示</span></div>
+    <p><em>inject hint</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其中</span><span>许多</span><span>患者</span><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>行为</span></div>
+    <p><em>Many of these patients because of his behavior</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>遭受</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>永久</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>损伤</span></div>
+    <p><em>suffered permanent damage</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>包括</span><span>大小</span><span>便</span><span>失禁</span><span>健忘</span></div>
+    <p><em>including incontinence and forgetfulness</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>忘记</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>如何</span><span>说话</span></div>
+    <p><em>forgot how to speak</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>忘记</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>父母</span></div>
+    <p><em>forget their own parents</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>甚至</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>受审</span><span>者</span><span>当成</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>父母</span></div>
+    <p><em>even think of the people being interrogated as their parents</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>基</span><span>于</span><span>卡梅伦</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>研究</span></div>
+    <p><em>Based on Cameron&#x27;s research</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>CIA</span><span>终于</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>套</span><span>完整</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>酷刑</span><span>手册</span></div>
+    <p><em>The CIA finally has a complete torture manual</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>KUBARK</span><span>中情</span><span>局</span><span>审讯</span><span>。</span><span>所幸</span><span>人类</span><span>历史</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a></div>
+    <p><em>KUBARK CIA interrogation. Fortunately, in human history</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>规模</span><span>如此</span><span>庞大</span><span>而</span><span>残酷</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>人体</span><span>实验</span><span>最终</span></div>
+    <p><em>Such a massive and brutal human experiment finally</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>终止</span></div>
+    <p><em>be terminated</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>部分</span><span>受害</span><span>者</span><span>得到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>政府</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>赔偿</span></div>
+    <p><em>Some victims were compensated by the government</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>弗兰克</span><span>奥尔森</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>家人</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>得到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>And Frank Olson&#x27;s family got</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>福特</span><span>总统</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>CIA</span><span>局长</span><span>威廉</span><span>柯比</span></div>
+    <p><em>President Ford and CIA Director William Kirby</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>道歉</span></div>
+    <p><em>apology</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>也许</span><span>很多</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a></div>
+    <p><em>Maybe many people will think</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>无论</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>达伦布朗</span><span>秀</span><span>还是</span><span>CIA</span></div>
+    <p><em>Whether it&#x27;s the Darren Brown show or the CIA</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>似乎</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>离</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>很远</span></div>
+    <p><em>seems far away from us</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86/index.html">但</a><span>实际</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>精神</span><span>控制</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>身边</span></div>
+    <p><em>But actually mind control is probably on your side</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1955</span><span>年</span></div>
+    <p><em>1955</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>位</span><span>24</span><span>岁</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>年轻</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>琼斯</span></div>
+    <p><em>A 24-year-old Jones</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>创造</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>教堂</span></div>
+    <p><em>created his own church</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>称作</span><span>人民</span><span>圣殿</span></div>
+    <p><em>people&#x27;s temple</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>令</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>不可思议</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a></div>
+    <p><em>Incredibly</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>竟然</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>通过</span><span>挨家挨户</span><span>上门</span><span>推销</span><span>宠物</span><span>猴子</span></div>
+    <p><em>He turned out to be selling pet monkeys door-to-door</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>聚拢</span><span>人气</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>to gather popular</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>琼斯</span><span>最早</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>布道</span><span>涉及</span><span>平等</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>种族</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>融合</span></div>
+    <p><em>Jones&#x27; earliest sermons dealt with equality and the integration of race</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>鼓励</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>追随</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><span>穷</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>He encouraged his followers to be poor</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>提供</span><span>食品</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>工作</span><span>岗位</span></div>
+    <p><em>Provide food and jobs</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>20</span><span>世纪</span><span>70</span><span>年代</span></div>
+    <p><em>in the 1970s</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>琼斯</span><span>要求</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>信众</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>个人</span><span>积蓄</span></div>
+    <p><em>Jones asks his followers to put personal savings</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>物品</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>捐献</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>教堂</span></div>
+    <p><em>and items are donated to the church</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>并</span><span>要求</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>假期</span><span>不要</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a></div>
+    <p><em>and asked them not to have sex with</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>家人</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>一起</span></div>
+    <p><em>own family together</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而是</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>信徒</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>一起</span></div>
+    <p><em>but to be with other believers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>同时</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>吸毒</span><span>成瘾</span></div>
+    <p><em>He is also addicted to drugs</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>后来</span><span>琼斯</span><span>带领</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><span>几百</span><span>名</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>追随</span><span>者</span></div>
+    <p><em>Jones later led several hundred followers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>圭亚那</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>丛林</span><span>里面</span></div>
+    <p><em>Inside the jungles of Guyana</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>建立</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>与世隔绝</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>社区</span></div>
+    <p><em>Created an isolated community</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>琼斯</span><span>城</span></div>
+    <p><em>jones city</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1978</span><span>年</span></div>
+    <p><em>1978</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>美国</span><span>国会</span><span>议员</span><span>利奥</span><span>·</span><span>莱恩</span><span>前往</span><span>琼斯</span><span>城</span></div>
+    <p><em>U.S. Congressman Leo Lane to Jonestown</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>调查</span><span>有关</span><span>那里</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>美国</span><span>公民</span></div>
+    <p><em>Investigate about U.S. citizens there</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>受到</span><span>琼斯</span><span>控制</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>传言</span><span>。</span><span>结果</span><span>琼斯</span><span>及</span><span>其</span></div>
+    <p><em>Rumors of being controlled by Jones. Results Jones and his</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>武装</span><span>人员</span><span>打死</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>利奥</span><span>·</span><span>莱恩</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>行</span></div>
+    <p><em>Armed men kill Leo Lane and his party</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>之后</span></div>
+    <p><em>after</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>琼斯</span><span>召集</span><span>所有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>居民</span><span>声称</span></div>
+    <p><em>Jones called all the residents to claim</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_a269834a-c682-43d6-9576-0380cf5016b1.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>美国</span><span>政府</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>琼斯</span><span>城</span><span>进行</span><span>报复</span></div>
+    <p><em>U.S. government to retaliate against Jonestown</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>呼吁</span><span>大家</span><span>集体</span><span>自杀</span></div>
+    <p><em>Call for mass suicide</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>并</span><span>要求</span><span>大家</span><span>喝下</span><span>掺</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>氰化</span><span>物</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>葡萄</span><span>汁</span></div>
+    <p><em>and asked everyone to drink grape juice laced with cyanide</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>同时</span><span>要求</span><span>父母</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>先</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>孩子</span><span>喝</span></div>
+    <p><em>At the same time, parents are required to give their children drinks first</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E5%86%8D/index.html">再</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><span>喝</span></div>
+    <p><em>then drink it yourself</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>结果</span><span>超过</span><span>900</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>Results over 900 people</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>结束</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>生命</span></div>
+    <p><em>ended his life</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其中</span><span>包括</span><span>270</span><span>名</span><span>儿童</span></div>
+    <p><em>including 270 children</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>尽管</span><span>现场</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>武装</span><span>人员</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>监视</span></div>
+    <p><em>Despite the presence of armed men on the scene</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>上去</span><span>绝大</span><span>多数</span><span>都是</span><span>自愿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>But the vast majority seem to be voluntary</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>30多</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a></div>
+    <p><em>over 30 years</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>心理</span><span>学</span><span>家</span><span>们</span><span>纷纷</span><span>研究</span></div>
+    <p><em>Psychologists have studied</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>琼斯</span><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>那么</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>自愿</span><span>结束</span><span>生命</span></div>
+    <p><em>Why Jones allowed so many people to end their lives voluntarily</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>最后</span><span>心理</span><span>学</span><span>家</span><span>们</span><span>认为</span></div>
+    <p><em>Finally, psychologists believe that</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>琼斯</span><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>4</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>工具</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>信徒</span><span>进行</span><span>心理</span><span>控制</span></div>
+    <p><em>Jones used 4 tools for mind control of believers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>斯坦福</span><span>大学</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>乔纳森</span><span>弗里德曼</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a></div>
+    <p><em>Jonathan Friedman of Stanford University and</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>斯科特</span><span>弗雷泽</span></div>
+    <p><em>Scott Fraser</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>曾</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>经典</span><span>实验</span></div>
+    <p><em>A classic experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>实验</span><span>中</span></div>
+    <p><em>In experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>研究</span><span>人员</span><span>扮成义工</span></div>
+    <p><em>Researchers dressed as volunteers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>挨家挨户</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>解释</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>house-to-house explanation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>由于</span><span>附近</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>交通</span><span>事故</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>频繁</span></div>
+    <p><em>Due to the frequent traffic accidents nearby</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>请</span><span>附近</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>居民</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>院子</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a></div>
+    <p><em>Invite nearby residents in their yards</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>竖立</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小心</span><span>驾驶</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>标志</span><span>牌</span></div>
+    <p><em>Put up a sign to drive carefully</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>标志</span><span>牌</span><span>呢又</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>又</span><span>丑</span></div>
+    <p><em>But this sign is big and ugly</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><span>很少</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>居民</span><span>愿意</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><span>干</span></div>
+    <p><em>So few residents are willing to do this</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>阶段</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>What about the next phase of the experiment?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>研究</span><span>人员</span><span>去到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>另外</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小</span><span>区</span></div>
+    <p><em>The researchers went to another community</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>次</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>请</span><span>居民</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>院子</span><a style="text-decoration:none" href="../../zh/word/%E9%87%8C/index.html">里</a><span>头</span><span>竖</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>块</span><span>儿</span><span>安全</span></div>
+    <p><em>This time they asked residents to stand up in the yard for safety</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_4ea77136-3893-4176-ab02-eada49074b7a.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>驾驶</span><span>员</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>标志</span><span>牌</span></div>
+    <p><em>such a sign for the driver</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2255c70c-fd17-459a-971d-a70f67a92a08.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>标志</span><span>牌</span><span>很小</span></div>
+    <p><em>This sign is small</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>只有</span><span>3</span><span>英寸</span><span>那么</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a></div>
+    <p><em>only 3 inches</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>景观</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>影响</span></div>
+    <p><em>no effect on the landscape</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><span>几乎</span><span>所有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>居民</span><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>乐意</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a></div>
+    <p><em>So almost all residents are happy to do it</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_a58b2d99-a804-4322-ac8f-3d7bc84b43a6.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>两</span><span>周</span><span>以后</span></div>
+    <p><em>two weeks later</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>研究</span><span>人员</span><span>又</span><span>来到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小</span><span>区</span></div>
+    <p><em>The researchers came to this community again</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_d3d6d78c-5370-458e-b9d0-db5af06ef31a.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>请</span><span>这些</span><span>插</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>标志</span><span>牌</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>居民</span></div>
+    <p><em>Invite these residents with signs</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>标志</span><span>牌</span><span>换成</span><span>更大</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>标志</span><span>牌</span></div>
+    <p><em>Replace this sign with the bigger one</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>结果</span><span>令</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>吃惊</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a></div>
+    <p><em>The surprising result is that</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>超过</span><span>七成多</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>more than seventy percent</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>愿意</span><span>树立</span><span>起</span><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>又</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>又</span><span>丑</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>标志</span><span>牌</span></div>
+    <p><em>Willing to put up that big ugly sign</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>概念</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>称作</span><span>登</span><span>堂</span><span>入室</span></div>
+    <p><em>This concept is called entering the room</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_12badb7f-8ebe-42ef-b22a-006e254c36d7.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>首先</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>对方</span><span>接受</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>比较</span></div>
+    <p><em>He first let the other party accept a comparison</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>温和</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E4%B9%88/index.html">这么</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>要求</span></div>
+    <p><em>such a gentle request</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><span>慢慢</span><span>换成</span><span>更加</span><span>夸张</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>要求</span></div>
+    <p><em>Then slowly change to more exaggerated requirements</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A6%82%E6%9E%9C/index.html">如果</a><span>人们</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><span>设定</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>底线</span></div>
+    <p><em>If people don&#x27;t set themselves a bottom line</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>拒绝</span><span>过分</span><span>要求</span><span>的话</span></div>
+    <p><em>Refuse to ask too much</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><span>登</span><span>堂</span><span>入室</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>手段</span></div>
+    <p><em>This is the way to enter the room</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>每每</span><span>奏效</span></div>
+    <p><em>will work every time</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>20</span><span>世纪</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>50</span><span>年代</span></div>
+    <p><em>1950s</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>美国</span><span>心理</span><span>学</span><span>家</span><span>所罗门</span><span>阿西</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>American psychologist Solomon Assi did</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>系列</span><span>关于</span><span>从众性</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span></div>
+    <p><em>A series of experiments on conformity</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其中</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>试验</span><span>阿希</span><span>要求</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>试</span><span>者</span></div>
+    <p><em>One of the trials, Asch, asked subjects to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>每次</span><span>单独</span><a style="text-decoration:none" href="../../zh/word/%E5%88%B0/index.html">到</a><span>实验</span><span>室</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a></div>
+    <p><em>Come to the lab alone each time</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>介绍</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>另外</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>6</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>Then introduce him to 6 other people</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>当然</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>并</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E7%9F%A5%E9%81%93/index.html">知道</a><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>6</span></div>
+    <p><em>Of course he doesn&#x27;t know the other 6</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>个人</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>阿西</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span><span>助手</span></div>
+    <p><em>The individual is Asi&#x27;s experimental assistant</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>整个</span><span>实验</span><span>组</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>1</span><span>名</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>试</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a></div>
+    <p><em>The entire experimental group consisted of 1 subject and</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>6</span><span>名</span><span>假冒</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>被试</span><span>者</span><span>组成</span></div>
+    <p><em>6 fake subjects</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>坐</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>桌子</span><span>面前</span></div>
+    <p><em>they sit at the table</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>告知</span><span>需要</span><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>项</span><span>视力</span><span>测试</span></div>
+    <p><em>being told that a vision test is required</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>看到</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>两</span><span>张</span><span>卡片</span></div>
+    <p><em>What they see are two cards</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>第一</span><span>张</span><span>卡片</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>条</span><span>线</span></div>
+    <p><em>There is a line on the first card</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>第二</span><span>张</span><span>卡片</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>三</span><span>条</span><span>长短</span><span>不同</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>线</span></div>
+    <p><em>The second card has three lines of different lengths</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>其中</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>条</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>第1</span><span>章</span><span>卡片</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a></div>
+    <p><em>One of them and the chapter 1 card</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><span>条</span><span>线</span><span>长度</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>一样</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>The length of that line is the same</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>整个</span><span>小组</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%97/index.html">得</a><span>说出</span><span>第二</span><span>张</span><span>卡片</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>到底</span></div>
+    <p><em>The whole group has to say what is on the second card</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>哪</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>条</span><span>线</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>第一</span><span>张</span><span>卡片</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><span>条</span><span>线</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>which line is the same as the line on the first card</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>长度</span><span>一样</span></div>
+    <p><em>same length</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>7</span><span>个人</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>座位</span><span>都是</span><span>特意</span><span>安排</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>The seats for these 7 people are specially arranged</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>目的</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>为了</span><span>确保</span></div>
+    <p><em>The purpose is to ensure</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>真正</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>试</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>最后</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>发言</span></div>
+    <p><em>The real subject was the last to speak</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>前面</span><span>两</span><span>轮</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span><span>当中</span></div>
+    <p><em>In the first two rounds of experiments</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>6</span><span>名</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>假冒</span><span>者</span><span>给出</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>都是</span><span>正确</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>答案</span></div>
+    <p><em>6 of the impostors gave all the correct answers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>第三</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>试验</span><span>当中</span></div>
+    <p><em>in the third experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>6</span><span>名</span><span>假冒</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span><span>者</span><span>故意</span><span>给出</span></div>
+    <p><em>These 6 fake experimenters deliberately gave</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>错误</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>答案</span></div>
+    <p><em>gave a wrong answer</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>阿希希望</span><span>通过</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span></div>
+    <p><em>Asch hopes that through such experiments</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>判断</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>几</span><span>成人</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>明显</span><span>错误</span></div>
+    <p><em>Judging how many adults are obviously wrong</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>引导</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>随</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>溜</span></div>
+    <p><em>Under this kind of guidance</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>结果</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>令</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>吃惊</span></div>
+    <p><em>The results are surprising</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>超过</span><span>七成</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>放弃</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>判断</span></div>
+    <p><em>More than 70% of people give up their judgment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>随</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>流</span></div>
+    <p><em>and go with the flow</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部分</span><span>信徒</span><span>追随</span><span>琼斯</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Some believers follow Jones&#x27;s</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>原因</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>琼斯</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>显灵</span></div>
+    <p><em>The reason is because Jones will manifest</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_16eb655f-f126-42b8-a69e-dad234f76121.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>比如</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>遭受</span><span>癌症</span><span>折磨</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Like he will suffer from cancer</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>来到</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>教堂</span><span>跟前</span></div>
+    <p><em>man came to his church</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><span>病人</span><span>张开</span><span>嘴</span></div>
+    <p><em>Then the patient opens his mouth</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>戏剧</span><span>化</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>病人</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>Then he&#x27;ll be dramatic from the patient&#x27;s</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>嘴里头</span><span>揪出</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>癌</span><span>组织</span></div>
+    <p><em>A cancerous tissue was found in the mouth</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>痊愈</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>And then he says you can be healed</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86/index.html">但</a><span>实际</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>这些</span><span>都是</span><span>骗局</span><span>而已</span></div>
+    <p><em>But it&#x27;s really just a scam</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>也许</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>这些</span><span>太假</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>Some people may say that these are too fake</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>太小儿</span><span>科</span></div>
+    <p><em>Too Pediatrics</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>才</span><span>不会</span><span>相信</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a></div>
+    <p><em>I won&#x27;t believe you</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>那么</span><span>请</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%83%B3/index.html">想</a><span>一想</span></div>
+    <p><em>So please think about it</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>通灵</span><span>术</span><span>、</span><span>灵魂</span><span>出窍</span></div>
+    <p><em>psychic, out of body</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>桌灵转</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>就是</span><span>笔仙</span><span>或者</span><span>碟仙</span><span>这些</span></div>
+    <p><em>Table Lingzhuan is also known as pen fairy or dish fairy</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>相信</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a></div>
+    <p><em>Do you believe</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>概念</span><span>叫</span><span>认知</span><span>失调</span></div>
+    <p><em>There is a concept called cognitive dissonance</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>就是</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>人类</span><span>天生</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>倾向</span><span>于</span><span>避免</span><span>由</span></div>
+    <p><em>That is, humans are innately inclined to avoid</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>观念</span><span>冲突</span><span>而</span><span>引起</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>心理</span><span>冲突</span></div>
+    <p><em>Psychological Conflict Caused by Concept Conflict</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>简单</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><span>就是</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>现象</span></div>
+    <p><em>Simply put, it is a phenomenon</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>错</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a></div>
+    <p><em>it&#x27;s not my fault</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>很多</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>应该</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>经历</span></div>
+    <p><em>A lot of people should have this experience</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>甚至</span><span>有些</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>属</span><span>于</span><span>永远</span></div>
+    <p><em>Some people even belong to forever</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>错误</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>类</span></div>
+    <p><em>the one without errors</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>对于</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>for them</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>错误</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>原因</span><span>永远</span><span>都是</span><span>客观</span><span>条件</span><span>或者</span></div>
+    <p><em>The cause of the error is always objective conditions or</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>其他</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>造成</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>caused by others</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>1959</span><span>年</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>实验</span></div>
+    <p><em>An experiment in 1959</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>说明</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>现象</span></div>
+    <p><em>is often used to illustrate this phenomenon</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>实验</span><span>当中</span></div>
+    <p><em>in the experiment</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>心理</span><span>学</span><span>家</span><span>莱昂</span><span>费</span><span>斯汀格</span></div>
+    <p><em>psychologist leon festinger</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>要求</span><span>参与</span><span>者</span><span>进行</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>项</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>无聊</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>任务</span></div>
+    <p><em>Ask participants to do a very boring task</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比如</span><span>转动</span><span>门</span><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>手</span><span>转</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>小时</span></div>
+    <p><em>Like turning a doorknob for an hour</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部分</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>参与</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>得到</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>美</span><span>元</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>报酬</span></div>
+    <p><em>Some of the participants will get paid a dollar</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>另外</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>部分</span><span>参与</span><span>者</span></div>
+    <p><em>while other participants</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>得到</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>20</span><span>美</span><span>元</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>报酬</span></div>
+    <p><em>Got paid $20</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_1f4608ce-e0c6-4b6e-bd73-061b90bbe4c2.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>然后</span><span>这些</span><span>参与</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>要求</span><a style="text-decoration:none" href="../../zh/word/%E5%8E%BB/index.html">去</a></div>
+    <p><em>These participants were then asked to</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%91%8A%E8%AF%89/index.html">告诉</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>实验</span><span>对象</span></div>
+    <p><em>tell the next subject</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><span>所</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>任务</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>有趣</span><span>儿</span></div>
+    <p><em>Said the task he did was interesting</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>相比</span><span>拿</span><span>20</span><span>美</span><span>元</span><span>报酬</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>compared to those who get paid $20</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>那些</span><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>美</span><span>元</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>参与</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>表示</span></div>
+    <p><em>Those who took a dollar would say</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>出</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>任务</span><span>更加</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>意思</span></div>
+    <p><em>This task is more interesting</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>按说</span><span>那些</span><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>美</span><span>元</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>应该</span><span>吐槽</span><span>才</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>呀</span></div>
+    <p><em>It is said that those who take a dollar should complain.</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2913711b-f58c-4bec-8edb-604b54020d69.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>任务</span><span>无聊</span><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>钱</span><span>又</span><span>少</span></div>
+    <p><em>Because the task is boring, I get less money</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>出现</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>结果</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    <p><em>Why does this result occur?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>那些</span><span>拿钱</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%9A/index.html">多</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>参与</span><span>者</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E8%A7%89%E5%BE%97/index.html">觉得</a></div>
+    <p><em>Because those who take more money will feel that</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>无聊</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>工作</span><span>当中</span><a style="text-decoration:none" href="../../zh/word/%E5%B7%B2%E7%BB%8F/index.html">已经</a></div>
+    <p><em>They&#x27;ve gone from that boring job</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>得到</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>足够</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>补偿</span></div>
+    <p><em>been adequately compensated</em></p>
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_34d2eae9-1abb-4572-ade8-15253b9ad7da.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>而</span><span>那些</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><span>拿</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>1</span><span>美</span><span>金</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>参与</span><span>者</span></div>
+    <p><em>And those who took only $1</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>却</span><span>需要</span><span>通过</span><span>描述</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>工作</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    <p><em>but need to describe the work by</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>多么</span><span>多么</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>有趣</span></div>
+    <p><em>how much fun</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>不爽</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>经历</span><span>进行</span><span>辩护</span></div>
+    <p><em>to defend one&#x27;s unpleasant experience</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>换</span><span>句</span><span>话</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>in other words</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>经常</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>欺骗</span><a style="text-decoration:none" href="../../zh/word/%E8%87%AA%E5%B7%B1/index.html">自己</a></div>
+    <p><em>We often deceive ourselves</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以</span><span>此</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>世界</span><span>变得</span><span>更</span><span>理性</span></div>
+    <p><em>to make the world more rational</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>更</span><span>和谐</span></div>
+    <p><em>more harmonious</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以上</span><span>就是</span><span>琼斯</span><span>所</span><span>使用</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>四</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>手段</span></div>
+    <p><em>These are the four tactics Jones used</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>对于</span><span>催眠</span><span>术</span><span>等</span><span>高深</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>技术</span><span>并</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>关系</span></div>
+    <p><em>It doesn&#x27;t matter for advanced techniques such as hypnotism</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%8F%AA/index.html">只</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>应用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>四</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>关键</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>心理</span><span>原则</span></div>
+    <p><em>Just applying four key psychological principles</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>人们</span><span>陷入</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>邪教</span><span>而</span><span>无法</span><span>自拔</span></div>
+    <p><em>Let people fall into a cult and cannot extricate themselves</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>也许</span><span>以为</span><span>琼斯</span><span>创立</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>一些</span><span>奇怪</span></div>
+    <p><em>Some strange things you might think Jones founded</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>而</span><span>痛苦</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>仪式</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>吓跑</span><span>信徒</span></div>
+    <p><em>And painful rituals scare off believers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>比如</span><span>周末</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>信徒</span><a style="text-decoration:none" href="../../zh/word/%E8%B7%9F/index.html">跟</a><span>家人</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>一起</span></div>
+    <p><em>For example, not allowing believers to be with their families on weekends</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><span>实际</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><span>却</span><span>恰恰</span><span>相反</span></div>
+    <p><em>But in fact the exact opposite</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>由于</span><span>自我</span><span>辩护</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>心理</span></div>
+    <p><em>Due to the psychology of self-defense</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>这些</span><span>痛苦</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>仪式</span><span>反而</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><span>信徒</span><span>们</span></div>
+    <p><em>These painful rituals make believers</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><span>组织</span><span>产生</span><span>更强</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>向</span><span>心力</span></div>
+    <p><em>Generates stronger centripetal force on the organization</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>也许</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>假设</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>并</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>生活</span></div>
+    <p><em>Maybe you&#x27;ll assume we don&#x27;t live</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>与世隔绝</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>地方</span></div>
+    <p><em>in an isolated place</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>自制</span><span>力</span></div>
+    <p><em>we have self-control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>受</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%87/index.html">过</a><span>高等</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>教育</span></div>
+    <p><em>We are highly educated</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>应该</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>抵御</span><span>这些</span><span>思想</span><span>控制</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>手段</span></div>
+    <p><em>We should be able to resist these means of mind control</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>心理</span><span>学</span><span>家</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>研究</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a></div>
+    <p><em>But from the research of psychologists</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>想法</span><span>有些</span><span>天真</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    <p><em>That&#x27;s a bit naive</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>不过</span><a style="text-decoration:none" href="../../zh/word/%E4%B9%9F/index.html">也</a><span>不必</span><span>太过</span><span>悲观</span></div>
+    <p><em>But don&#x27;t be too pessimistic</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>达伦</span><span>布朗</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>场</span><span>演出</span><span>结束</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a></div>
+    <p><em>Darren Brown said at the end of a show</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>关键</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>所有</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E9%83%BD/index.html">都</a><span>极易</span><span>受到</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>影响</span></div>
+    <p><em>The point is that all of us are extremely vulnerable to this</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><span>通过</span><span>了解</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a></div>
+    <p><em>But by knowing this</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>了解</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>如何</span><a style="text-decoration:none" href="../../zh/word/%E8%A2%AB/index.html">被</a><span>操纵</span></div>
+    <p><em>Learn how we can be manipulated</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>变得</span><span>更</span><span>坚强</span></div>
+    <p><em>we can be stronger</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>，</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>反抗</span><span>！</span></div>
+    <p><em>We can say no, we can resist!</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>以上</span><span>就是</span><span>本次</span><span>分享</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>内容</span></div>
+    <p><em>The above is the content of this sharing</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>希望</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>带来</span><span>启发</span></div>
+    <p><em>Hope it can inspire you</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A6%82%E6%9E%9C/index.html">如果</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E5%96%9C%E6%AC%A2/index.html">喜欢</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>视频</span></div>
+    <p><em>if you like my video</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>请</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>订阅</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>频道</span><a style="text-decoration:none" href="../../zh/word/%E7%82%B9/index.html">点</a></div>
+    <p><em>please subscribe to my channel</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>赞</span><span>并</span><span>分享</span><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><span>更多</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    <p><em>Like and share with more people</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%B0%A2%E8%B0%A2/index.html">谢谢</a><span>您</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>观看</span></div>
+    <p><em>Thank you for watching</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>那么</span><span>下次</span><span>再见</span></div>
+    <p><em>then see you next time</em></p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>

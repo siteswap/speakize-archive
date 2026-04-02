@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>LanguageReactor_export - Chinese - Speakize Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  const stored = localStorage.getItem('theme');
+  const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-bs-theme', preferred);
+})();
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  const next = (theme === 'light') ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.documentElement.setAttribute('data-bs-theme', next);
+}
+</script>
+<style>
+  html[data-bs-theme="light"] body { background-color: #f4f6f9; }
+</style>
+
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary bg-gradient">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../index.html">Speakize (beta)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container max-width-500">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="../../documents.html">Documents</a></li>
+<li class="nav-item"><a class="nav-link" href="../../flashcards.html">Flashcards</a></li>
+<li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../../reports.html">Words by Spoken Frequency</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Review Count</a></li>
+            <li><a class="dropdown-item" href="../../reports.html">Words by Next Review Due</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="../../smartfeed.html">Smart Feed</a></li>
+<li class="nav-item"><a class="nav-link" href="../../exports.html">Exports</a></li>
+
+      </ul>
+      <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('../../');">
+        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
+          <option value="zh">Chinese</option>
+          <option value="es">Spanish</option>
+        </select>
+        <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
+        <button class="btn btn-outline-dark" type="submit">Lookup</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown dropstart">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">remoteuser</a></li>
+            <hr>
+            <li><a class="dropdown-item" href="#" onclick="toggleTheme()"><i class="bi bi-moon"></i> Dark mode</a></li>
+            <li><a class="dropdown-item" href="../../instructions.html"><i class="bi bi-question-circle"></i> Help</a></li>
+            <li><a class="dropdown-item" href="../../settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <hr>
+            <li><a class="dropdown-item text-muted"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+<br>
+<h2 class="card-title text-center">
+  LanguageReactor_export
+  <small class="text-muted">(Document)</small>
+</h2>
+
+<br>
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+  <td></td>
+  <td>
+    <div><span>经过</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>段</span><span>时间</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>实验</span><span>得出</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>结论</span><a style="text-decoration:none" href="../../zh/word/%E5%91%A2/index.html">呢</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_3f7fc970-abf2-470b-aaca-1dfd50d0c3fc.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>所以</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>为了</span><span>避免</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>情况</span><span>出现</span></div>
+    <p><em>So they avoid this situation</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>2500万</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>儿童</span><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>接受</span><span>疫苗</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>注射</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E7%8E%B0%E5%9C%A8/index.html">现在</a><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>非常</span><span>成熟</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>技术</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2c9f5dd5-32e4-47c8-8c29-e09e5aca902c.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>于是</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>提到</span><span>两</span><span>件</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%8B/index.html">事</a></div>
+    <p><em>So he mentioned two things</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>穷人</span><a style="text-decoration:none" href="../../zh/word/%E5%92%8C/index.html">和</a><span>富人</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%80/index.html">最</a><span>主要</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>区别</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>钱</span><span>多少</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>才</span><a style="text-decoration:none" href="../../zh/word/%E8%83%BD/index.html">能</a><a style="text-decoration:none" href="../../zh/word/%E7%9F%A5%E9%81%93/index.html">知道</a><span>到底</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>原因</span><a style="text-decoration:none" href="../../zh/word/%E8%AE%A9/index.html">让</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><span>造成</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a><span>贫困</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><span>实验</span><a style="text-decoration:none" href="../../zh/word/%E5%81%9A/index.html">做</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>实验</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>人们</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><a style="text-decoration:none" href="../../zh/word/%E7%9F%A5%E9%81%93/index.html">知道</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a><span>该</span><a style="text-decoration:none" href="../../zh/word/%E6%80%8E%E4%B9%88/index.html">怎么</a><span>办</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_fdcf01a6-acbb-4e7a-a65e-cd097bb339d5.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>然后</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%98/index.html">还</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>钱</span><a style="text-decoration:none" href="../../zh/word/%E9%82%A3/index.html">那</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>更</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>干活</span><span>等</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E7%BB%99/index.html">给</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>钱</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a></div>
+    <p><em>Then if you give me the money, I will not work and wait for you to give me the money, right?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E8%83%BD/index.html">可能</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>由于</span><span>撒哈拉</span><span>以南</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>非洲</span><span>政府</span><span>非常</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>腐败</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>那么</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>种</span><span>情况</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8B/index.html">下</a><span>援助</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%BA/index.html">为</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>没用</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1%E6%9C%89/index.html">没有</a><span>任何</span><span>变化</span><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E5%90%A7/index.html">吧</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>大概</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99%E6%A0%B7/index.html">这样</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%A6%82%E6%9E%9C/index.html">如果</a><a style="text-decoration:none" href="../../zh/word/%E6%8A%8A/index.html">把</a><span>非洲</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>GDP</span><span>画</span><span>出来</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>样子</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>所以</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>画</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>图</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%9B%A0%E4%B8%BA/index.html">因为</a><span>撒哈拉</span><span>以南</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>非洲</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>非常</span><span>贫穷</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%8E/index.html">从</a><span>数据</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8A/index.html">上</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><span>好像</span><span>并</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%8D/index.html">不</a><span>支持</span><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>结论</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>争论</span><span>就是</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>针对</span><span>于</span><span>穷</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>援助</span><span>到底</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>有没有</span><a style="text-decoration:none" href="../../zh/word/%E7%94%A8/index.html">用</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>首先</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91%E4%BB%AC/index.html">我们</a><span>先</span><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>讲</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><span>讲</span><span>针对</span><span>贫穷</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>争论</span></div>
+    <p><em>First, let&#x27;s talk about a debate about poverty.</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>。</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>有理</span><span>有据</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>外国</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a><span>真的</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>开放</span><a style="text-decoration:none" href="../../zh/word/%E5%90%97/index.html">吗</a><span>？</span></div>
+    <p><em>Are foreigners really open?</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>然而</span><span>每个</span><span>国家</span><a style="text-decoration:none" href="../../zh/word/%E6%9C%89/index.html">有</a><span>不同</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>习俗</span><span>，</span><span>不同</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>文化</span><span>，</span><span>不同</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>国情</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_1dc6f948-e2b1-4908-a568-239c5dd3f9f0.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>很快</span><a style="text-decoration:none" href="../../zh/word/%E5%BE%88/index.html">很</a><span>容易</span><a style="text-decoration:none" href="../../zh/word/%E5%8F%AF%E4%BB%A5/index.html">可以</a><span>交到</span><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>女</span><span>朋友</span></div>
+    <p><em>It&#x27;s quick and easy to get a girlfriend</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>尤其</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><span>那些</span><span>马上</span><a style="text-decoration:none" href="../../zh/word/%E8%A6%81/index.html">要</a><span>出国</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>男</span><span>孩子</span><span>。</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E8%A7%89%E5%BE%97/index.html">觉得</a><span>出国</span><a style="text-decoration:none" href="../../zh/word/%E5%B0%B1/index.html">就</a><span>意味</span><a style="text-decoration:none" href="../../zh/word/%E7%9D%80/index.html">着</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A4%AA/index.html">太</a><span>残忍</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>就是</span><span>传统</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>中国</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%A5%BD/index.html">好</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><a style="text-decoration:none" href="../../zh/word/%E7%9C%8B/index.html">看</a><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>情感</span><span>经历</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>您</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>竞争</span><span>力</span><span>不足</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><span>太爽</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%86/index.html">了</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td><button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_47aaf9ea-43ba-4bc3-ac20-2688364e1a14.mp3"><i class="bi bi-play-fill"></i></button></td>
+  <td>
+    <div><span>朋友</span><a style="text-decoration:none" href="../../zh/word/%E5%A4%A7/index.html">大</a><span>部分</span><a style="text-decoration:none" href="../../zh/word/%E8%AF%B4/index.html">说</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%A4%AA/index.html">太</a><span>温柔</span></div>
+    <p><em>Most of my friends say I&#x27;m too gentle</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>初恋</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><a style="text-decoration:none" href="../../zh/word/%E6%97%B6%E5%80%99/index.html">时候</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%86%E6%98%AF/index.html">但是</a><span>之前</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>美国</span><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%80/index.html">一</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>屌丝</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>美</span><span>籍</span><span>华</span><a style="text-decoration:none" href="../../zh/word/%E4%BA%BA/index.html">人</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E5%AF%B9/index.html">对</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>美国</span><span>土生土长</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><span>醒醒</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a><span>背</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E6%9D%A5/index.html">来</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>-</span><a style="text-decoration:none" href="../../zh/word/%E4%BD%A0/index.html">你</a><a style="text-decoration:none" href="../../zh/word/%E8%BF%99/index.html">这</a><a style="text-decoration:none" href="../../zh/word/%E4%B8%AA/index.html">个</a><span>笨蛋</span><a style="text-decoration:none" href="../../zh/word/%E5%9C%A8/index.html">在</a><span>胡说</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%80%E4%B9%88/index.html">什么</a><span>？</span><span>-</span><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><span>是不是</span><span>…</span></div>
+    <p><em>- what are you idiots talking about? -It&#x27;s me…</em></p>
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><span>嫁给</span><a style="text-decoration:none" href="../../zh/word/%E4%BB%96/index.html">他</a></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E4%BB%96%E4%BB%AC/index.html">他们</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>脸上</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><span>露出</span><span>开心</span><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>笑容</span></div>
+    
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+    <div><a style="text-decoration:none" href="../../zh/word/%E6%B2%A1/index.html">没</a><span>想到</span><span>今天</span><a style="text-decoration:none" href="../../zh/word/%E4%BC%9A/index.html">会</a><a style="text-decoration:none" href="../../zh/word/%E6%98%AF/index.html">是</a><a style="text-decoration:none" href="../../zh/word/%E6%88%91/index.html">我</a><a style="text-decoration:none" href="../../zh/word/%E7%9A%84/index.html">的</a><span>死期</span></div>
+    
+  </td>
+</tr>
+
+  </tbody>
+</table>
+<br>
+<div class="text-center">
+  <a href="../../documents.html" class="btn btn-outline-primary">&larr; All Documents</a>
+</div>
+<br><br>
+<audio id="phraseAudio"></audio>
+<script>
+
+function doWordLookup(prefix) {
+  var langEl = document.getElementById('wordLookupLang');
+  var lang = langEl ? langEl.value : 'zh';
+  var word = document.getElementById('wordLookupInput').value.trim();
+  if (!word) return false;
+  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  return false;
+}
+
+document.querySelectorAll('.phrase-play').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var audio = document.getElementById('phraseAudio');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+  });
+});
+</script>
+</body>
+</html>
