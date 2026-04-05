@@ -27,9 +27,14 @@ WORD_ANCHOR_RE = re.compile(
     r'''class=["']word["'][^>]*data-name=["'][^"']+["'][^>]*data-lang=["'][a-z]{2}["']'''
 )
 
-# Pages that render zh/es phrases at runtime and therefore must route
+# Sources that render zh/es phrases at runtime and therefore must route
 # `segmented` tokens through the shared renderer and attach the modal.
-RUNTIME_RENDER_PAGES = ["deck_page.js", "study_page.js", "word_page.js"]
+# smartfeed.html has its rendering code inline in a <script> block rather
+# than in a separate _page.js file, but the contract is the same.
+RUNTIME_RENDER_PAGES = [
+    "deck_page.js", "study_page.js", "word_page.js", "reports_page.js",
+    "smartfeed.html",
+]
 
 
 def test_documents_json_phrases_are_highlighted():
@@ -99,6 +104,7 @@ def test_html_pages_load_flashcards_js():
         "study.html": "study_page.js",
         "word.html": "word_page.js",
         "document.html": "document_page.js",
+        "reports.html": "reports_page.js",
     }
     for html_name, js_name in page_scripts.items():
         html = (ROOT / html_name).read_text()

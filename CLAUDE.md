@@ -19,8 +19,8 @@ To update the sample data, re-run `generate_static_archive.py` from sherpa again
 ## Layout
 
 - `index.html`, `documents.html`, `flashcards.html`, `reports.html`, `smartfeed.html`, `exports.html`, `settings.html`, `instructions.html` — top-level pages
-- `deck.html`, `study.html`, `word.html`, `words.html`, `document.html` — dynamic-style pages driven by query params + JS (`deck_page.js`, `study_page.js`, `word_page.js`, `document_page.js`)
-- `flashcards.js` — shared library (`window.Speakize`): phrase-token renderer (`.word` anchors with the 3-color legend), deck resolver, and the word-click modal (HTML + click handler). Included by `deck.html`, `study.html`, `word.html`, `document.html`, `smartfeed.html` — each page passes its own `lookup(lang, name)` function to `Speakize.attachWordModal`.
+- `deck.html`, `study.html`, `word.html`, `words.html`, `document.html`, `reports.html` — dynamic-style pages driven by query params + JS (`deck_page.js`, `study_page.js`, `word_page.js`, `document_page.js`, `reports_page.js`)
+- `flashcards.js` — shared library (`window.Speakize`): phrase-token renderer (`.word` anchors with the 3-color legend), deck resolver, and the word-click modal (HTML + click handler). Included by `deck.html`, `study.html`, `word.html`, `document.html`, `reports.html`, `smartfeed.html` — each page passes its own `lookup(lang, name)` function to `Speakize.attachWordModal`.
 - `data/zh.json`, `data/es.json` — per-language word database (replaces the backend DB); ~800KB–1.9MB each
 - `data/documents.json` — metadata + per-document content (phrases, wordData, YouTube embeds) for all documents; also contains the `myContent`/`sharedContent` list ordering used by `documents.html`
 - `zh/index.html`, `es/index.html` — language landing pages
