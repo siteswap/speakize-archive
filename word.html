@@ -85,32 +85,6 @@ function toggleTheme() {
   </div>
 </div>
 
-<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Meaning: <b id="modalDefinition"></b><br>
-        Spoken frequency rank: <b id="modalRank"></b><br>
-        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
-        <br>
-        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
-          <i class="bi bi-play-fill"></i> Play Audio
-        </button>
-        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
-        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
-        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <script>
 function doWordLookup(prefix) {
   var langEl = document.getElementById('wordLookupLang');
@@ -121,6 +95,7 @@ function doWordLookup(prefix) {
   return false;
 }
 </script>
+<script src="flashcards.js"></script>
 <script src="word_page.js"></script>
 </body>
 </html>

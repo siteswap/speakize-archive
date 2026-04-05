@@ -1,39 +1,5 @@
 (function() {
-  var BUCKET_URL = "https://storage.googleapis.com/createflashcardapp.appspot.com";
-  var VIRTUAL_IDS = {
-    all: {label: 'All Flashcards', type: null},
-    reading: {label: 'All Reading Flashcards', type: 'READING'},
-    listening: {label: 'All Listening Flashcards', type: 'LISTENING'},
-    speaking: {label: 'All Speaking Flashcards', type: 'PRODUCTION'}
-  };
-
-  function esc(s) {
-    if (s === null || s === undefined) return '';
-    return String(s).replace(/[&<>"']/g, function(c) {
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-  }
-
-  function resolveDeck(data, id) {
-    if (VIRTUAL_IDS.hasOwnProperty(id)) {
-      var v = VIRTUAL_IDS[id];
-      var phrases = [];
-      for (var i = 0; i < data.decks.length; i++) {
-        var d = data.decks[i];
-        for (var j = 0; j < d.phrases.length; j++) {
-          var p = d.phrases[j];
-          if (v.type === null || p.card_type === v.type) phrases.push(p);
-        }
-      }
-      return {name: v.label, phrases: phrases};
-    }
-    var numId = parseInt(id, 10);
-    for (var k = 0; k < data.decks.length; k++) {
-      if (data.decks[k].id === numId) return {name: data.decks[k].name, phrases: data.decks[k].phrases};
-    }
-    return null;
-  }
-
+  var S = window.Speakize;
   var container = document.getElementById('studyPageContainer');
   var params = new URLSearchParams(window.location.search);
   var lang = params.get('lang') || 'zh';
@@ -43,18 +9,22 @@
     .then(function(r) { return r.json(); })
     .then(function(data) { start(data); })
     .catch(function(err) {
-      container.innerHTML = '<div class="alert alert-danger m-4">Failed to load: ' + esc(err.message) + '</div>';
+      container.innerHTML = '<div class="alert alert-danger m-4">Failed to load: ' + S.esc(err.message) + '</div>';
     });
 
   function start(data) {
-    var deck = resolveDeck(data, id);
+    var deck = S.resolveDeck(data, id);
     if (!deck || !deck.phrases.length) {
       container.innerHTML = '<div class="alert alert-warning m-4">No flashcards in this deck.</div>';
       return;
     }
+    var knownSet = new Set(data.known || []);
+    var pages = data.pages || {};
+    S.attachWordModal(S.makeLangLookup(data, lang));
+
     var backHref = 'deck.html?lang=' + lang + '&id=' + encodeURIComponent(id);
     container.innerHTML =
-      '<br><h3 class="text-center">' + esc(deck.name) + '</h3>' +
+      '<br><h3 class="text-center">' + S.esc(deck.name) + '</h3>' +
       '<p class="text-center text-muted"><span id="studyPos">1</span> / ' + deck.phrases.length + '</p>' +
       '<div class="card m-3 text-center shadow"><div class="card-body">' +
         '<img id="studyImage" class="img-fluid rounded mb-2" style="display:none; max-height:200px;" alt="">' +
@@ -71,7 +41,12 @@
     var idx = 0;
     function show(i) {
       var p = deck.phrases[i];
-      document.getElementById('studyText').textContent = p.phrase || '';
+      var textEl = document.getElementById('studyText');
+      if (p.segmented && p.segmented.length) {
+        textEl.innerHTML = S.renderTokens(lang, p.segmented, pages, knownSet);
+      } else {
+        textEl.textContent = p.phrase || '';
+      }
       document.getElementById('studyTrans').textContent = p.translation || '';
       document.getElementById('studyPos').textContent = (i + 1);
       var aud = document.getElementById('studyAudio');

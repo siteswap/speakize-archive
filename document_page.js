@@ -1,29 +1,24 @@
 (function() {
+  var S = window.Speakize;
   var params = new URLSearchParams(window.location.search);
   var docId = params.get('id');
   var container = document.getElementById('documentPageContainer');
 
-  function escapeHtml(s) {
-    return (s || '').replace(/[&<>"']/g, function(c) {
-      return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c];
-    });
-  }
-
   function renderError(msg) {
     container.innerHTML = '<div class="container p-5 text-center"><p class="text-muted">' +
-      escapeHtml(msg) + '</p>' +
+      S.esc(msg) + '</p>' +
       '<a href="documents.html" class="btn btn-outline-primary">&larr; All Documents</a></div>';
   }
 
   function renderDoc(doc, wordData) {
     var html = '<br><h2 class="card-title text-center">' +
-      escapeHtml(doc.title) +
+      S.esc(doc.title) +
       ' <small class="text-muted">(Document)</small></h2>';
 
     if (doc.youtube) {
       html += '<div class="embed-responsive embed-responsive-16by9" style="max-width: 100%;">' +
         '<iframe class="embed-responsive-item" style="width:100%; aspect-ratio:16/9;" src="' +
-        escapeHtml(doc.youtube) + '" title="YouTube video" allowfullscreen></iframe></div><br>';
+        S.esc(doc.youtube) + '" title="YouTube video" allowfullscreen></iframe></div><br>';
     }
 
     html += '<div class="mb-3 text-center"><small class="text-muted">' +
@@ -36,11 +31,11 @@
     (doc.phrases || []).forEach(function(p) {
       var firstTd = p.audio
         ? '<button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="' +
-            escapeHtml(p.audio) + '"><i class="bi bi-play-fill"></i></button>'
+            S.esc(p.audio) + '"><i class="bi bi-play-fill"></i></button>'
         : '';
       var tokens = spaceTokens ? p.tokens_html.replace(/<\/a><a /g, '</a> <a ') : p.tokens_html;
       html += '<tr><td>' + firstTd + '</td><td><div>' + tokens + '</div>' +
-        '<p><em>' + escapeHtml(p.translation) + '</em></p></td></tr>';
+        '<p><em>' + S.esc(p.translation) + '</em></p></td></tr>';
     });
 
     html += '</tbody></table><br><div class="text-center">' +
@@ -49,46 +44,16 @@
     container.innerHTML = html;
     document.title = doc.title + ' - Speakize Archive';
 
-    // Attach word modal handler
-    var wordAudio = new Audio();
-    container.addEventListener('click', function(e) {
-      var el = e.target.closest('.word');
-      if (!el) return;
-      e.preventDefault();
-      var lang = el.getAttribute('data-lang');
-      var name = el.getAttribute('data-name');
+    S.attachWordModal(function(lang, name) {
       var info = wordData[lang + '|' + name];
-      if (!info) return;
-      document.getElementById('modalWordTitle').textContent = name;
-      document.getElementById('modalDefinition').textContent = info.definition || '—';
-      document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
-      var pinyinEl = document.getElementById('modalPinyin');
-      var pinyinRow = document.getElementById('modalPinyinRow');
-      if (pinyinRow) {
-        if (info.pinyin) {
-          pinyinEl.textContent = info.pinyin;
-          pinyinRow.style.display = '';
-        } else {
-          pinyinRow.style.display = 'none';
-        }
-      }
-      var fullLink = document.getElementById('modalFullInfo');
-      if (info.inTop) {
-        fullLink.href = info.href;
-        fullLink.style.display = '';
-      } else {
-        fullLink.style.display = 'none';
-      }
-      var modal = new bootstrap.Modal(document.getElementById('wordModal'));
-      modal.show();
-      if (info.audio) {
-        wordAudio.src = info.audio;
-        wordAudio.play().catch(function(){});
-      }
-    });
-    var playBtn = document.getElementById('modalPlayBtn');
-    if (playBtn) playBtn.addEventListener('click', function() {
-      wordAudio.play().catch(function(){});
+      if (!info) return null;
+      return {
+        definition: info.definition,
+        rank: info.rank,
+        pinyin: info.pinyin,
+        audioUrl: info.audio || S.wordAudioUrl(lang, name),
+        fullHref: info.inTop ? (info.href || S.wordHref(lang, name)) : null
+      };
     });
 
     container.querySelectorAll('.phrase-play').forEach(function(btn) {
