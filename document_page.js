@@ -11,9 +11,16 @@
   }
 
   function renderDoc(doc, wordData) {
+    var isUserDoc = docId && docId.indexOf('u-') === 0;
+    var editBtn = isUserDoc
+      ? ' <a href="add_text.html?id=' + encodeURIComponent(docId) +
+        '" class="btn btn-sm btn-outline-primary align-middle ms-2"><i class="bi bi-pencil"></i> Edit</a>' +
+        ' <button type="button" id="userDocDeleteBtn" class="btn btn-sm btn-outline-danger align-middle ms-1">' +
+        '<i class="bi bi-trash"></i> Delete</button>'
+      : '';
     var html = '<br><h2 class="card-title text-center">' +
       S.esc(doc.title) +
-      ' <small class="text-muted">(Document)</small></h2>';
+      ' <small class="text-muted">(Document)</small>' + editBtn + '</h2>';
 
     if (doc.youtube) {
       html += '<div class="embed-responsive embed-responsive-16by9" style="max-width: 100%;">' +
@@ -56,6 +63,19 @@
       };
     });
 
+    var delBtn = document.getElementById('userDocDeleteBtn');
+    if (delBtn) {
+      delBtn.addEventListener('click', function() {
+        if (!confirm('Delete "' + doc.title + '"? This cannot be undone.')) return;
+        var all;
+        try { all = JSON.parse(localStorage.getItem('speakize_user_docs') || '{}'); }
+        catch (e) { all = {}; }
+        delete all[docId];
+        localStorage.setItem('speakize_user_docs', JSON.stringify(all));
+        window.location.href = 'documents.html';
+      });
+    }
+
     container.querySelectorAll('.phrase-play').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var audio = document.getElementById('phraseAudio');
@@ -67,6 +87,22 @@
 
   if (!docId) {
     renderError('No document id specified.');
+    return;
+  }
+
+  if (docId.indexOf('u-') === 0) {
+    var userDocs;
+    try {
+      userDocs = JSON.parse(localStorage.getItem('speakize_user_docs') || '{}');
+    } catch (e) {
+      userDocs = {};
+    }
+    var udoc = userDocs[docId];
+    if (!udoc) {
+      renderError('User document ' + docId + ' not found.');
+    } else {
+      renderDoc(udoc, udoc.wordData || {});
+    }
     return;
   }
 
