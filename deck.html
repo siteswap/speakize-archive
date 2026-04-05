@@ -121,6 +121,24 @@ function doWordLookup(prefix) {
   return false;
 }
 </script>
+<script>
+(function() {
+  var key = 'study_lang';
+  var sel = document.getElementById('wordLookupLang');
+  if (!sel) return;
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  var saved = localStorage.getItem(key);
+  var initial = (urlLang === 'zh' || urlLang === 'es') ? urlLang
+              : (saved === 'zh' || saved === 'es') ? saved : null;
+  if (initial) {
+    sel.value = initial;
+    localStorage.setItem(key, initial);
+  }
+  sel.addEventListener('change', function() {
+    localStorage.setItem(key, sel.value);
+  });
+})();
+</script>
 <script src="deck_page.js"></script>
 </body>
 </html>
