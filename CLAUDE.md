@@ -35,3 +35,4 @@ To update the sample data, re-run `generate_static_archive.py` from sherpa again
 - Word pages fetch from per-language JSON at runtime (no per-word HTML files).
 - Document pages support word-click modals and color highlighting.
 - When making changes, prefer regenerating from sherpa over hand-editing generated pages, unless the change is to the template/generator itself.
+- **Chinese word segmentation** for user-added text (`add_text_page.js`) uses the browser-native `Intl.Segmenter` API with `{granularity: 'word'}`. No external library is shipped. Spanish is split by whitespace/punctuation via regex. If `Intl.Segmenter` is unavailable (rare — unsupported only in older browsers), Chinese falls back to the same per-character regex.
