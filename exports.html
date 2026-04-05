@@ -82,13 +82,9 @@ function toggleTheme() {
   <h2 class="my-4">Exports</h2>
   <p class="text-muted">Exported Anki packages, MP3 and MP4 files. Create exports from the Flashcards page.</p>
   <input type="text" id="exportSearch" class="form-control mb-3" placeholder="Search exports...">
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-toggle="tab" href="#exports-zh" role="tab">Chinese (12)</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" data-bs-toggle="tab" href="#exports-es" role="tab">Spanish (18)</a></li>
-
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="exports-zh" role="tabpanel">
+  <div>
+    <div data-lang-filter="zh" id="exports-zh">
+<h5 class="mb-3">Chinese (12)</h5>
 <div class="row"><div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/LXFB99_ANGLE-scaled.jpg" class="card-img-top" alt="Duolingo grammar points"><div class="card-body"><h6 class="card-title">Duolingo grammar points</h6><p class="card-text text-muted small">2025-04-21</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/anki/speakize_Duolingo%20grammar%20points_310591.apkg" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/LXFB99_ANGLE-scaled.jpg" class="card-img-top" alt="My Notes from 2025-04-21 10:00:34.002529"><div class="card-body"><h6 class="card-title">My Notes from 2025-04-21 10:00:34.002529</h6><p class="card-text text-muted small">2025-04-21</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/anki/speakize_My%20Notes%20from%202025-04-21%2010%3A00%3A34.002529_401223.apkg" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_6525db22-88bc-4453-be4b-8505bba55dd2.png" class="card-img-top" alt="Haley 27_12_2022"><div class="card-body"><h6 class="card-title">Haley 27_12_2022</h6><p class="card-text text-muted small">2023-07-23</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/file_exports/speakize_Haley%2027_12_2022_045133.mp3" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
@@ -102,7 +98,8 @@ function toggleTheme() {
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_e5cc1d85-b099-433d-ac48-dcbf57107e1e.jpg" class="card-img-top" alt="Meteor Garden S1 E13"><div class="card-body"><h6 class="card-title">Meteor Garden S1 E13</h6><p class="card-text text-muted small">2022-11-16</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/anki/speakize_Meteor%20Garden%20S1%20E13_838868.apkg" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="/static/android-chrome-192x192.png" class="card-img-top" alt="陀螺仪"><div class="card-body"><h6 class="card-title">陀螺仪</h6><p class="card-text text-muted small">2022-10-16</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/file_exports/speakize_%E9%99%80%E8%9E%BA%E4%BB%AA_686792.mp3" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 </div></div>
-<div class="tab-pane fade" id="exports-es" role="tabpanel">
+<div data-lang-filter="es" id="exports-es">
+<h5 class="mb-3">Spanish (18)</h5>
 <div class="row"><div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_d69d7c15-542a-4342-a2c2-3af7ff9d0624.jpg" class="card-img-top" alt="Hacemos la cena"><div class="card-body"><h6 class="card-title">Hacemos la cena</h6><p class="card-text text-muted small">2025-05-13</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/anki/speakize_Hacemos%20la%20cena_684797.apkg" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_b15e74a4-4d5c-46d0-84b5-10890c36218a.jpg" class="card-img-top" alt="Una loba como yo no está para tipos como tú"><div class="card-body"><h6 class="card-title">Una loba como yo no está para tipos como tú</h6><p class="card-text text-muted small">2023-02-08</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/anki/speakize_Una%20loba%20como%20yo%20no%20est%C3%A1%20para%20tipos%20como%20t%C3%BA_446405.apkg" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
 <div class="col-sm-6 col-md-4 mb-3 export-card"><div class="card shadow h-100"><img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_b15e74a4-4d5c-46d0-84b5-10890c36218a.jpg" class="card-img-top" alt="Una loba como yo no está para tipos como tú"><div class="card-body"><h6 class="card-title">Una loba como yo no está para tipos como tú</h6><p class="card-text text-muted small">2023-02-05</p><a href="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/file_exports/speakize_Una%20loba%20como%20yo%20no%20est%C3%A1%20para%20tipos%20como%20t%C3%BA_750572.mp4" class="btn btn-sm btn-primary" download><i class="bi bi-download"></i> Download</a></div></div></div>
@@ -134,6 +131,26 @@ function doWordLookup(prefix) {
   window.location.href = prefix + 'word.html?lang=' + lang + '&w=' + encodeURIComponent(word);
   return false;
 }
+
+
+(function() {
+  var key = 'sherpa_lang';
+  var sel = document.getElementById('wordLookupLang');
+  if (!sel) return;
+  var saved = localStorage.getItem(key);
+  if (saved === 'zh' || saved === 'es') sel.value = saved;
+  function applyFilter() {
+    var lang = sel.value;
+    document.querySelectorAll('[data-lang-filter]').forEach(function(el) {
+      el.style.display = (el.getAttribute('data-lang-filter') === lang) ? '' : 'none';
+    });
+  }
+  sel.addEventListener('change', function() {
+    localStorage.setItem(key, sel.value);
+    applyFilter();
+  });
+  applyFilter();
+})();
 
 document.getElementById('exportSearch').addEventListener('input', function() {
   const q = this.value.toLowerCase();

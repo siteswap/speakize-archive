@@ -82,13 +82,9 @@ function toggleTheme() {
   <h2 class="my-4">Reports</h2>
   <p class="text-muted">These are target words sorted by spoken frequency. The first 100 words often cover over 50% of the spoken language.</p>
   <input type="text" id="reportSearch" class="form-control mb-3" placeholder="Filter words...">
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-toggle="tab" href="#reports-zh" role="tab">Chinese (1000)</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" data-bs-toggle="tab" href="#reports-es" role="tab">Spanish (1000)</a></li>
-
-  </ul>
-  <div class="tab-content mt-3">
-    <div class="tab-pane fade show active" id="reports-zh" role="tabpanel">
+  <div class="mt-3">
+    <div data-lang-filter="zh" id="reports-zh">
+<h5 class="mb-3">Chinese (1000)</h5>
 <table class="table table-striped table-hover" id="reportsTable-zh">
   <thead><tr><th>Rank</th><th>Coverage%</th><th>Word</th><th>Pinyin</th><th>Meaning</th></tr></thead>
   <tbody>
@@ -1445,7 +1441,8 @@ function toggleTheme() {
   </tbody>
 </table>
 </div>
-<div class="tab-pane fade" id="reports-es" role="tabpanel">
+<div data-lang-filter="es" id="reports-es">
+<h5 class="mb-3">Spanish (1000)</h5>
 <table class="table table-striped table-hover" id="reportsTable-es">
   <thead><tr><th>Rank</th><th>Coverage%</th><th>Word</th><th>Meaning</th></tr></thead>
   <tbody>
@@ -2473,6 +2470,26 @@ document.getElementById('reportSearch').addEventListener('input', function() {
     row.style.display = text.includes(q) ? '' : 'none';
   });
 });
+
+
+(function() {
+  var key = 'sherpa_lang';
+  var sel = document.getElementById('wordLookupLang');
+  if (!sel) return;
+  var saved = localStorage.getItem(key);
+  if (saved === 'zh' || saved === 'es') sel.value = saved;
+  function applyFilter() {
+    var lang = sel.value;
+    document.querySelectorAll('[data-lang-filter]').forEach(function(el) {
+      el.style.display = (el.getAttribute('data-lang-filter') === lang) ? '' : 'none';
+    });
+  }
+  sel.addEventListener('change', function() {
+    localStorage.setItem(key, sel.value);
+    applyFilter();
+  });
+  applyFilter();
+})();
 </script>
 </body>
 </html>
