@@ -131,7 +131,7 @@ function doWordLookup(prefix) {
   var lang = langEl ? langEl.value : 'zh';
   var word = document.getElementById('wordLookupInput').value.trim();
   if (!word) return false;
-  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  window.location.href = prefix + 'word.html?lang=' + lang + '&w=' + encodeURIComponent(word);
   return false;
 }
 

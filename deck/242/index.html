@@ -98,10 +98,18 @@ function toggleTheme() {
   </div>
 </div>
 <br>
+
+<div class="mb-3 text-center">
+  <small class="text-muted">
+    <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
+    <span style="color:#a71d5d;">&#9632;</span> Not in target range &nbsp;
+    &#9632; Known word
+  </small>
+</div>
 <div class="container"><div class="row row-cols-1 row-cols-md-2 g-4"><div class="col">
   <div class="card shadow">
     <div class="card-body">
-      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;他起得比平时晚得多</h5>
+      <h5 class="card-title"><span class="badge bg-warning"><i class="bi bi-speaker"></i></span>&nbsp;&nbsp;<a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="他" data-lang="zh">他</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="起" data-lang="zh">起</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="得" data-lang="zh">得</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="比" data-lang="zh">比</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="平时" data-lang="zh">平时</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="晚" data-lang="zh">晚</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="得" data-lang="zh">得</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="多" data-lang="zh">多</a></h5>
       <img src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/images/img_3a1edb5b-a5ad-440a-b312-eacc3507abba.gif" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">
       <p class="text-muted"><em>he got up much later than usual</em></p>
       <br><audio controls src="https://storage.googleapis.com/createflashcardapp.appspot.com/user/remoteuser/audio/phrase_2249b8a8-0c4c-4911-b9ce-98a00d1ba539.mp3" style="width:100%; max-width:250px;"></audio>
@@ -114,15 +122,85 @@ function toggleTheme() {
   <a href="../../flashcards.html" class="btn btn-outline-primary">&larr; All Flashcards</a>
 </div>
 <br><br>
+
+<div class="modal fade" id="wordModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="modalWordTitle"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Meaning: <b id="modalDefinition"></b><br>
+        Spoken frequency rank: <b id="modalRank"></b><br>
+        <span id="modalPinyinRow">Pinyin: <b id="modalPinyin"></b><br></span>
+        <br>
+        <a href="#" id="modalFullInfo" class="btn btn-sm btn-outline-primary">Full info &rarr;</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modalPlayBtn">
+          <i class="bi bi-play-fill"></i> Play Audio
+        </button>
+        <span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>
+        <span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>
+        <span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
+
 function doWordLookup(prefix) {
   var langEl = document.getElementById('wordLookupLang');
   var lang = langEl ? langEl.value : 'zh';
   var word = document.getElementById('wordLookupInput').value.trim();
   if (!word) return false;
-  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  window.location.href = prefix + 'word.html?lang=' + lang + '&w=' + encodeURIComponent(word);
   return false;
 }
+
+var wordData = {"zh|多": {"definition": "many; much; often", "rank": 80, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%A4%9A.mp3", "href": "../../word.html?lang=zh&w=%E5%A4%9A", "inTop": true, "pinyin": "duō"}, "zh|比": {"definition": "Belgium; Belgian; abbr. for 比利時|比利时[Bi3 li4 shi2]; to compare; (followed by a noun and adjective) more {adj.} than {noun}; ratio", "rank": 193, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%AF%94.mp3", "href": "../../word.html?lang=zh&w=%E6%AF%94", "inTop": true, "pinyin": "bǐ"}, "zh|起": {"definition": "to rise; to raise; to get up", "rank": 205, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E8%B5%B7.mp3", "href": "../../word.html?lang=zh&w=%E8%B5%B7", "inTop": true, "pinyin": "qǐ"}, "zh|得": {"definition": "to obtain; to get; to gain; structural particle: used after a verb (or adjective as main verb), linking it to following phrase indicating effect, degree, possibility etc; \n; to have to; must; ought to", "rank": 49, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%BE%97.mp3", "href": "../../word.html?lang=zh&w=%E5%BE%97", "inTop": true, "pinyin": "dé"}, "zh|他": {"definition": "he or him; (used for either sex when the sex is unknown or unimportant); (used before sb's name for emphasis)", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E4%BB%96.mp3", "href": "../../word.html?lang=zh&w=%E4%BB%96", "inTop": true, "pinyin": "tā"}, "zh|晚": {"definition": "evening; night; late", "rank": 429, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E6%99%9A.mp3", "href": "../../word.html?lang=zh&w=%E6%99%9A", "inTop": true, "pinyin": "wǎn"}, "zh|平时": {"definition": "ordinarily; in normal times; in peacetime", "rank": 3335, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/zh/word_%E5%B9%B3%E6%97%B6.mp3", "href": "../../word.html?lang=zh&w=%E5%B9%B3%E6%97%B6", "inTop": false, "pinyin": "píng shí"}};
+var wordAudio = new Audio();
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('.word');
+  if (!el) return;
+  e.preventDefault();
+  var lang = el.getAttribute('data-lang');
+  var name = el.getAttribute('data-name');
+  var info = wordData[lang + '|' + name];
+  if (!info) return;
+  document.getElementById('modalWordTitle').textContent = name;
+  document.getElementById('modalDefinition').textContent = info.definition || '—';
+  document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+  var pinyinEl = document.getElementById('modalPinyin');
+  var pinyinRow = document.getElementById('modalPinyinRow');
+  if (pinyinRow) {
+    if (info.pinyin) {
+      pinyinEl.textContent = info.pinyin;
+      pinyinRow.style.display = '';
+    } else {
+      pinyinRow.style.display = 'none';
+    }
+  }
+  var fullLink = document.getElementById('modalFullInfo');
+  if (info.inTop) {
+    fullLink.href = info.href;
+    fullLink.style.display = '';
+  } else {
+    fullLink.style.display = 'none';
+  }
+  var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+  modal.show();
+  if (info.audio) {
+    wordAudio.src = info.audio;
+    wordAudio.play().catch(function(){});
+  }
+});
+var playBtn = document.getElementById('modalPlayBtn');
+if (playBtn) playBtn.addEventListener('click', function() {
+  wordAudio.play().catch(function(){});
+});
 </script>
 </body>
 </html>

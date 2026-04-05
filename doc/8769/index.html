@@ -84,6 +84,7 @@ function toggleTheme() {
   <small class="text-muted">(Document)</small>
 </h2>
 
+
 <div class="mb-3 text-center">
   <small class="text-muted">
     <span style="color:#fd7e14;">&#9632;</span> Target word (due for review) &nbsp;
@@ -124,7 +125,7 @@ function toggleTheme() {
 <tr>
   <td></td>
   <td>
-    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="¿" data-lang="es">¿</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="viste" data-lang="es">Viste</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="la" data-lang="es">la</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="ambulancia" data-lang="es">ambulancia</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="nueva" data-lang="es">nueva</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="?" data-lang="es">?</a></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="¿" data-lang="es">¿</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="viste" data-lang="es">Viste</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="la" data-lang="es">la</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="ambulancia" data-lang="es">ambulancia</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="nueva" data-lang="es">nueva</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="?" data-lang="es">?</a></div>
     <p><em>Did you see the new ambulance?</em></p>
   </td>
 </tr>
@@ -138,14 +139,14 @@ function toggleTheme() {
 <tr>
   <td></td>
   <td>
-    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="sí" data-lang="es">Sí</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="," data-lang="es">,</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="y" data-lang="es">y</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="va" data-lang="es">va</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="larga" data-lang="es">larga</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="distancia" data-lang="es">distancia</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="." data-lang="es">.</a></div>
+    <div><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="sí" data-lang="es">Sí</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="," data-lang="es">,</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="y" data-lang="es">y</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="va" data-lang="es">va</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="larga" data-lang="es">larga</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="distancia" data-lang="es">distancia</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="." data-lang="es">.</a></div>
     <p><em>Yes, and it goes long distance.</em></p>
   </td>
 </tr>
 <tr>
   <td></td>
   <td>
-    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="¿" data-lang="es">¿</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="la" data-lang="es">La</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="gente" data-lang="es">gente</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="tiene" data-lang="es">tiene</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="tolerancia" data-lang="es">tolerancia</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="?" data-lang="es">?</a></div>
+    <div><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="¿" data-lang="es">¿</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="la" data-lang="es">La</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="gente" data-lang="es">gente</a><a style="color:#fd7e14;text-decoration:none" href="#" class="word" data-name="tiene" data-lang="es">tiene</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="tolerancia" data-lang="es">tolerancia</a><a style="color:#a71d5d;text-decoration:none" href="#" class="word" data-name="?" data-lang="es">?</a></div>
     <p><em>Do people have tolerance?</em></p>
   </td>
 </tr>
@@ -199,49 +200,53 @@ function doWordLookup(prefix) {
   var lang = langEl ? langEl.value : 'zh';
   var word = document.getElementById('wordLookupInput').value.trim();
   if (!word) return false;
-  window.location.href = prefix + lang + '/word/' + encodeURIComponent(word) + '/index.html';
+  window.location.href = prefix + 'word.html?lang=' + lang + '&w=' + encodeURIComponent(word);
   return false;
 }
 
-var wordData = {"tolerancia": {"definition": "tolerance", "rank": 11583, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_tolerancia.mp3", "href": "../../es/word/tolerancia/index.html", "inTop": false, "known": false}, "?": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%3F.mp3", "href": "../../es/word/_/index.html", "inTop": false, "known": false}, "es": {"definition": "it is", "rank": 7, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_es.mp3", "href": "../../es/word/es/index.html", "inTop": true, "known": false}, "sí": {"definition": "Yes", "rank": 20, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_s%C3%AD.mp3", "href": "../../es/word/s%C3%AD/index.html", "inTop": true, "known": false}, ".": {"definition": ".", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_..mp3", "href": "../../es/word/./index.html", "inTop": false, "known": false}, "tiene": {"definition": "have", "rank": 65, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_tiene.mp3", "href": "../../es/word/tiene/index.html", "inTop": true, "known": false}, "¿": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%C2%BF.mp3", "href": "../../es/word/%C2%BF/index.html", "inTop": false, "known": false}, "todos": {"definition": "everybody", "rank": 78, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_todos.mp3", "href": "../../es/word/todos/index.html", "inTop": true, "known": false}, "va": {"definition": "goes", "rank": 111, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_va.mp3", "href": "../../es/word/va/index.html", "inTop": false, "known": false}, "viste": {"definition": "dresses", "rank": 585, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_viste.mp3", "href": "../../es/word/viste/index.html", "inTop": false, "known": false}, "la": {"definition": "the", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_la.mp3", "href": "../../es/word/la/index.html", "inTop": true, "known": false}, "y": {"definition": "and", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_y.mp3", "href": "../../es/word/y/index.html", "inTop": true, "known": false}, "ambulancia": {"definition": "ambulance", "rank": 2374, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_ambulancia.mp3", "href": "../../es/word/ambulancia/index.html", "inTop": false, "known": false}, "distancia": {"definition": "distance", "rank": 1961, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_distancia.mp3", "href": "../../es/word/distancia/index.html", "inTop": false, "known": false}, "francia": {"definition": "France", "rank": 2363, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_francia.mp3", "href": "../../es/word/francia/index.html", "inTop": false, "known": false}, "larga": {"definition": "long", "rank": 1371, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_larga.mp3", "href": "../../es/word/larga/index.html", "inTop": false, "known": false}, "bien": {"definition": "right", "rank": 23, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_bien.mp3", "href": "../../es/word/bien/index.html", "inTop": true, "known": false}, "gente": {"definition": "people", "rank": 134, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_gente.mp3", "href": "../../es/word/gente/index.html", "inTop": false, "known": false}, "de": {"definition": "of", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_de.mp3", "href": "../../es/word/de/index.html", "inTop": true, "known": false}, ",": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%2C.mp3", "href": "../../es/word/%2C/index.html", "inTop": false, "known": false}, "aceptan": {"rank": 7434, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_aceptan.mp3", "href": "../../es/word/aceptan/index.html", "inTop": false, "known": false}, "nueva": {"definition": "new", "rank": 295, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_nueva.mp3", "href": "../../es/word/nueva/index.html", "inTop": false, "known": false}};
+var wordData = {"es|aceptan": {"rank": 7434, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_aceptan.mp3", "href": "../../word.html?lang=es&w=aceptan", "inTop": false}, "es|bien": {"definition": "right", "rank": 23, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_bien.mp3", "href": "../../word.html?lang=es&w=bien", "inTop": true}, "es|,": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%2C.mp3", "href": "../../word.html?lang=es&w=%2C", "inTop": false}, "es|larga": {"definition": "long", "rank": 1371, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_larga.mp3", "href": "../../word.html?lang=es&w=larga", "inTop": false}, "es|gente": {"definition": "people", "rank": 134, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_gente.mp3", "href": "../../word.html?lang=es&w=gente", "inTop": true}, "es|ambulancia": {"definition": "ambulance", "rank": 2374, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_ambulancia.mp3", "href": "../../word.html?lang=es&w=ambulancia", "inTop": false}, "es|distancia": {"definition": "distance", "rank": 1961, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_distancia.mp3", "href": "../../word.html?lang=es&w=distancia", "inTop": false}, "es|la": {"definition": "the", "rank": 5, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_la.mp3", "href": "../../word.html?lang=es&w=la", "inTop": true}, "es|tiene": {"definition": "have", "rank": 65, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_tiene.mp3", "href": "../../word.html?lang=es&w=tiene", "inTop": true}, "es|?": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%3F.mp3", "href": "../../word.html?lang=es&w=%3F", "inTop": false}, "es|todos": {"definition": "everybody", "rank": 78, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_todos.mp3", "href": "../../word.html?lang=es&w=todos", "inTop": true}, "es|de": {"definition": "of", "rank": 2, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_de.mp3", "href": "../../word.html?lang=es&w=de", "inTop": true}, "es|¿": {"audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_%C2%BF.mp3", "href": "../../word.html?lang=es&w=%C2%BF", "inTop": false}, "es|nueva": {"definition": "new", "rank": 295, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_nueva.mp3", "href": "../../word.html?lang=es&w=nueva", "inTop": true}, "es|francia": {"definition": "France", "rank": 2363, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_francia.mp3", "href": "../../word.html?lang=es&w=francia", "inTop": false}, "es|sí": {"definition": "Yes", "rank": 20, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_s%C3%AD.mp3", "href": "../../word.html?lang=es&w=s%C3%AD", "inTop": true}, "es|viste": {"definition": "dresses", "rank": 585, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_viste.mp3", "href": "../../word.html?lang=es&w=viste", "inTop": true}, "es|y": {"definition": "and", "rank": 8, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_y.mp3", "href": "../../word.html?lang=es&w=y", "inTop": true}, "es|tolerancia": {"definition": "tolerance", "rank": 11583, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_tolerancia.mp3", "href": "../../word.html?lang=es&w=tolerancia", "inTop": false}, "es|va": {"definition": "goes", "rank": 111, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_va.mp3", "href": "../../word.html?lang=es&w=va", "inTop": true}, "es|es": {"definition": "it is", "rank": 7, "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_es.mp3", "href": "../../word.html?lang=es&w=es", "inTop": true}, "es|.": {"definition": ".", "audio": "https://storage.googleapis.com/createflashcardapp.appspot.com/common/audio/es/word_..mp3", "href": "../../word.html?lang=es&w=.", "inTop": false}};
 var wordAudio = new Audio();
-document.querySelectorAll('.word').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    e.preventDefault();
-    var name = this.getAttribute('data-name');
-    var info = wordData[name];
-    if (!info) return;
-    document.getElementById('modalWordTitle').textContent = name;
-    document.getElementById('modalDefinition').textContent = info.definition || '—';
-    document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
-    var pinyinEl = document.getElementById('modalPinyin');
-    var pinyinRow = document.getElementById('modalPinyinRow');
-    if (pinyinRow) {
-      if (info.pinyin) {
-        pinyinEl.textContent = info.pinyin;
-        pinyinRow.style.display = '';
-      } else {
-        pinyinRow.style.display = 'none';
-      }
-    }
-    var fullLink = document.getElementById('modalFullInfo');
-    if (info.inTop) {
-      fullLink.href = info.href;
-      fullLink.style.display = '';
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('.word');
+  if (!el) return;
+  e.preventDefault();
+  var lang = el.getAttribute('data-lang');
+  var name = el.getAttribute('data-name');
+  var info = wordData[lang + '|' + name];
+  if (!info) return;
+  document.getElementById('modalWordTitle').textContent = name;
+  document.getElementById('modalDefinition').textContent = info.definition || '—';
+  document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
+  var pinyinEl = document.getElementById('modalPinyin');
+  var pinyinRow = document.getElementById('modalPinyinRow');
+  if (pinyinRow) {
+    if (info.pinyin) {
+      pinyinEl.textContent = info.pinyin;
+      pinyinRow.style.display = '';
     } else {
-      fullLink.style.display = 'none';
+      pinyinRow.style.display = 'none';
     }
-    var modal = new bootstrap.Modal(document.getElementById('wordModal'));
-    modal.show();
-    if (info.audio) {
-      wordAudio.src = info.audio;
-      wordAudio.play().catch(function(){});
-    }
-  });
+  }
+  var fullLink = document.getElementById('modalFullInfo');
+  if (info.inTop) {
+    fullLink.href = info.href;
+    fullLink.style.display = '';
+  } else {
+    fullLink.style.display = 'none';
+  }
+  var modal = new bootstrap.Modal(document.getElementById('wordModal'));
+  modal.show();
+  if (info.audio) {
+    wordAudio.src = info.audio;
+    wordAudio.play().catch(function(){});
+  }
 });
-document.getElementById('modalPlayBtn').addEventListener('click', function() {
+var playBtn = document.getElementById('modalPlayBtn');
+if (playBtn) playBtn.addEventListener('click', function() {
   wordAudio.play().catch(function(){});
 });
+</script>
+<script>
 document.querySelectorAll('.phrase-play').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var audio = document.getElementById('phraseAudio');
