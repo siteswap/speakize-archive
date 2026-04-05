@@ -350,6 +350,10 @@
         var phraseIdx = sessionQueue.shift();
         reinsertIdx = null;
         answerCard(phraseIdx, btn);
+        if (btn !== 'again') {
+          var p = deck.phrases[phraseIdx];
+          if (p && p.segmented) S.recordWordReviews(lang, p.segmented, pages);
+        }
         // If the card needs to go back in the queue (learning/relearning)
         var c = cards[phraseIdx];
         if (c && (c.state === 'learning' || c.state === 'relearning')) {

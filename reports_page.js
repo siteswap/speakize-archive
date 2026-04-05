@@ -4,10 +4,15 @@
 
   var LEGEND_HTML = "\n<div class=\"mb-3 text-center\">\n  <small class=\"text-muted\">\n    <span style=\"color:#fd7e14;\">&#9632;</span> Target word (due for review) &nbsp;\n    <span style=\"color:#a71d5d;\">&#9632;</span> Not in target range &nbsp;\n    &#9632; Known word\n  </small>\n</div>";
 
+  function loadReviewCounts(lang) {
+    try { return JSON.parse(localStorage.getItem('speakize.wordReviews.' + lang)) || {}; } catch (e) { return {}; }
+  }
+
   function renderTable(lang, data) {
     var pages = data.pages;
     var knownSet = new Set(data.known || []);
     var hasPinyin = (lang === 'zh');
+    var reviewCounts = loadReviewCounts(lang);
 
     // Sort words by rank
     var words = [];
@@ -25,7 +30,7 @@
     var html = '<h5 class="mb-3">' + S.esc(LANG_NAMES[lang] || lang) +
                ' (' + words.length + ')</h5>' + LEGEND_HTML;
     html += '<table class="table table-striped table-hover" id="reportsTable">';
-    html += '<thead><tr><th>Rank</th><th>Coverage%</th><th>Word</th>';
+    html += '<thead><tr><th>Rank</th><th>Coverage%</th><th>Reviews</th><th>Word</th>';
     if (hasPinyin) html += '<th>Pinyin</th>';
     html += '<th>Meaning</th><th>Example</th></tr></thead><tbody>';
 
@@ -37,7 +42,9 @@
       var pct = totalWpm > 0 ? (cumWpm / totalWpm * 100).toFixed(1) : '0.0';
       var wordHref = 'word.html?lang=' + lang + '&w=' + encodeURIComponent(w.name);
 
+      var rev = reviewCounts[w.name] || 0;
       html += '<tr><td>' + info.rank + '</td><td>' + pct + '%</td>';
+      html += '<td>' + rev + '</td>';
       html += '<td><a href="' + wordHref + '">' + S.esc(w.name) + '</a></td>';
       if (hasPinyin) html += '<td>' + S.esc(info.pinyin || '') + '</td>';
 

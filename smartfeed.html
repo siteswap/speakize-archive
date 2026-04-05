@@ -233,6 +233,8 @@ function doWordLookup(prefix) {
 
   window.feedNext = function() {
     if (phrases.length === 0) return;
+    var p = phrases[idx];
+    if (p && p.segmented) S.recordWordReviews(lang, p.segmented, pages);
     idx = (idx + 1) % phrases.length;
     show(idx);
   };

@@ -178,6 +178,22 @@ window.Speakize = (function() {
     };
   }
 
+  var REVIEW_CAP = 50;
+  function recordWordReviews(lang, segmented, pages) {
+    if (!segmented || !segmented.length) return;
+    var key = 'speakize.wordReviews.' + lang;
+    var counts;
+    try { counts = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { counts = {}; }
+    var seen = {};
+    for (var i = 0; i < segmented.length; i++) {
+      var w = segmented[i].toLowerCase();
+      if (seen[w] || !(w in pages)) continue;
+      seen[w] = true;
+      counts[w] = Math.min((counts[w] || 0) + 1, REVIEW_CAP);
+    }
+    try { localStorage.setItem(key, JSON.stringify(counts)); } catch (e) {}
+  }
+
   return {
     BUCKET_URL: BUCKET_URL,
     VIRTUAL_IDS: VIRTUAL_IDS,
@@ -188,6 +204,7 @@ window.Speakize = (function() {
     resolveDeck: resolveDeck,
     ensureModal: ensureModal,
     attachWordModal: attachWordModal,
-    makeLangLookup: makeLangLookup
+    makeLangLookup: makeLangLookup,
+    recordWordReviews: recordWordReviews
   };
 })();
