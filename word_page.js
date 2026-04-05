@@ -32,7 +32,7 @@
       parts.push('<a style="' + style + '" href="#" class="word" data-name="' +
                  esc(lower) + '" data-lang="' + lang + '">' + esc(tok) + '</a>');
     }
-    return parts.join('');
+    return parts.join(lang === 'zh' ? '' : ' ');
   }
 
   function renderExamples(lang, examples, pages, knownSet) {

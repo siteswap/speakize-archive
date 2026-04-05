@@ -32,12 +32,14 @@
       '&#9632; Known word</small></div>' +
       '<table class="table table-borderless"><tbody>';
 
+    var spaceTokens = doc.lang !== 'zh';
     (doc.phrases || []).forEach(function(p) {
       var firstTd = p.audio
         ? '<button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="' +
             escapeHtml(p.audio) + '"><i class="bi bi-play-fill"></i></button>'
         : '';
-      html += '<tr><td>' + firstTd + '</td><td><div>' + p.tokens_html + '</div>' +
+      var tokens = spaceTokens ? p.tokens_html.replace(/<\/a><a /g, '</a> <a ') : p.tokens_html;
+      html += '<tr><td>' + firstTd + '</td><td><div>' + tokens + '</div>' +
         '<p><em>' + escapeHtml(p.translation) + '</em></p></td></tr>';
     });
 
