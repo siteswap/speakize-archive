@@ -51,14 +51,17 @@ function toggleTheme() {
 
       </ul>
       <form class="d-flex" id="wordLookupForm" onsubmit="return doWordLookup('');">
-        <select class="form-select form-select-sm me-2" id="wordLookupLang" style="width: auto;">
-          <option value="zh">Chinese</option>
-          <option value="es">Spanish</option>
-        </select>
         <input class="form-control me-2" type="search" placeholder="Lookup Word" aria-label="Lookup Word" id="wordLookupInput">
         <button class="btn btn-outline-dark" type="submit">Lookup</button>
       </form>
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center me-2">
+          <input type="hidden" id="wordLookupLang" value="zh">
+          <div class="btn-group btn-group-sm" role="group" aria-label="Study language">
+            <button type="button" class="btn btn-outline-light lang-toggle-btn active" data-lang="zh">zh</button>
+            <button type="button" class="btn btn-outline-light lang-toggle-btn" data-lang="es">es</button>
+          </div>
+        </li>
         <li class="nav-item dropdown dropstart">
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
@@ -108,5 +111,28 @@ function doWordLookup(prefix) {
 </script>
 <script src="flashcards.js"></script>
 <script src="add_text_page.js"></script>
+<script>
+(function() {
+  var KEY = 'study_lang';
+  var hidden = document.getElementById('wordLookupLang');
+  var btns = document.querySelectorAll('.lang-toggle-btn');
+  if (!hidden || !btns.length) return;
+  var saved = localStorage.getItem(KEY);
+  var lang = (saved === 'zh' || saved === 'es') ? saved : 'zh';
+  function apply(l) {
+    hidden.value = l;
+    btns.forEach(function(b) { b.classList.toggle('active', b.dataset.lang === l); });
+  }
+  apply(lang);
+  btns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      if (hidden.value === b.dataset.lang) return;
+      apply(b.dataset.lang);
+      localStorage.setItem(KEY, b.dataset.lang);
+      hidden.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+})();
+</script>
 </body>
 </html>
