@@ -33,4 +33,10 @@ To update the sample data, re-run `generate_static_archive.py` from sherpa again
 - Word pages fetch from per-language JSON at runtime (no per-word HTML files).
 - Document pages support word-click modals and color highlighting.
 - When making changes, prefer regenerating from sherpa over hand-editing generated pages, unless the change is to the template/generator itself.
+- **Word coloring logic** (dynamic, client-side): driven by the user's target-word count (`speakize.targetWords` in localStorage, set in `settings.html`; allowed values 100/200/500/1000, default 100) and per-word review counts. For a word with frequency `rank`:
+  - `rank` unknown or `rank > target` → magenta `#a71d5d` ("not in target range")
+  - `reviews >= 5` → no color ("known")
+  - otherwise → orange `#fd7e14` ("target, due for review")
+  Helpers live in `flashcards.js`: `wordStyle`, `getTargetWords`, `renderTokens` (for dynamically rendered phrases), and `applyDynamicColors(root, lang, wordData)` which rewrites inline styles on pre-rendered `.word` anchors (used by `document_page.js` since `tokens_html` in `data/documents/*.json` ships with baked-in colors).
+- **Per-word review counts** are tracked client-side in localStorage under `speakize.wordReviews.<lang>` (capped at 50). Incremented by `Speakize.recordWordReviews` in `flashcards.js` whenever a phrase is shown in Study Now (`study_page.js`) or Smart Feed (`smartfeed.html`). Read by `reports_page.js` to populate the Reviews column. Available as a signal for dynamic word coloring.
 - **Chinese word segmentation** for user-added text (`add_text_page.js`) uses the browser-native `Intl.Segmenter` API with `{granularity: 'word'}`. No external library is shipped. Spanish is split by whitespace/punctuation via regex. If `Intl.Segmenter` is unavailable (rare — unsupported only in older browsers), Chinese falls back to the same per-character regex.

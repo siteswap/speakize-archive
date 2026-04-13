@@ -120,16 +120,11 @@ function toggleTheme() {
     <legend class="col-form-label">Target words:</legend>
     <div class="input-group mb-3">
       <label class="input-group-text">Most frequently spoken</label>
-      <select class="form-select" disabled>
-        <option>0</option>
-        <option selected>100</option>
-        <option>200</option>
-        <option>500</option>
-        <option>1000</option>
-        <option>2000</option>
-        <option>5000</option>
-        <option>10000</option>
-        <option>20000</option>
+      <select class="form-select" id="targetWordsSelect">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
       </select>
       <label class="input-group-text">words</label>
     </div>
@@ -169,6 +164,17 @@ function toggleTheme() {
 <br><br>
 </div>
 <script>
+(function() {
+  var sel = document.getElementById('targetWordsSelect');
+  if (!sel) return;
+  var stored = parseInt(localStorage.getItem('speakize.targetWords'), 10);
+  var allowed = ['100', '200', '500', '1000'];
+  var current = allowed.indexOf(String(stored)) >= 0 ? String(stored) : '100';
+  sel.value = current;
+  sel.addEventListener('change', function() {
+    localStorage.setItem('speakize.targetWords', sel.value);
+  });
+})();
 function doWordLookup(prefix) {
   var langEl = document.getElementById('wordLookupLang');
   var lang = langEl ? langEl.value : 'zh';
