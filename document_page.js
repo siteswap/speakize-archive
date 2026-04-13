@@ -18,9 +18,19 @@
         ' <button type="button" id="userDocDeleteBtn" class="btn btn-sm btn-outline-danger align-middle ms-1">' +
         '<i class="bi bi-trash"></i> Delete</button>'
       : '';
+    var reportBtn = ' <a href="document_report.html?id=' + encodeURIComponent(docId) +
+      '" class="btn btn-sm btn-outline-primary align-middle ms-2"><i class="bi bi-bar-chart"></i> Word Frequency</a>';
+    var userDecks = S.loadUserFlashcards(doc.lang);
+    var deckId = 'u-doc-' + docId;
+    var deckBtn = userDecks[deckId]
+      ? ' <a href="deck.html?lang=' + encodeURIComponent(doc.lang) +
+        '&id=' + encodeURIComponent(deckId) +
+        '" class="btn btn-sm btn-outline-primary align-middle ms-2"><i class="bi bi-collection"></i> Flashcards (' +
+        (userDecks[deckId].phrases || []).length + ')</a>'
+      : '';
     var html = '<br><h2 class="card-title text-center">' +
       S.esc(doc.title) +
-      ' <small class="text-muted">(Document)</small>' + editBtn + '</h2>';
+      ' <small class="text-muted">(Document)</small>' + reportBtn + deckBtn + editBtn + '</h2>';
 
     if (doc.youtube) {
       html += '<div class="embed-responsive embed-responsive-16by9" style="max-width: 100%;">' +
@@ -35,7 +45,7 @@
       '<table class="table table-borderless"><tbody>';
 
     var spaceTokens = doc.lang !== 'zh';
-    (doc.phrases || []).forEach(function(p) {
+    (doc.phrases || []).forEach(function(p, idx) {
       var plainText = (p.segmented && p.segmented.length)
         ? p.segmented.join(spaceTokens ? ' ' : '')
         : (function() {
@@ -48,7 +58,7 @@
             S.esc(p.audio) + '"><i class="bi bi-play-fill"></i></button>'
         : (plainText ? S.ttsBtnHtml(plainText, doc.lang, 'phrase-tts') : '');
       var tokens = spaceTokens ? p.tokens_html.replace(/<\/a><a /g, '</a> <a ') : p.tokens_html;
-      html += '<tr><td>' + firstTd + '</td><td><div>' + tokens + '</div>' +
+      html += '<tr data-phrase-idx="' + idx + '"><td>' + firstTd + '</td><td><div>' + tokens + '</div>' +
         '<p><em>' + S.esc(p.translation) + '</em></p></td></tr>';
     });
 
@@ -68,6 +78,24 @@
         audioUrl: info.audio || S.wordAudioUrl(lang, name),
         fullHref: info.inTop ? (info.href || S.wordHref(lang, name)) : null
       };
+    }, {
+      getCardContext: function(el) {
+        var row = el.closest('[data-phrase-idx]');
+        if (!row) return null;
+        var tokensDiv = row.querySelector('td:nth-child(2) > div');
+        var transEl = row.querySelector('td:nth-child(2) em');
+        var anchors = tokensDiv ? tokensDiv.querySelectorAll('.word') : [];
+        var segmented = [];
+        for (var i = 0; i < anchors.length; i++) segmented.push(anchors[i].textContent);
+        var phrase = tokensDiv ? tokensDiv.textContent.trim() : '';
+        return {
+          docId: docId,
+          docTitle: doc.title,
+          phrase: phrase,
+          segmented: segmented,
+          translation: transEl ? transEl.textContent : ''
+        };
+      }
     });
 
     var delBtn = document.getElementById('userDocDeleteBtn');

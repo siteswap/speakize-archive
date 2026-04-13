@@ -18,7 +18,7 @@
 
   fetch('data/' + lang + '.json')
     .then(function(r) { return r.json(); })
-    .then(function(data) { start(data); })
+    .then(function(data) { S.mergeUserDecks(data, lang); start(data); })
     .catch(function(err) {
       container.innerHTML = '<div class="alert alert-danger m-4">Failed to load: ' + S.esc(err.message) + '</div>';
     });
@@ -338,8 +338,8 @@
         }
       }
       var img = document.getElementById('studyImage');
-      if (p.image_url) { img.src = p.image_url; img.style.display = ''; }
-      else { img.removeAttribute('src'); img.style.display = 'none'; }
+      img.src = p.image_url || S.PLACEHOLDER_IMG;
+      img.style.display = '';
 
       // Update button labels with intervals
       var intervals = getIntervals(phraseIdx);

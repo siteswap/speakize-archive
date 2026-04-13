@@ -9,6 +9,14 @@
 window.Speakize = (function() {
   var BUCKET_URL = "https://storage.googleapis.com/createflashcardapp.appspot.com";
 
+  var PLACEHOLDER_IMG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">' +
+      '<rect width="240" height="160" fill="#e9ecef"/>' +
+      '<rect x="1" y="1" width="238" height="158" fill="none" stroke="#adb5bd" stroke-dasharray="6,4"/>' +
+      '<text x="120" y="88" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6c757d">No image</text>' +
+    '</svg>'
+  );
+
   var VIRTUAL_IDS = {
     all: {label: 'All Flashcards', type: null},
     reading: {label: 'All Reading Flashcards', type: 'READING'},
@@ -35,9 +43,9 @@ window.Speakize = (function() {
             '<button type="button" class="btn btn-secondary" id="modalPlayBtn">' +
               '<i class="bi bi-play-fill"></i> Play Audio' +
             '</button>' +
-            '<span class="btn btn-outline-danger disabled"><i class="bi bi-book"></i> Read</span>' +
-            '<span class="btn btn-outline-warning disabled"><i class="bi bi-speaker"></i> Listen</span>' +
-            '<span class="btn btn-outline-success disabled"><i class="bi bi-mic"></i> Speak</span>' +
+            '<button type="button" class="btn btn-outline-danger" id="modalReadBtn" style="display:none"><i class="bi bi-book"></i> Read</button>' +
+            '<button type="button" class="btn btn-outline-warning" id="modalListenBtn" style="display:none"><i class="bi bi-speaker"></i> Listen</button>' +
+            '<button type="button" class="btn btn-outline-success" id="modalSpeakBtn" style="display:none"><i class="bi bi-mic"></i> Speak</button>' +
             '<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>' +
           '</div>' +
         '</div>' +
@@ -110,12 +118,82 @@ window.Speakize = (function() {
     }
     var numId = parseInt(id, 10);
     for (var k = 0; k < data.decks.length; k++) {
-      if (data.decks[k].id === numId) {
-        var d2 = data.decks[k];
-        return {id: numId, name: d2.name, phrases: d2.phrases, virtual: false, is_shared: d2.is_shared};
+      var deckK = data.decks[k];
+      if (deckK.id === numId || deckK.id === id) {
+        return {id: deckK.id, name: deckK.name, phrases: deckK.phrases, virtual: false, is_shared: deckK.is_shared};
       }
     }
     return null;
+  }
+
+  function loadUserFlashcards(lang) {
+    try {
+      var raw = localStorage.getItem('speakize.flashcards.' + lang);
+      var obj = raw ? JSON.parse(raw) : {};
+      return (obj && typeof obj === 'object' && !Array.isArray(obj)) ? obj : {};
+    } catch (e) { return {}; }
+  }
+
+  function saveUserFlashcards(lang, map) {
+    try { localStorage.setItem('speakize.flashcards.' + lang, JSON.stringify(map)); } catch (e) {}
+  }
+
+  function mergeUserDecks(data, lang) {
+    var userDecks = loadUserFlashcards(lang);
+    data.decks = data.decks || [];
+    Object.keys(userDecks).forEach(function(deckId) {
+      var ud = userDecks[deckId];
+      data.decks.push({
+        id: ud.id,
+        name: ud.name,
+        phrases: ud.phrases || [],
+        is_user: true,
+        is_shared: false
+      });
+    });
+  }
+
+  function addUserFlashcard(lang, context, word, cardType) {
+    var map = loadUserFlashcards(lang);
+    var deckId = 'u-doc-' + context.docId;
+    var deck = map[deckId];
+    if (!deck) {
+      deck = map[deckId] = {
+        id: deckId,
+        name: context.docTitle,
+        docId: context.docId,
+        is_user: true,
+        phrases: []
+      };
+    } else {
+      deck.name = context.docTitle;
+    }
+    var dup = deck.phrases.some(function(p) {
+      return p.phrase === context.phrase && p.card_type === cardType && p.word === word;
+    });
+    if (!dup) {
+      deck.phrases.push({
+        phrase: context.phrase,
+        segmented: context.segmented || [],
+        card_type: cardType,
+        translation: context.translation || '',
+        audio_url: '',
+        image_url: '',
+        word: word,
+        created_at: Date.now()
+      });
+      saveUserFlashcards(lang, map);
+    }
+    return {added: !dup, deck: deck};
+  }
+
+  function showToast(msg, kind) {
+    var el = document.createElement('div');
+    el.className = 'alert alert-' + (kind || 'success') + ' shadow';
+    el.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:2000;min-width:240px;text-align:center';
+    el.textContent = msg;
+    document.body.appendChild(el);
+    setTimeout(function() { el.remove(); }, 1800);
   }
 
   function ensureModal() {
@@ -126,14 +204,39 @@ window.Speakize = (function() {
   }
 
   var _attached = false;
-  function attachWordModal(lookup) {
+  function attachWordModal(lookup, options) {
     ensureModal();
-    if (_attached) { attachWordModal._lookup = lookup; return; }
-    _attached = true;
     attachWordModal._lookup = lookup;
+    attachWordModal._options = options || {};
+    if (_attached) return;
+    _attached = true;
     var currentAudio = null;
+    var currentCtx = null;
     var currentLang = null;
     var currentWord = null;
+
+    function onAddClick(cardType) {
+      return function() {
+        if (!currentCtx) return;
+        var res = addUserFlashcard(currentLang, currentCtx, currentWord, cardType);
+        showToast(res.added
+          ? 'Added to "' + res.deck.name + '"'
+          : 'Already in "' + res.deck.name + '"',
+          res.added ? 'success' : 'warning');
+        if (cardType === 'LISTENING' || cardType === 'PRODUCTION') {
+          ttsSpeak(currentCtx.phrase, currentLang);
+        }
+        var modalEl = document.getElementById('wordModal');
+        var inst = bootstrap.Modal.getInstance(modalEl);
+        if (inst) inst.hide();
+      };
+    }
+    var readBtn = document.getElementById('modalReadBtn');
+    var listenBtn = document.getElementById('modalListenBtn');
+    var speakBtn = document.getElementById('modalSpeakBtn');
+    if (readBtn) readBtn.addEventListener('click', onAddClick('READING'));
+    if (listenBtn) listenBtn.addEventListener('click', onAddClick('LISTENING'));
+    if (speakBtn) speakBtn.addEventListener('click', onAddClick('PRODUCTION'));
 
     document.addEventListener('click', function(e) {
       var el = e.target.closest('.word');
@@ -143,6 +246,15 @@ window.Speakize = (function() {
       var name = el.getAttribute('data-name');
       var info = attachWordModal._lookup(lang, name);
       if (!info) return;
+
+      var opts = attachWordModal._options || {};
+      currentCtx = opts.getCardContext ? (opts.getCardContext(el) || null) : null;
+      currentLang = lang;
+      currentWord = name;
+      var show = currentCtx ? '' : 'none';
+      if (readBtn) readBtn.style.display = show;
+      if (listenBtn) listenBtn.style.display = show;
+      if (speakBtn) speakBtn.style.display = show;
       document.getElementById('modalWordTitle').textContent = name;
       document.getElementById('modalDefinition').textContent = info.definition || '—';
       document.getElementById('modalRank').textContent = info.rank ? '#' + info.rank : '—';
@@ -164,8 +276,6 @@ window.Speakize = (function() {
       }
       var modal = new bootstrap.Modal(document.getElementById('wordModal'));
       modal.show();
-      currentLang = lang;
-      currentWord = name;
       if (info.audioUrl) {
         currentAudio = new Audio(info.audioUrl);
         currentAudio.play().catch(function(){});
@@ -231,6 +341,11 @@ window.Speakize = (function() {
     ensureModal: ensureModal,
     attachWordModal: attachWordModal,
     makeLangLookup: makeLangLookup,
-    recordWordReviews: recordWordReviews
+    recordWordReviews: recordWordReviews,
+    PLACEHOLDER_IMG: PLACEHOLDER_IMG,
+    loadUserFlashcards: loadUserFlashcards,
+    saveUserFlashcards: saveUserFlashcards,
+    mergeUserDecks: mergeUserDecks,
+    addUserFlashcard: addUserFlashcard
   };
 })();
