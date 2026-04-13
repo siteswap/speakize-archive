@@ -71,6 +71,7 @@
         '<p class="fs-4" id="studyText"></p>' +
         '<p><em id="studyTrans" style="display:none"></em></p>' +
         '<audio controls id="studyAudio" style="display:none"></audio>' +
+        '<button type="button" class="btn btn-outline-secondary btn-sm" id="studyTtsBtn" style="display:none"><i class="bi bi-volume-up"></i></button>' +
         '<p class="text-muted small mt-2" id="studyMeta"></p>' +
         '<br>' +
         '<div id="studyShowBtnWrap"><button class="btn btn-lg btn-secondary" id="btnShow">Show Answer</button></div>' +
@@ -261,6 +262,7 @@
         document.getElementById('studyShowBtnWrap').style.display = 'none';
         var aud = document.getElementById('studyAudio');
         aud.removeAttribute('src'); aud.style.display = 'none';
+        document.getElementById('studyTtsBtn').style.display = 'none';
         var img = document.getElementById('studyImage');
         img.removeAttribute('src'); img.style.display = 'none';
         updateStatus();
@@ -295,6 +297,7 @@
           document.getElementById('studyShowBtnWrap').style.display = 'none';
           var aud = document.getElementById('studyAudio');
           aud.removeAttribute('src'); aud.style.display = 'none';
+          document.getElementById('studyTtsBtn').style.display = 'none';
           var img = document.getElementById('studyImage');
           img.removeAttribute('src'); img.style.display = 'none';
           setTimeout(function() { showCard(); }, Math.min(waitSec * 1000, 5000));
@@ -320,8 +323,20 @@
       document.getElementById('studyMeta').textContent = meta;
 
       var aud = document.getElementById('studyAudio');
-      if (p.audio_url) { aud.src = p.audio_url; aud.style.display = ''; }
-      else { aud.removeAttribute('src'); aud.style.display = 'none'; }
+      var ttsBtn = document.getElementById('studyTtsBtn');
+      var phraseText = (p.segmented && p.segmented.length) ? p.segmented.join(lang === 'zh' ? '' : ' ') : (p.phrase || '');
+      if (p.audio_url) {
+        aud.src = p.audio_url; aud.style.display = '';
+        ttsBtn.style.display = 'none';
+      } else {
+        aud.removeAttribute('src'); aud.style.display = 'none';
+        if (phraseText) {
+          ttsBtn.style.display = '';
+          ttsBtn.onclick = function() { S.ttsSpeak(phraseText, lang); };
+        } else {
+          ttsBtn.style.display = 'none';
+        }
+      }
       var img = document.getElementById('studyImage');
       if (p.image_url) { img.src = p.image_url; img.style.display = ''; }
       else { img.removeAttribute('src'); img.style.display = 'none'; }
@@ -342,6 +357,9 @@
       document.getElementById('studyTrans').style.display = '';
       var aud = document.getElementById('studyAudio');
       if (aud.src) aud.play().catch(function(){});
+      else if (document.getElementById('studyTtsBtn').style.display !== 'none') {
+        document.getElementById('studyTtsBtn').click();
+      }
     });
 
     ['again', 'hard', 'good', 'easy'].forEach(function(btn) {

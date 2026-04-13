@@ -118,6 +118,7 @@ function toggleTheme() {
     <audio controls id="feedAudio" >
       Your browser does not support the <code>audio</code> element.
     </audio>
+    <button type="button" class="btn btn-outline-secondary btn-sm" id="feedTtsBtn" style="display:none"><i class="bi bi-volume-up"></i></button>
     <br><br>
     <button class="btn btn-primary" onclick="feedAgain()">Again</button>
     <button class="btn btn-primary" onclick="feedNext()">Next</button>
@@ -187,6 +188,7 @@ function doWordLookup(prefix) {
       document.getElementById('feedTrans').textContent = '';
       var audio = document.getElementById('feedAudio');
       audio.removeAttribute('src'); audio.style.display = 'none';
+      document.getElementById('feedTtsBtn').style.display = 'none';
       var img = document.getElementById('feedImage');
       img.removeAttribute('src'); img.style.display = 'none';
       return;
@@ -197,8 +199,20 @@ function doWordLookup(prefix) {
     document.getElementById('feedText').innerHTML = html;
     document.getElementById('feedTrans').textContent = p.translation || '';
     var audio = document.getElementById('feedAudio');
-    if (p.audio_url) { audio.src = p.audio_url; audio.style.display = ''; }
-    else { audio.removeAttribute('src'); audio.style.display = 'none'; }
+    var ttsBtn = document.getElementById('feedTtsBtn');
+    var phraseText = (p.segmented && p.segmented.length) ? p.segmented.join(lang === 'zh' ? '' : ' ') : (p.phrase || '');
+    if (p.audio_url) {
+      audio.src = p.audio_url; audio.style.display = '';
+      ttsBtn.style.display = 'none';
+    } else {
+      audio.removeAttribute('src'); audio.style.display = 'none';
+      if (phraseText) {
+        ttsBtn.style.display = '';
+        ttsBtn.onclick = function() { S.ttsSpeak(phraseText, lang); };
+      } else {
+        ttsBtn.style.display = 'none';
+      }
+    }
     var img = document.getElementById('feedImage');
     if (p.image_url) { img.src = p.image_url; img.style.display = ''; }
     else { img.removeAttribute('src'); img.style.display = 'none'; }
@@ -242,6 +256,9 @@ function doWordLookup(prefix) {
     show(idx);
     var audio = document.getElementById('feedAudio');
     if (audio.src) audio.play();
+    else if (document.getElementById('feedTtsBtn').style.display !== 'none') {
+      document.getElementById('feedTtsBtn').click();
+    }
   };
 
   loadLang(sel.value);

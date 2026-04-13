@@ -36,10 +36,11 @@
 
     var spaceTokens = doc.lang !== 'zh';
     (doc.phrases || []).forEach(function(p) {
+      var plainText = (p.segmented && p.segmented.length) ? p.segmented.join(spaceTokens ? ' ' : '') : '';
       var firstTd = p.audio
         ? '<button type="button" class="btn btn-secondary btn-sm phrase-play" data-src="' +
             S.esc(p.audio) + '"><i class="bi bi-play-fill"></i></button>'
-        : '';
+        : (plainText ? S.ttsBtnHtml(plainText, doc.lang, 'phrase-tts') : '');
       var tokens = spaceTokens ? p.tokens_html.replace(/<\/a><a /g, '</a> <a ') : p.tokens_html;
       html += '<tr><td>' + firstTd + '</td><td><div>' + tokens + '</div>' +
         '<p><em>' + S.esc(p.translation) + '</em></p></td></tr>';

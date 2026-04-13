@@ -13,7 +13,9 @@
       var img = ex.image_url ? '<img src="' + S.esc(ex.image_url) +
                 '" class="img-fluid rounded-start mb-2" alt="">' : '';
       var trans = ex.translation ? '<p><em>' + S.esc(ex.translation) + '</em></p>' : '';
-      var audio = ex.audio_url ? '<audio controls src="' + S.esc(ex.audio_url) + '"></audio>' : '';
+      var exText = (ex.segmented && ex.segmented.length) ? ex.segmented.join(lang === 'zh' ? '' : ' ') : '';
+      var audio = ex.audio_url ? '<audio controls src="' + S.esc(ex.audio_url) + '"></audio>'
+                  : (exText ? S.ttsBtnHtml(exText, lang) : '');
       var tokens = S.renderTokens(lang, ex.segmented || [], pages, knownSet);
       html += '<div class="card m-3 text-center shadow"><div class="card-body">' +
               img + '<p class="card-text">' + tokens + '</p>' + trans + audio +
