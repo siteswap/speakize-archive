@@ -1,0 +1,18 @@
+Be able to generate a flashcard deck from a NEW document
+	- bulk link at bottom
+	- Play all button
+	- Link to flashcards
+
+Fuller zh modals (needs lang dictionary sharding)
+3 Report types
+22 quality documents with mp3 & mp4 exports
+
+Quickstart guide
+
+---------------------
+
+Migration - django's generate_static command tool was used to export original templates and reference data
+Opus was used to move original django-python logic into js that runs in the client
+The backend database was shrunk down to a static json database
+Used IndexedDB for client side 
+
