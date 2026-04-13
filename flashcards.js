@@ -86,7 +86,11 @@ window.Speakize = (function() {
   var DEFAULT_TARGET_WORDS = 100;
   var KNOWN_REVIEW_THRESHOLD = 5;
 
-  function getTargetWords() {
+  function getTargetWords(lang) {
+    if (lang) {
+      var perLang = parseInt(localStorage.getItem('speakize.targetWords.' + lang), 10);
+      if (perLang > 0) return perLang;
+    }
     var v = parseInt(localStorage.getItem('speakize.targetWords'), 10);
     return v > 0 ? v : DEFAULT_TARGET_WORDS;
   }
@@ -103,7 +107,7 @@ window.Speakize = (function() {
   }
 
   function renderTokens(lang, segmented, pages, _knownSet) {
-    var target = getTargetWords();
+    var target = getTargetWords(lang);
     var reviews = loadReviewCounts(lang);
     var parts = [];
     for (var i = 0; i < segmented.length; i++) {
@@ -119,7 +123,7 @@ window.Speakize = (function() {
 
   function applyDynamicColors(root, lang, wordData) {
     if (!root) return;
-    var target = getTargetWords();
+    var target = getTargetWords(lang);
     var reviews = loadReviewCounts(lang);
     var anchors = root.querySelectorAll('.word');
     for (var i = 0; i < anchors.length; i++) {

@@ -90,9 +90,9 @@ function toggleTheme() {
   <div class="card-body">
     <legend class="col-form-label">Study Language:</legend>
     <div class="input-group mb-3">
-      <select class="form-select" disabled>
-        <option selected>Chinese</option>
-        <option>Spanish</option>
+      <select class="form-select" id="studyLangSelect">
+        <option value="zh">Chinese</option>
+        <option value="es">Spanish</option>
       </select>
     </div>
   </div>
@@ -165,14 +165,29 @@ function toggleTheme() {
 </div>
 <script>
 (function() {
-  var sel = document.getElementById('targetWordsSelect');
-  if (!sel) return;
-  var stored = parseInt(localStorage.getItem('speakize.targetWords'), 10);
-  var allowed = ['100', '200', '500', '1000'];
-  var current = allowed.indexOf(String(stored)) >= 0 ? String(stored) : '100';
-  sel.value = current;
-  sel.addEventListener('change', function() {
-    localStorage.setItem('speakize.targetWords', sel.value);
+  var langSel = document.getElementById('studyLangSelect');
+  var tgtSel = document.getElementById('targetWordsSelect');
+  if (!langSel || !tgtSel) return;
+  var allowedLangs = ['zh', 'es'];
+  var allowedTargets = ['100', '200', '500', '1000'];
+  var storedLang = localStorage.getItem('speakize.studyLang');
+  var currentLang = allowedLangs.indexOf(storedLang) >= 0 ? storedLang : 'zh';
+  langSel.value = currentLang;
+
+  function loadTargetFor(lang) {
+    var v = parseInt(localStorage.getItem('speakize.targetWords.' + lang), 10);
+    if (!(v > 0)) v = parseInt(localStorage.getItem('speakize.targetWords'), 10);
+    var s = String(v);
+    tgtSel.value = allowedTargets.indexOf(s) >= 0 ? s : '100';
+  }
+  loadTargetFor(currentLang);
+
+  langSel.addEventListener('change', function() {
+    localStorage.setItem('speakize.studyLang', langSel.value);
+    loadTargetFor(langSel.value);
+  });
+  tgtSel.addEventListener('change', function() {
+    localStorage.setItem('speakize.targetWords.' + langSel.value, tgtSel.value);
   });
 })();
 function doWordLookup(prefix) {
