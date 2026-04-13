@@ -54,7 +54,7 @@
     container.innerHTML =
       '<div class="card m-3 text-center shadow">' +
         '<div class="card-header">' +
-          '<a href="' + lang + '/index.html">&larr; ' + S.esc(langName) + ' Word List</a>' +
+          '<a href="reports.html">&larr; ' + S.esc(langName) + ' Word List</a>' +
         '</div>' +
         '<div class="card-body">' +
           '<h1 class="display-1">' + S.esc(word) + '</h1><br>' +

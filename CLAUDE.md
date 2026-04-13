@@ -24,8 +24,6 @@ To update the sample data, re-run `generate_static_archive.py` from sherpa again
 - `data/zh.json`, `data/es.json` — per-language word database (replaces the backend DB); ~800KB–1.9MB each
 - `data/documents/index.json` — lightweight index: `myContent`/`sharedContent` ordering (used by `documents.html`) + `documents: {id: {title, lang}}` for listing
 - `data/documents/<id>.json` — per-document content (title, lang, youtube, phrases, wordData); fetched on demand by `document.html`
-- `zh/index.html`, `es/index.html` — language landing pages
-- `doc/` — legacy standalone document pages; superseded by `document.html?id=<id>` + `data/documents.json` (safe to delete)
 - `fp_assets/` — shared static assets
 - `page_manifest.json` — tracks generation status of each page
 - `user_credentials.txt` — example login (`remoteuser` / shown in file)
