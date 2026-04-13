@@ -21,8 +21,10 @@
       var img = p.image_url ? '<img src="' + S.esc(p.image_url) +
                 '" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">' : '';
       var trans = p.translation ? '<p class="text-muted"><em>' + S.esc(p.translation) + '</em></p>' : '';
+      var phraseText = (p.segmented && p.segmented.length) ? p.segmented.join(lang === 'zh' ? '' : ' ') : (p.phrase || '');
       var audio = p.audio_url ? '<br><audio controls src="' + S.esc(p.audio_url) +
-                  '" style="width:100%; max-width:250px;"></audio>' : '';
+                  '" style="width:100%; max-width:250px;"></audio>'
+                  : (phraseText ? '<br>' + S.ttsBtnHtml(phraseText, lang) : '');
       var deckTag = deck.virtual && p.deck_name
         ? '<div><small class="text-muted">from deck: <a href="deck.html?lang=' + lang +
           '&id=' + p.deck_id + '">' + S.esc(p.deck_name) + '</a></small></div>'

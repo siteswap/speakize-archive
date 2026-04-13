@@ -51,6 +51,22 @@ window.Speakize = (function() {
     });
   }
 
+  var TTS_LANGS = {zh: 'zh-CN', es: 'es-ES'};
+
+  function ttsSpeak(text, lang) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = TTS_LANGS[lang] || lang;
+    window.speechSynthesis.speak(u);
+  }
+
+  function ttsBtnHtml(text, lang, cls) {
+    return '<button type="button" class="btn btn-outline-secondary btn-sm ' + (cls || '') +
+      '" onclick="Speakize.ttsSpeak(' + esc(JSON.stringify(text)) + ',' +
+      esc(JSON.stringify(lang)) + ')"><i class="bi bi-volume-up"></i></button>';
+  }
+
   function wordAudioUrl(lang, w) {
     return BUCKET_URL + '/common/audio/' + lang + '/word_' + encodeURIComponent(w.toLowerCase()) + '.mp3';
   }
@@ -116,6 +132,8 @@ window.Speakize = (function() {
     _attached = true;
     attachWordModal._lookup = lookup;
     var currentAudio = null;
+    var currentLang = null;
+    var currentWord = null;
 
     document.addEventListener('click', function(e) {
       var el = e.target.closest('.word');
@@ -146,14 +164,20 @@ window.Speakize = (function() {
       }
       var modal = new bootstrap.Modal(document.getElementById('wordModal'));
       modal.show();
+      currentLang = lang;
+      currentWord = name;
       if (info.audioUrl) {
         currentAudio = new Audio(info.audioUrl);
         currentAudio.play().catch(function(){});
+      } else {
+        currentAudio = null;
+        ttsSpeak(name, lang);
       }
     });
     var playBtn = document.getElementById('modalPlayBtn');
     if (playBtn) playBtn.addEventListener('click', function() {
       if (currentAudio) currentAudio.play().catch(function(){});
+      else if (currentWord) ttsSpeak(currentWord, currentLang);
     });
   }
 
@@ -198,6 +222,8 @@ window.Speakize = (function() {
     BUCKET_URL: BUCKET_URL,
     VIRTUAL_IDS: VIRTUAL_IDS,
     esc: esc,
+    ttsSpeak: ttsSpeak,
+    ttsBtnHtml: ttsBtnHtml,
     wordAudioUrl: wordAudioUrl,
     wordHref: wordHref,
     renderTokens: renderTokens,
