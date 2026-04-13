@@ -87,6 +87,10 @@ function toggleTheme() {
     Packages include phrase audio and per-word tooltips (translation, pinyin for Chinese, spoken-frequency rank).
   </div>
   <input type="text" id="exportSearch" class="form-control mb-3" placeholder="Search exports...">
+  <div id="localExportsSection" class="mb-4" hidden>
+    <h5 class="mb-3">Your generated packages <span class="text-muted small">(this browser only)</span></h5>
+    <div class="row" id="localExportsRow"></div>
+  </div>
   <div>
     <div data-lang-filter="zh" id="exports-zh">
 <h5 class="mb-3">Chinese (12)</h5>
@@ -127,6 +131,7 @@ function toggleTheme() {
 
   </div>
 </div>
+<script src="local_exports.js"></script>
 <script>
 function doWordLookup(prefix) {
   var langEl = document.getElementById('wordLookupLang');
@@ -163,6 +168,90 @@ document.getElementById('exportSearch').addEventListener('input', function() {
     el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
   });
 });
+
+(function() {
+  if (!window.SpeakizeLocalExports) return;
+  var section = document.getElementById('localExportsSection');
+  var row = document.getElementById('localExportsRow');
+  var langSel = document.getElementById('wordLookupLang');
+
+  function escHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+  function fmtSize(n) {
+    if (!n) return '';
+    if (n < 1024) return n + ' B';
+    if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
+    return (n / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+  function applyLangFilter() {
+    if (!langSel) return;
+    var lang = langSel.value;
+    document.querySelectorAll('#localExportsRow [data-lang-filter]').forEach(function(el) {
+      el.style.display = (el.getAttribute('data-lang-filter') === lang) ? '' : 'none';
+    });
+  }
+  function downloadBlob(blob, filename) {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+  }
+  function render(rows) {
+    if (!rows.length) { section.hidden = true; row.innerHTML = ''; return; }
+    section.hidden = false;
+    row.innerHTML = rows.map(function(r) {
+      var date = (r.createdAt || '').slice(0, 10);
+      var img = r.thumbnailUrl
+        ? '<img src="' + escHtml(r.thumbnailUrl) + '" class="card-img-top" alt="' + escHtml(r.deckName) + '">'
+        : '<img src="/static/android-chrome-192x192.png" class="card-img-top" alt="">';
+      return '<div class="col-sm-6 col-md-4 mb-3 export-card" data-lang-filter="' + escHtml(r.lang) + '">'
+        + '<div class="card shadow h-100">' + img
+        + '<div class="card-body">'
+        + '<h6 class="card-title">' + escHtml(r.deckName) + '</h6>'
+        + '<p class="card-text text-muted small">' + escHtml(date) + ' · ' + escHtml(fmtSize(r.size)) + '</p>'
+        + '<button class="btn btn-sm btn-primary me-2" data-action="download" data-id="' + escHtml(r.id) + '">'
+        + '<i class="bi bi-download"></i> Download</button>'
+        + '<button class="btn btn-sm btn-outline-danger" data-action="delete" data-id="' + escHtml(r.id) + '" data-name="' + escHtml(r.deckName) + '">'
+        + '<i class="bi bi-trash"></i></button>'
+        + '</div></div></div>';
+    }).join('');
+    applyLangFilter();
+  }
+  function refresh() {
+    return SpeakizeLocalExports.list().then(render);
+  }
+
+  row.addEventListener('click', function(e) {
+    var btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-id');
+    var action = btn.getAttribute('data-action');
+    if (action === 'download') {
+      SpeakizeLocalExports.list().then(function(rows) {
+        var meta = rows.find(function(r) { return r.id === id; });
+        return SpeakizeLocalExports.getBlob(id).then(function(blob) {
+          if (!blob) return;
+          var safe = (meta && meta.deckName ? meta.deckName : 'deck').replace(/[^\w\- ]+/g, '_');
+          downloadBlob(blob, 'speakize_' + safe + '.apkg');
+        });
+      });
+    } else if (action === 'delete') {
+      var name = btn.getAttribute('data-name') || 'this package';
+      if (!confirm('Delete "' + name + '" from your browser?')) return;
+      SpeakizeLocalExports.delete(id).then(refresh);
+    }
+  });
+
+  if (langSel) langSel.addEventListener('change', applyLangFilter);
+  refresh();
+})();
 </script>
 </body>
 </html>

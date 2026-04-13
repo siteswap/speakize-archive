@@ -156,10 +156,32 @@
 
       progress(progressEl, 'Building .apkg…');
       var filename = 'speakize_' + (deck.name || 'deck').replace(/[^\w\- ]+/g, '_') + '_' + sixDigitSuffix() + '.apkg';
-      pkg.writeToFile(filename);
-      progress(progressEl, failures
-        ? 'Downloaded ' + filename + ' (' + failures + '/' + total + ' media files failed — check CORS on bucket).'
-        : 'Downloaded ' + filename + '.');
+      return pkg.writeToFile(filename).then(function(out) {
+        var savedNote = '';
+        if (window.SpeakizeLocalExports && out && out.blob) {
+          var thumb = null;
+          for (var k = 0; k < phrases.length; k++) {
+            if (phrases[k].image_url) { thumb = phrases[k].image_url; break; }
+          }
+          return window.SpeakizeLocalExports.save({
+            deckName: deck.name || 'Speakize',
+            lang: lang,
+            thumbnailUrl: thumb,
+            blob: out.blob,
+          }).then(function() {
+            savedNote = ' Saved to your browser — see Exports page.';
+          }, function() {
+            savedNote = ' (Could not save to browser storage.)';
+          }).then(function() {
+            progress(progressEl, (failures
+              ? 'Downloaded ' + filename + ' (' + failures + '/' + total + ' media files failed — check CORS on bucket).'
+              : 'Downloaded ' + filename + '.') + savedNote);
+          });
+        }
+        progress(progressEl, failures
+          ? 'Downloaded ' + filename + ' (' + failures + '/' + total + ' media files failed — check CORS on bucket).'
+          : 'Downloaded ' + filename + '.');
+      });
     }).catch(function(err) {
       progress(progressEl, 'Export failed: ' + (err && err.message ? err.message : err));
       throw err;
