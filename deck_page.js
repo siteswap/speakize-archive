@@ -34,6 +34,34 @@
     return html + '</div>';
   }
 
+  function wireExportButtons(deck, lang, data) {
+    var ankiBtn = document.getElementById('exportAnkiBtn');
+    var mp3Btn = document.getElementById('exportMp3Btn');
+    var mp4Btn = document.getElementById('exportMp4Btn');
+    var progressEl = document.getElementById('exportProgress');
+
+    ankiBtn.addEventListener('click', function() {
+      if (typeof Package === 'undefined' || !window.SQL) {
+        progressEl.textContent = 'Anki libraries still loading, try again in a moment.';
+        return;
+      }
+      window.SpeakizeAnki.exportDeck(deck, lang, data, {
+        progressEl: progressEl,
+        buttons: [ankiBtn]
+      });
+    });
+
+    fetch('data/known_exports.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(known) {
+        if (!known) return;
+        var entry = (known[lang] || {})[deck.name];
+        if (entry && entry.mp3) { mp3Btn.href = entry.mp3; mp3Btn.classList.remove('d-none'); }
+        if (entry && entry.mp4) { mp4Btn.href = entry.mp4; mp4Btn.classList.remove('d-none'); }
+      })
+      .catch(function() {});
+  }
+
   function renderPage(lang, id, data) {
     var deck = S.resolveDeck(data, id);
     var container = document.getElementById('deckPageContainer');
@@ -48,7 +76,15 @@
     var buttons =
       '<div class="d-grid gap-2 col-md-6 mx-auto my-3">' +
         '<a href="' + studyHref + '" class="btn btn-primary shadow">Study Now</a>' +
-        '<a href="exports.html" class="btn btn-outline-primary shadow">Export as Anki / MP3 / MP4</a>' +
+        '<div class="btn-group shadow" role="group" aria-label="Export">' +
+          '<button type="button" id="exportAnkiBtn" class="btn btn-outline-primary">' +
+            '<i class="bi bi-download"></i> Anki (.apkg)</button>' +
+          '<a id="exportMp3Btn" class="btn btn-outline-primary d-none" download>' +
+            '<i class="bi bi-music-note"></i> MP3</a>' +
+          '<a id="exportMp4Btn" class="btn btn-outline-primary d-none" download>' +
+            '<i class="bi bi-film"></i> MP4</a>' +
+        '</div>' +
+        '<div id="exportProgress" class="text-muted small text-center"></div>' +
       '</div>';
     var back = '<div class="text-center my-4">' +
       '<a href="flashcards.html" class="btn btn-outline-primary">&larr; All Flashcards</a></div>';
@@ -56,6 +92,7 @@
       renderPhraseCards(lang, deck, data.pages, knownSet) + back;
     document.title = deck.name + ' - Flashcards';
     S.attachWordModal(S.makeLangLookup(data, lang));
+    wireExportButtons(deck, lang, data);
   }
 
   var params = new URLSearchParams(window.location.search);

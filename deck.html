@@ -114,6 +114,20 @@ function doWordLookup(prefix) {
 })();
 </script>
 <script src="flashcards.js"></script>
+<script src="fp_assets/vendor/sha256.min.js"></script>
+<script src="fp_assets/vendor/FileSaver.min.js"></script>
+<script src="fp_assets/vendor/jszip.min.js"></script>
+<script src="fp_assets/vendor/sql-wasm.js"></script>
+<script src="fp_assets/vendor/genanki.js"></script>
+<script src="anki_export.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    if (typeof initSqlJs === 'function') {
+      initSqlJs({ locateFile: function(f) { return 'fp_assets/vendor/' + f; } })
+        .then(function(SQLLib) { window.SQL = SQLLib; });
+    }
+  });
+</script>
 <script src="deck_page.js"></script>
 </body>
 </html>
