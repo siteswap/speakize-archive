@@ -66,6 +66,7 @@
       '<a href="documents.html" class="btn btn-outline-primary">&larr; All Documents</a></div><br><br>';
 
     container.innerHTML = html;
+    S.applyDynamicColors(container, doc.lang, wordData);
     document.title = doc.title + ' - Speakize Archive';
 
     S.attachWordModal(function(lang, name) {

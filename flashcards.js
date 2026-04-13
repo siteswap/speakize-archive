@@ -83,21 +83,52 @@ window.Speakize = (function() {
     return 'word.html?lang=' + lang + '&w=' + encodeURIComponent(w);
   }
 
-  function renderTokens(lang, segmented, pages, knownSet) {
+  var DEFAULT_TARGET_WORDS = 100;
+  var KNOWN_REVIEW_THRESHOLD = 5;
+
+  function getTargetWords() {
+    var v = parseInt(localStorage.getItem('speakize.targetWords'), 10);
+    return v > 0 ? v : DEFAULT_TARGET_WORDS;
+  }
+
+  function loadReviewCounts(lang) {
+    try { return JSON.parse(localStorage.getItem('speakize.wordReviews.' + lang)) || {}; }
+    catch (e) { return {}; }
+  }
+
+  function wordStyle(rank, reviews, target) {
+    if (rank == null || rank > target) return 'color:#a71d5d;text-decoration:none';
+    if (reviews >= KNOWN_REVIEW_THRESHOLD) return 'text-decoration:none';
+    return 'color:#fd7e14;text-decoration:none';
+  }
+
+  function renderTokens(lang, segmented, pages, _knownSet) {
+    var target = getTargetWords();
+    var reviews = loadReviewCounts(lang);
     var parts = [];
     for (var i = 0; i < segmented.length; i++) {
       var tok = segmented[i];
       var lower = tok.toLowerCase();
-      var style, isInTop = lower in pages;
-      if (isInTop) {
-        style = knownSet.has(lower) ? 'text-decoration:none' : 'color:#fd7e14;text-decoration:none';
-      } else {
-        style = 'color:#a71d5d;text-decoration:none';
-      }
+      var info = pages[lower];
+      var style = wordStyle(info ? info.rank : null, reviews[lower] || 0, target);
       parts.push('<a style="' + style + '" href="#" class="word" data-name="' +
                  esc(lower) + '" data-lang="' + lang + '">' + esc(tok) + '</a>');
     }
     return parts.join(lang === 'zh' ? '' : ' ');
+  }
+
+  function applyDynamicColors(root, lang, wordData) {
+    if (!root) return;
+    var target = getTargetWords();
+    var reviews = loadReviewCounts(lang);
+    var anchors = root.querySelectorAll('.word');
+    for (var i = 0; i < anchors.length; i++) {
+      var a = anchors[i];
+      var name = (a.getAttribute('data-name') || '').toLowerCase();
+      var l = a.getAttribute('data-lang') || lang;
+      var info = wordData ? wordData[l + '|' + name] : null;
+      a.setAttribute('style', wordStyle(info ? info.rank : null, reviews[name] || 0, target));
+    }
   }
 
   function resolveDeck(data, id) {
@@ -337,6 +368,8 @@ window.Speakize = (function() {
     wordAudioUrl: wordAudioUrl,
     wordHref: wordHref,
     renderTokens: renderTokens,
+    applyDynamicColors: applyDynamicColors,
+    getTargetWords: getTargetWords,
     resolveDeck: resolveDeck,
     ensureModal: ensureModal,
     attachWordModal: attachWordModal,
