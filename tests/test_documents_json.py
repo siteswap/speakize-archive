@@ -12,11 +12,21 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCS_JSON = ROOT / "data" / "documents.json"
+DOCS_DIR = ROOT / "data" / "documents"
 
 
 def load():
-    return json.loads(DOCS_JSON.read_text())
+    """Reconstruct the legacy {myContent, sharedContent, documents: {id: full}}
+    shape from the new split layout (index.json + per-doc files)."""
+    index = json.loads((DOCS_DIR / "index.json").read_text())
+    documents = {}
+    for doc_id in index["documents"]:
+        documents[doc_id] = json.loads((DOCS_DIR / f"{doc_id}.json").read_text())
+    return {
+        "myContent": index["myContent"],
+        "sharedContent": index["sharedContent"],
+        "documents": documents,
+    }
 
 
 def test_lists_are_non_empty():
