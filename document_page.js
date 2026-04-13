@@ -20,9 +20,17 @@
       : '';
     var reportBtn = ' <a href="document_report.html?id=' + encodeURIComponent(docId) +
       '" class="btn btn-sm btn-outline-primary align-middle ms-2"><i class="bi bi-bar-chart"></i> Word Frequency</a>';
+    var userDecks = S.loadUserFlashcards(doc.lang);
+    var deckId = 'u-doc-' + docId;
+    var deckBtn = userDecks[deckId]
+      ? ' <a href="deck.html?lang=' + encodeURIComponent(doc.lang) +
+        '&id=' + encodeURIComponent(deckId) +
+        '" class="btn btn-sm btn-outline-primary align-middle ms-2"><i class="bi bi-collection"></i> Flashcards (' +
+        (userDecks[deckId].phrases || []).length + ')</a>'
+      : '';
     var html = '<br><h2 class="card-title text-center">' +
       S.esc(doc.title) +
-      ' <small class="text-muted">(Document)</small>' + reportBtn + editBtn + '</h2>';
+      ' <small class="text-muted">(Document)</small>' + reportBtn + deckBtn + editBtn + '</h2>';
 
     if (doc.youtube) {
       html += '<div class="embed-responsive embed-responsive-16by9" style="max-width: 100%;">' +
