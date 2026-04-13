@@ -18,8 +18,9 @@
       var tokens = (p.segmented && p.segmented.length)
         ? S.renderTokens(lang, p.segmented, pages, knownSet)
         : S.esc(p.phrase || '');
-      var img = p.image_url ? '<img src="' + S.esc(p.image_url) +
-                '" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">' : '';
+      var imgSrc = p.image_url || S.PLACEHOLDER_IMG;
+      var img = '<img src="' + S.esc(imgSrc) +
+                '" class="img-fluid rounded mb-2" alt="" style="max-height:120px;">';
       var trans = p.translation ? '<p class="text-muted"><em>' + S.esc(p.translation) + '</em></p>' : '';
       var phraseText = (p.segmented && p.segmented.length) ? p.segmented.join(lang === 'zh' ? '' : ' ') : (p.phrase || '');
       var audio = p.audio_url ? '<br><audio controls src="' + S.esc(p.audio_url) +
@@ -102,7 +103,7 @@
   var id = params.get('id') || 'all';
   fetch('data/' + lang + '.json')
     .then(function(r) { return r.json(); })
-    .then(function(data) { renderPage(lang, id, data); })
+    .then(function(data) { S.mergeUserDecks(data, lang); renderPage(lang, id, data); })
     .catch(function(err) {
       document.getElementById('deckPageContainer').innerHTML =
         '<div class="alert alert-danger m-4">Failed to load deck data: ' + S.esc(err.message) + '</div>';
