@@ -150,7 +150,7 @@ function doWordLookup(prefix) {
     });
     pane.innerHTML = html;
   }
-  fetch('data/documents.json')
+  fetch('data/documents/index.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var userDocs;

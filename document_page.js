@@ -106,17 +106,15 @@
     return;
   }
 
-  fetch('data/documents.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var doc = data.documents[docId];
-      if (!doc) {
-        renderError('Document ' + docId + ' not found.');
-        return;
-      }
+  fetch('data/documents/' + encodeURIComponent(docId) + '.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('not found');
+      return r.json();
+    })
+    .then(function(doc) {
       renderDoc(doc, doc.wordData || {});
     })
     .catch(function(err) {
-      renderError('Failed to load document data: ' + err);
+      renderError('Document ' + docId + ' not found.');
     });
 })();

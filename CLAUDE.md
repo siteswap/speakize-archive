@@ -22,7 +22,8 @@ To update the sample data, re-run `generate_static_archive.py` from sherpa again
 - `deck.html`, `study.html`, `word.html`, `words.html`, `document.html`, `reports.html` — dynamic-style pages driven by query params + JS (`deck_page.js`, `study_page.js`, `word_page.js`, `document_page.js`, `reports_page.js`)
 - `flashcards.js` — shared library (`window.Speakize`): phrase-token renderer (`.word` anchors with the 3-color legend), deck resolver, and the word-click modal (HTML + click handler). Included by `deck.html`, `study.html`, `word.html`, `document.html`, `reports.html`, `smartfeed.html` — each page passes its own `lookup(lang, name)` function to `Speakize.attachWordModal`.
 - `data/zh.json`, `data/es.json` — per-language word database (replaces the backend DB); ~800KB–1.9MB each
-- `data/documents.json` — metadata + per-document content (phrases, wordData, YouTube embeds) for all documents; also contains the `myContent`/`sharedContent` list ordering used by `documents.html`
+- `data/documents/index.json` — lightweight index: `myContent`/`sharedContent` ordering (used by `documents.html`) + `documents: {id: {title, lang}}` for listing
+- `data/documents/<id>.json` — per-document content (title, lang, youtube, phrases, wordData); fetched on demand by `document.html`
 - `zh/index.html`, `es/index.html` — language landing pages
 - `doc/` — legacy standalone document pages; superseded by `document.html?id=<id>` + `data/documents.json` (safe to delete)
 - `fp_assets/` — shared static assets

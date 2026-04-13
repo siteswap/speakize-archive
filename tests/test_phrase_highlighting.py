@@ -37,9 +37,18 @@ RUNTIME_RENDER_PAGES = [
 ]
 
 
+def _load_docs():
+    docs_dir = ROOT / "data" / "documents"
+    index = json.loads((docs_dir / "index.json").read_text())
+    documents = {}
+    for doc_id in index["documents"]:
+        documents[doc_id] = json.loads((docs_dir / f"{doc_id}.json").read_text())
+    return {**index, "documents": documents}
+
+
 def test_documents_json_phrases_are_highlighted():
-    """Every phrase in documents.json must have tokens_html with .word anchors."""
-    data = json.loads((ROOT / "data" / "documents.json").read_text())
+    """Every phrase in every document must have tokens_html with .word anchors."""
+    data = _load_docs()
     missing = []
     for doc_id, doc in data["documents"].items():
         for i, p in enumerate(doc.get("phrases") or []):
@@ -52,6 +61,13 @@ def test_documents_json_phrases_are_highlighted():
         "Phrases in documents.json missing .word anchors:\n  "
         + "\n  ".join(missing[:10])
         + (f"\n  ... and {len(missing) - 10} more" if len(missing) > 10 else "")
+    )
+
+
+def test_documents_json_file_removed():
+    """The monolithic data/documents.json should no longer exist."""
+    assert not (ROOT / "data" / "documents.json").exists(), (
+        "data/documents.json should be replaced by data/documents/ directory"
     )
 
 
@@ -132,6 +148,7 @@ def test_html_pages_do_not_inline_word_modal():
 if __name__ == "__main__":
     tests = [
         test_documents_json_phrases_are_highlighted,
+        test_documents_json_file_removed,
         test_flashcards_js_emits_word_anchors,
         test_runtime_pages_route_segmented_through_shared_renderer,
         test_all_phrase_pages_attach_shared_modal,
