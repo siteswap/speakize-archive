@@ -1,5 +1,5 @@
 Be able to generate a flashcard deck from a NEW document
-	- bulk link at bottom
+	- Bulk link at bottom
 	- Play all button
 	- Link to flashcards
 
@@ -11,8 +11,35 @@ Quickstart guide
 
 ---------------------
 
-Migration - django's generate_static command tool was used to export original templates and reference data
+Include in archive the history of the project:
+
+30th July 2020:
+ - First git commit - a python script that calls Google TTS & Translate to produce Anki audio flashcards
+ - Struggling to find relevant content, rely on online lessons & HSK website
+July 2021 - passed HSK4 (considered 1 year of full time work):
+ - It's still just python scripts, now covering HSK1-4
+ - I've read Fluent Forever and started including word frequency metadata, but no images yet
+Nov 2021:
+ - First Django site commit
+ - Try to solve the content / relevance problem with word tracking, word feed, hanzi newsfeed, youtube imports etc. 
+Nov 2022:
+ - By now the site has developed most of it's major features
+ - 22nd Nov to 22nd Dec 2022 - learn first 1000 Spanish words in 1 month (word feed) to test site with a new lang
+Jan 2023 - Aug 2023:
+ - Professional reviews, Reddit user feedback, searched for PMF, Twinkle (funding/feedback) 
+ - A few features based on feedback - new front end, 20+ langs to grab more users, UX/usability, shared content for instant start
+ - Found this period frustrating; lots of time passing without clear progress, UX/front-end never quite comes together
+ - Language wise, probably around HSK5 by now (considered another 1 year of full time work)
+ - Last features/bug fixes added on Sept 6th 2023
+
+In total - 3 years of work in parrallel with chinese study
+
+March 2024 - Cost reduction work (spins up getting hit by bots & fake accounts)
+April 2026 - Archived as a static site
+
+---------------------
+
+Archive
+Django's generate_static command tool was used to export original templates
 Opus was used to move original django-python logic into js that runs in the client
 The backend database was shrunk down to a static json database
-Used IndexedDB for client side 
-
